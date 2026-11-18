@@ -1,0 +1,9 @@
+{
+  "name": "simutrade-labs",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "python3 server.py --host 0.0.0.0 --port 4173 --strictPort",
+    "test": "python3 -m unittest discover -s tests -v"
+  }
+}

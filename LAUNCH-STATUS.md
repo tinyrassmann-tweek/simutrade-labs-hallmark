@@ -1,16 +1,15 @@
-# SimuTrade Labs Hallmark — Launch Status
+# SimuTrade Labs — Visual edition 1.1
 
-**Status: Premium open-design landing locked. Core package pending full source push.**
+Updated November 17, 2026.
 
-- Elite open-design standard applied: cream/navy/gold, Playfair Display, Montserrat, classy hierarchy.
-- Education-only boundary explicit. No advice. No performance claims.
-- Landing page (index.html) ready for review and staging.
-- Full operator workspace, tests, and Google Cloud package described in README; source to be completed in next cycle.
+The complete modular source is included: premium landing page, simulated-trading practice app, operator portals, original logo, custom illustrative photography, Python backend, 13 regression tests, portable HTML builder, Dockerfile, and Google Cloud deployment script.
 
-## Next
-1. Owner review of landing.
-2. Complete source push (workspace, tests, deploy script).
-3. Staging deploy (Netlify or Cloud Run) after authorization.
-4. Access review form live only after go.
+Run `python3 server.py` and open http://localhost:3000. Generate the standalone previews and full ZIP with `python3 build_release.py`.
 
-Deep Work Block 2 complete for Hallmark advance + Shopify momentum.
+The landing explains the consumer benefit through working, labeled practice examples. Guest access needs no account or deposit. All balances and trades are simulated. The included feed is synthetic. Optional providers and AI generation require configuration.
+
+Validation: 13 backend tests pass, both application JavaScript files parse, and browser checks cover the risk/replay/reflection previews, durable lead saving, simulated entry/manual exit, journal saving, and responsive navigation. See `verification/visual-edition.json`.
+
+Google Cloud deployment, a custom domain, and external provider integrations are not verified as live. The source package is deployable; it is not evidence of an active production service. No new paid services were provisioned in this update.
+
+Historical Hallmark records are retained under `.hallmark/`. The earlier public landing draft is preserved under `requirements/Previous-Public-Landing-2026-11-09.html`; the current site source is `public/index.html`.

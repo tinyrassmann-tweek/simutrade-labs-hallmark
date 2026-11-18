@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080e18">
+<title>The Lab / SimuTrade Labs</title>
+<meta name="description" content="SimuTrade Labs practice workspace for simulated trading, custom challenge rules, Quant analysis, journaling, and operator tools.">
+<link rel="icon" href="/assets/logo.webp">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/premium.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<script defer src="/app.js">
+</script>
+</head>
+<body class="lab-app">
+<a class="skip" href="#workspace">Skip to workspace</a>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="/">
+<img src="/assets/logo.webp" width="30" height="45" alt="SimuTrade Labs logo">
+<span>
+<strong>SimuTrade Labs</strong>
+<small>Your private practice desk</small>
+</span>
+</a>
+<nav class="side-nav" aria-label="Workspace">
+<div class="nav-label">Trader’s lab</div>
+<button type="button" data-page="overview">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<rect x="3" y="3" width="7" height="7"/>
+<rect x="14" y="3" width="7" height="7"/>
+<rect x="3" y="14" width="7" height="7"/>
+<rect x="14" y="14" width="7" height="7"/>
+</svg>
+</span>Overview</button>
+<button type="button" data-page="trade">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M3 17l5-7 5 4 8-11M3 21h18"/>
+</svg>
+</span>Simulation desk</button>
+<button type="button" data-page="challenge">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M12 3l9 5v8l-9 5-9-5V8zM8 12l3 3 5-6"/>
+</svg>
+</span>Challenge rules</button>
+<button type="button" data-page="journal">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"/>
+</svg>
+</span>Trade journal</button>
+<button type="button" data-page="quant">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M2 12c4-15 6 15 10 0S18-3 22 12M2 20h20"/>
+</svg>
+</span>Quant visualizer</button>
+<button type="button" data-page="coach">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="8"/>
+<path d="M12 7v5l3 2"/>
+</svg>
+</span>Discipline coach</button>
+<button type="button" data-page="research">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<circle cx="10" cy="10" r="6"/>
+<path d="M15 15l6 6"/>
+</svg>
+</span>Research & alerts</button>
+<div class="nav-label">Operator workspace</div>
+<button type="button" data-page="studio">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M4 20L17 7l3 3L7 23zM16 2v3M21 5h3M8 3v3"/>
+</svg>
+</span>AI cowork studio</button>
+<button type="button" data-page="crm">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<circle cx="9" cy="8" r="4"/>
+<path d="M2 22v-3a7 7 0 0114 0v3M17 4a4 4 0 010 8M19 16a5 5 0 013 5"/>
+</svg>
+</span>Contacts & pipeline</button>
+<button type="button" data-page="flows">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M3 7h18l-4-4M21 17H3l4 4M21 7l-4 4M3 17l4-4"/>
+</svg>
+</span>Follow-up planner</button>
+<div class="nav-label">Your workspace</div>
+<button type="button" data-page="settings">
+<span class="nav-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16"/>
+<circle cx="9" cy="6" r="2"/>
+<circle cx="15" cy="12" r="2"/>
+<circle cx="9" cy="18" r="2"/>
+</svg>
+</span>Settings & exports</button>
+</nav>
+<div class="side-bottom">Simulated funds only<br>
+<br>Think Tank Solutions AI<br>Learn the process. Keep the precision.<br>
+<br>
+<a href="/"> Back to SimuTrade Labs</a>
+</div>
+</aside>
+<div class="app-body">
+<header class="app-header">
+<div class="app-header-left">
+<button type="button" class="mobile-app-menu icon-btn" id="app-menu" aria-label="Open workspace navigation" aria-expanded="false">☰</button>
+<span class="muted" id="breadcrumb">Workspace / Overview</span>
+</div>
+<div class="app-header-right">
+<span class="pill" id="storage-mode">Guest / saved in this browser</span>
+<button type="button" class="small" id="account-button">Sign in / Save</button>
+<a class="btn small primary" href="#trade">New practice trade</a>
+</div>
+</header>
+<main id="workspace" class="app-main" tabindex="-1">
+<p>Opening your practice desk…</p>
+</main>
+</div>
+</div>
+<dialog id="auth-dialog" class="auth-dialog">
+<div class="dialog-top">
+<h2 id="auth-title">Save your practice.</h2>
+<button type="button" class="icon-btn" id="close-auth" aria-label="Close account dialog">×</button>
+</div>
+<p class="note">Your account and guest practice stay separate. Email verification and password recovery are not available yet. Use exports to keep a copy of important records.</p>
+<div class="tabs">
+<button type="button" data-auth="register" class="selected">Create account</button>
+<button type="button" data-auth="login">Sign in</button>
+</div>
+<form id="auth-form">
+<label id="name-label">Your name<input name="name" autocomplete="name" maxlength="80">
+</label>
+<label>Email<input name="email" type="email" required autocomplete="email" maxlength="254">
+</label>
+<label>Password (12+ characters)<input name="password" type="password" required minlength="12" maxlength="128" autocomplete="new-password">
+</label>
+<button type="submit" class="primary" style="width:100%">Create account</button>
+<p id="auth-status" class="note" aria-live="polite">
+</p>
+</form>
+</dialog>
+<div class="toast" role="status" id="toast" hidden>
+</div>
+</body>
+</html>

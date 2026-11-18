@@ -1,0 +1,8 @@
+Hallmark installed and applied November 8, 2026.
+Upstream: https://github.com/nutlope/hallmark
+Checkout commit: 407fa68
+Installed through the repository's own install.mjs --codex command.
+Installed agent skill directory in the build environment: /root/.agents/skills/hallmark
+Source checkout: vendor/hallmark in the build workspace.
+The downloaded app requires only Python 3.12+; Hallmark and Node are development tools, not runtime requirements.
+To install on another machine, follow the upstream README. No installation on the owner's Mac is claimed.

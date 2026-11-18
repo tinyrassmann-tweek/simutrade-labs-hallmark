@@ -1,0 +1,97 @@
+{
+ "v": 1,
+ "at": "2026-11-09T02:36:08.330Z",
+ "scope": "page",
+ "summary": {
+  "fails": 86,
+  "reflex": 124,
+  "warns": 12
+ },
+ "files": {
+  "simutrade-labs/public/index.html": {
+   "handlers": [],
+   "links": [
+    "#coach",
+    "#main",
+    "#method",
+    "#operators",
+    "#quant",
+    "/",
+    "/app",
+    "/app#coach",
+    "/app#quant",
+    "/app#studio",
+    "/privacy.html",
+    "/terms.html"
+   ],
+   "fields": [
+    "consent",
+    "email",
+    "goal",
+    "name",
+    "website"
+   ],
+   "hooks": [],
+   "ids": [
+    "coach",
+    "early-access",
+    "landing-chart",
+    "lead-form",
+    "lead-status",
+    "main",
+    "method",
+    "operators",
+    "quant",
+    "risk-amount",
+    "risk-contracts",
+    "risk-pct",
+    "risk-slider"
+   ],
+   "scripts": [
+    "/landing.js"
+   ]
+  }
+ },
+ "wiring": {
+  "handlers": [],
+  "links": [
+   "#coach",
+   "#main",
+   "#method",
+   "#operators",
+   "#quant",
+   "/",
+   "/app",
+   "/app#coach",
+   "/app#quant",
+   "/app#studio",
+   "/privacy.html",
+   "/terms.html"
+  ],
+  "fields": [
+   "consent",
+   "email",
+   "goal",
+   "name",
+   "website"
+  ],
+  "hooks": [],
+  "ids": [
+   "coach",
+   "early-access",
+   "landing-chart",
+   "lead-form",
+   "lead-status",
+   "main",
+   "method",
+   "operators",
+   "quant",
+   "risk-amount",
+   "risk-contracts",
+   "risk-pct",
+   "risk-slider"
+  ]
+ },
+ "scripts": {},
+ "pages": {}
+}

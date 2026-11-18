@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-08",
+  "hallmark_commit": "407fa68",
+  "static": {
+    "fail": 0,
+    "reflex": 0,
+    "dismissed": 1,
+    "notes": 1,
+    "links_kept": "12/12",
+    "fields_kept": "5/5"
+  },
+  "backend_tests": 13,
+  "responsive_frame_widths": [
+    320,
+    360,
+    390,
+    640,
+    768,
+    1280,
+    1440,
+    1920
+  ],
+  "hero_1280x800": {
+    "headline_bottom": 404.34,
+    "sentence_bottom": 491.03,
+    "action_bottom": 583.03
+  },
+  "browser_flows": [
+    "paper trade open",
+    "manual close",
+    "journal save",
+    "lead form server success"
+  ],
+  "review": "ship; coaching image loading corrected and reviewed",
+  "automatic_render": "not completed; local Chrome socket creation denied",
+  "deployment": "Google Cloud not connected; not deployed"
+}

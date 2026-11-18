@@ -1,0 +1,67 @@
+{
+  "edition": "1.1",
+  "client_date": "2026-11-17",
+  "scope": "Landing and app visual upgrade; simulation and persistence logic preserved.",
+  "automated": {
+    "backend_tests": {
+      "passed": 13,
+      "failed": 0,
+      "command": "python3 -m unittest discover -s tests -v"
+    },
+    "javascript_syntax": [
+      "public/landing.js",
+      "public/app.js"
+    ]
+  },
+  "browser": {
+    "desktop_content_width": 1348,
+    "landing": [
+      "risk-size 3 contracts shows $600 over $500 cap",
+      "plan range and risk check",
+      "controlled replay step 2 shows 19996 and long simulated P&L -160",
+      "journal reflection feedback",
+      "25000 balance at 0.5% and 10 point NQ stop gives zero whole contracts and $125 unused",
+      "voluntary pause starts and ends",
+      "lead form confirms saved request",
+      "pausing the initial animation leaves terminal opacity at 1",
+      "practice photograph fully loaded at 1600 by 900"
+    ],
+    "app": [
+      "guest simulated trade opens",
+      "manual close produces closed history",
+      "trade-linked journal reflection saves",
+      "mobile navigation opens, selects CRM, closes"
+    ],
+    "responsive_iframes": [
+      {
+        "frame": 320,
+        "content": 305,
+        "landing_scroll": 305,
+        "crm_scroll": 305
+      },
+      {
+        "frame": 390,
+        "content": 375,
+        "landing_scroll": 375,
+        "overview_scroll": 375,
+        "crm_scroll": 375
+      }
+    ],
+    "portable": [
+      "single HTML opens embedded guest app",
+      "Quant desk deep link opens correct app route",
+      "privacy notice opens inside portable preview",
+      "return from embedded privacy notice opens the app"
+    ]
+  },
+  "limitations": [
+    "No physical mobile-device test",
+    "No measured Lighthouse or performance score",
+    "No new Google Cloud deployment verified",
+    "Historical .hallmark audit is from prior edition"
+  ],
+  "packaging": {
+    "inline_javascript": "All 2 landing and 3 app inline script blocks pass node --check",
+    "archives": "Both source archives pass CRC checks and exclude runtime data, real environment files, and QA harnesses"
+  }
+}

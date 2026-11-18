@@ -1,0 +1,31 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Workbench",
+  "theme": "brand",
+  "axes": "navy/Georgia/cyan",
+  "hero": "Stage",
+  "nav": "brand mast and destinations",
+  "footer": "legal colophon",
+  "imagery": "original supplied logo and two existing illustrative photographs",
+  "entry": "2026-11-08",
+  "fingerprint": "SimuTrade-risk-geometry",
+  "sections": [
+   "hero",
+   "practice method",
+   "risk geometry",
+   "discipline coach",
+   "challenge rules",
+   "operator workspace",
+   "early access",
+   "questions",
+   "footer"
+  ],
+  "signature": "working risk geometry",
+  "waived": [],
+  "prompt": "Apply Hallmark to upgrade existing SimuTrade Labs",
+  "date": "2026-11-09"
+ }
+]

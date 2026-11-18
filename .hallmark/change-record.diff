@@ -1,0 +1,1088 @@
+--- before/index.html
++++ after/index.html
+@@ -4,9 +4,9 @@
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="theme-color" content="#080e18">
+-<title>SimuTrade Labs — Simulated trading. Real precision.</title>
++<title>SimuTrade Labs / Simulated trading. Real precision.</title>
+ <meta name="description" content="Build trading discipline with a simulated practice lab, custom challenge rules, risk planning, and structured trade review.">
+-<meta property="og:title" content="SimuTrade Labs — Your discipline is the edge.">
++<meta property="og:title" content="SimuTrade Labs / Your discipline is the edge.">
+ <meta property="og:description" content="Simulated trading. Real precision. Practice the process behind every decision.">
+ <link rel="icon" href="/assets/logo.webp">
+ <link rel="stylesheet" href="/style.css">
+@@ -17,6 +17,7 @@
+ <body>
+ <a class="skip" href="#main">Skip to content</a>
+ <header class="site-nav">
++<div class="wrap nav-inner">
+ <a class="brand" href="/" aria-label="SimuTrade Labs home">
+ <img src="/assets/logo.webp" width="45" height="67" alt="SimuTrade Labs gold ST monogram logo">
+ <span>
+@@ -24,68 +25,60 @@
+ <small>Simulated trading. Real precision.</small>
+ </span>
+ </a>
+-<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
++<button type="button" class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+ <nav class="nav-links" aria-label="Main navigation">
+ <a href="#method">The method</a>
+ <a href="#quant">Quant clarity</a>
+ <a href="#coach">Discipline coach</a>
+ <a href="#operators">For operators</a>
+-<a class="btn small primary" href="/app">Enter the Lab <span>↗</span>
++<a class="btn small primary" href="/app">Enter the Lab <span>
++</span>
+ </a>
+ </nav>
++</div>
+ </header>
+ <main id="main">
+ <section class="hero">
++<div class="wrap hero-layout">
++<div class="hero-content">
++<h1>Discipline<br>is your edge.</h1>
++<p>Rehearse your setup, respect your limits, and review every simulated trade.</p>
++<div class="hero-actions">
++<a class="btn primary" href="/app">Enter the Lab</a>
++<a class="btn" href="#method">Explore the method</a>
++</div>
++<span class="quiet">Simulated funds only, without a broker connection. Start without an account.</span>
++</div>
++<figure class="hero-visual">
+ <img class="hero-img" src="/assets/hero.webp" width="1600" height="900" alt="A focused trader reviewing price geometry and a handwritten risk journal at a private desk" fetchpriority="high">
+-<div class="wrap hero-content">
+-<span class="eyebrow reveal">
+-<span class="status-dot">
+-</span>A private practice desk for deliberate traders</span>
+-<h1 class="reveal delay">Markets move.<br>Discipline <em>holds.</em>
+-</h1>
+-<p class="reveal delay">Turn market noise into a repeatable process. Rehearse your setup, respect your limits, and understand the decisions behind every simulated trade.</p>
+-<div class="hero-actions reveal delay">
+-<a class="btn primary" href="/app">Enter the Lab <span>↗</span>
+-</a>
+-<a class="btn" href="#method">Explore the method <span>↓</span>
+-</a>
+-</div>
+-<span class="quiet">Simulated funds only · No broker connection · Start without an account</span>
+-</div>
+-<aside class="hero-aside">
+-<span class="eyebrow">The Lab principle</span>
+-<p>Practice the decision.<br>Then measure the discipline.</p>
+-<span class="quiet">A process you can repeat.</span>
+-</aside>
++<figcaption>Practice the decision. Then measure the discipline.</figcaption>
++</figure>
++</div>
+ </section>
+ <div class="wrap">
+-<div class="ticker mono" aria-label="Illustrative market pulse">
++<div class="ticker" aria-label="Illustrative market pulse">
+ <div class="label">
+-<span class="cyan">THE PRACTICE PULSE</span>
+-<span>ILLUSTRATIVE · NOT LIVE QUOTES</span>
+-</div>
+-<div>
+-<span>NQ / GEOMETRY</span>
+-<b>Structure <span class="cyan">↗</span>
+-</b>
++<span class="cyan">The practice pulse</span>
++<span>Illustrative, not live quotes</span>
++</div>
++<div>
++<span>NQ / Geometry</span>
++<b>Structure</b>
+ <span>Trend + residual</span>
+ </div>
+ <div>
+-<span>ES / RISK</span>
+-<b>Defined <span class="gold-text">◇</span>
+-</b>
++<span>ES / Risk</span>
++<b>Defined</b>
+ <span>Before execution</span>
+ </div>
+ <div>
+-<span>PLTR / CONTEXT</span>
+-<b>Observe <span class="cyan">⌁</span>
+-</b>
++<span>PLTR / Context</span>
++<b>Observe</b>
+ <span>Signal ≠ instruction</span>
+ </div>
+ <div>
+-<span>YOU / PROCESS</span>
+-<b>Deliberate <span class="gold-text">✓</span>
+-</b>
++<span>You / Process</span>
++<b>Deliberate</b>
+ <span>One planned decision</span>
+ </div>
+ </div>
+@@ -93,37 +86,33 @@
+ <section class="section wrap" id="method">
+ <div class="section-head">
+ <div>
+-<span class="eyebrow">01 / A better rehearsal</span>
+-<h2>A good result starts<br>before the entry.</h2>
++<h2>Build a repeatable trading routine.</h2>
+ </div>
+ <p>Knowing the rules is one thing. Following them when the chart moves is a skill you can practice.</p>
+ </div>
+-<div class="three">
+-<article class="feature">
+-<div class="num">01 — DEFINE</div>
++<ol class="three method-steps">
++<li class="feature">
+ <h3>Give your practice<br>real boundaries.</h3>
+ <p>Set a profit target, daily loss limit, overall drawdown, and risk per trade. Build a custom challenge that reflects the rules you want to rehearse.</p>
+-</article>
+-<article class="feature">
+-<div class="num">02 — REHEARSE</div>
++</li>
++<li class="feature">
+ <h3>Trade the plan.<br>Watch the process.</h3>
+ <p>Place simulated positions with an explicit stop reference and target. Position sizing and risk checks make the trade-off visible before you enter.</p>
+-</article>
+-<article class="feature">
+-<div class="num">03 — REVIEW</div>
++</li>
++<li class="feature">
+ <h3>Keep the lesson.<br>Leave the ego.</h3>
+ <p>Separate a profitable outcome from a sound decision. Use your journal and discipline coach to identify what deserves another repetition.</p>
+-</article>
+-</div>
+-</section>
+-<section class="section operator" id="quant">
++</li>
++</ol>
++</section>
++<section class="section quant-band" id="quant">
+ <div class="wrap two">
+ <div class="panel quant-preview">
+ <div class="quant-top">
+-<span class="mono cyan">TEXT → QUANT / RISK GEOMETRY</span>
+-<span class="pill">Interactive example</span>
+-</div>
+-<div class="big-num mono" id="risk-amount">$500 <span class="muted" style="font-size:12px">planned risk</span>
++<span>Risk geometry</span>
++<span class="pill" role="status">Interactive example</span>
++</div>
++<div class="big-num mono" id="risk-amount">$500 <span class="muted" class="risk-unit">planned risk</span>
+ </div>
+ <svg class="chart" id="landing-chart" viewBox="0 0 600 220" role="img" aria-label="Illustrative price series with a linear trend">
+ </svg>
+@@ -144,11 +133,10 @@
+ <b class="mono" id="risk-contracts">2 contracts</b>
+ </div>
+ </div>
+-<p class="quiet no-margin" style="margin-top:16px">Illustrative NQ sizing at $20/point. Rounded down to whole contracts; excludes fees and slippage.</p>
+-</div>
+-<div>
+-<span class="eyebrow">02 / Quant clarity</span>
+-<h2>Make the math<br>something you can see.</h2>
++<p class="quiet no-margin quant-caption">Illustrative NQ sizing at $20/point. Rounded down to whole contracts; excludes fees and slippage.</p>
++</div>
++<div>
++<h2>See the risk before entry.</h2>
+ <p>A chart becomes more useful when the risk beside it makes sense. Explore regression, residuals, and position sizing in a workspace built for learning.</p>
+ <ul class="check-list">
+ <li>Price geometry and linear trend visualization</li>
+@@ -156,25 +144,23 @@
+ <li>Risk sizing connected to your practice rules</li>
+ <li>Replay feed included; external data connection optional</li>
+ </ul>
+-<a href="/app#quant" class="btn">Explore the Quant desk ↗</a>
+-</div>
+-</div>
+-</section>
+-<section class="section wrap" id="coach">
++<a href="/app#quant" class="btn">Explore the Quant desk</a>
++</div>
++</div>
++</section>
++<section class="section wrap coach-section" id="coach">
+ <div class="two">
+ <div>
+-<span class="eyebrow">03 / Keep the trader human</span>
+-<h2>The next trade<br>doesn’t have to fix<br>the last one.</h2>
++<h2>Review the decision behind the trade.</h2>
+ <div class="coach-sample">
+-<span class="eyebrow">A moment from the discipline coach</span>
+ <p>“Two losses are information.<br>The urge to win them back is a cue to pause.”</p>
+ <span class="quiet">Illustrative rules-based coaching prompt</span>
+ </div>
+ <p>Reflect on recent trades, take a timed pause, and return to the plan. The built-in coach uses clear practice rules. Optional AI tools support deeper drafting when connected.</p>
+-<a href="/app#coach" class="btn small">Meet your discipline coach ↗</a>
+-</div>
+-<div>
+-<img class="photo" src="/assets/review.webp" alt="Two adults calmly reviewing a trading practice journal together" width="900" height="600" loading="lazy">
++<a href="/app#coach" class="btn small">Meet your discipline coach</a>
++</div>
++<div>
++<img class="photo" src="/assets/review.webp" alt="Two adults calmly reviewing a trading practice journal together" width="900" height="600" loading="eager" decoding="async" fetchpriority="low">
+ <div class="stats-row">
+ <div class="stat">
+ <small>Before</small>
+@@ -196,8 +182,7 @@
+ <div class="wrap">
+ <div class="section-head">
+ <div>
+-<span class="eyebrow">Built for challenge preparation</span>
+-<h2>Rehearse the rules<br>you need to follow.</h2>
++<h2>Practice against your challenge rules.</h2>
+ </div>
+ <p>Use custom profiles to practice against your own verified requirements. Firm rules change; your practice profile stays editable.</p>
+ </div>
+@@ -220,8 +205,7 @@
+ <section class="section operator" id="operators">
+ <div class="wrap two">
+ <div>
+-<span class="eyebrow">04 / The operator workspace</span>
+-<h2>Build the business<br>around the Lab.</h2>
++<h2>Run the business behind the Lab.</h2>
+ <p>For trading educators and simulation operators: organize leads, shape an offer, draft content, and prepare the next follow-up in one workspace.</p>
+ <div class="tool-pills">
+ <span class="pill">Offer Architect</span>
+@@ -230,29 +214,27 @@
+ <span class="pill">Research planner</span>
+ <span class="pill">Nurture drafts</span>
+ </div>
+-<a href="/app#studio" class="btn">Open the operator workspace ↗</a>
++<a href="/app#studio" class="btn">Open the operator workspace</a>
+ </div>
+ <div class="panel">
+-<span class="eyebrow">A practical cowork system</span>
+-<div class="feature">
+-<h3>One idea → A usable draft.</h3>
++<div class="feature">
++<h3>Turn an idea into a draft.</h3>
+ <p>Turn your audience, offer, or source notes into a structured working draft. Connect Gemini for AI generation, or start with the included editable frameworks.</p>
+ </div>
+ <div class="feature">
+-<h3>One contact → A clear next step.</h3>
++<h3>Give each contact a next step.</h3>
+ <p>Move contacts through a pipeline. Record a goal, prepare a follow-up, and export your work. Messaging and scheduling remain under your control.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+-<section class="section wrap" id="early-access">
++<section class="section wrap waitlist-section" id="early-access">
+ <div class="waitlist">
+ <div>
+-<span class="eyebrow">Start with one better session</span>
+ <h2>Your discipline<br>is the edge.</h2>
+ <p>Request early-access updates and tell us what you’re practicing for. Or open the included practice lab right now.</p>
+-<a class="btn small" href="/app">Try the Lab now ↗</a>
+-<p class="quiet" style="margin-top:28px">No payment details. No profit promises.<br>Just a more deliberate way to practice.</p>
++<a class="btn small" href="/app">Try the Lab now</a>
++<p class="quiet waitlist-note">No payment details. No profit promises.<br>Just a more deliberate way to practice.</p>
+ </div>
+ <form id="lead-form">
+ <div class="form-grid">
+@@ -272,18 +254,17 @@
+ </label>
+ <label class="check">
+ <input type="checkbox" name="consent" required>
+-<span>I’m 18 or older and agree to have my name, email, and stated interest stored so SimuTrade Labs can respond about early access. Read the <a href="/privacy.html" style="text-decoration:underline">privacy notice</a>.</span>
+-</label>
+-<button class="primary" type="submit" style="width:100%">Request early access ↗</button>
++<span>I’m 18 or older and agree to have my name, email, and stated interest stored so SimuTrade Labs can respond about early access. Read the <a href="/privacy.html" class="underlined">privacy notice</a>.</span>
++</label>
++<button class="primary full-control" type="submit">Request early access</button>
+ <p id="lead-status" aria-live="polite">
+ </p>
+ <span class="quiet">Submission saves your request. No automated email is sent yet.</span>
+ </form>
+ </div>
+ </section>
+-<section class="wrap section" style="padding-top:0">
++<section class="wrap section faq-section">
+ <div class="faq">
+-<span class="eyebrow">Before you enter</span>
+ <h2>A few clear answers.</h2>
+ <details>
+ <summary>Am I trading real money?</summary>
+@@ -321,10 +302,10 @@
+ <div class="bar">
+ <a href="/privacy.html" class="quiet">Privacy</a>
+ <a href="/terms.html" class="quiet">Terms & simulation limits</a>
+-<a href="/app" class="quiet">Enter the Lab ↗</a>
+-</div>
+-</div>
+-<p>SimuTrade Labs · A Think Tank Solutions AI venture. Educational simulation only. Simulated outcomes do not represent live trading results. Quotes may be synthetic or delayed. No financial advice, broker execution, profit guarantees, or prop firm affiliation.</p>
++<a href="/app" class="quiet">Enter the Lab</a>
++</div>
++</div>
++<p>SimuTrade Labs / A Think Tank Solutions AI venture. Educational simulation only. Simulated outcomes do not represent live trading results. Quotes may be synthetic or delayed. No financial advice, broker execution, profit guarantees, or prop firm affiliation.</p>
+ <p>© 2026 SimuTrade Labs. All rights reserved.</p>
+ </div>
+ </footer>
+--- before/app.html
++++ after/app.html
+@@ -4,7 +4,7 @@
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#080e18">
+-<title>The Lab — SimuTrade Labs</title>
++<title>The Lab / SimuTrade Labs</title>
+ <meta name="description" content="SimuTrade Labs practice workspace for simulated trading, custom challenge rules, Quant analysis, journaling, and operator tools.">
+ <link rel="icon" href="/assets/logo.webp">
+ <link rel="stylesheet" href="/style.css">
+@@ -24,50 +24,101 @@
+ </span>
+ </a>
+ <nav class="side-nav" aria-label="Workspace">
+-<div class="nav-label">THE TRADER’S LAB</div>
+-<button data-page="overview">
+-<span class="nav-icon">◈</span>Overview</button>
+-<button data-page="trade">
+-<span class="nav-icon">⌁</span>Simulation desk</button>
+-<button data-page="challenge">
+-<span class="nav-icon">◇</span>Challenge rules</button>
+-<button data-page="journal">
+-<span class="nav-icon">▤</span>Trade journal</button>
+-<button data-page="quant">
+-<span class="nav-icon">∿</span>Quant visualizer</button>
+-<button data-page="coach">
+-<span class="nav-icon">◎</span>Discipline coach</button>
+-<button data-page="research">
+-<span class="nav-icon">⌕</span>Research & alerts</button>
+-<div class="nav-label">THE OPERATOR’S OS</div>
+-<button data-page="studio">
+-<span class="nav-icon">✧</span>AI cowork studio</button>
+-<button data-page="crm">
+-<span class="nav-icon">▦</span>Contacts & pipeline</button>
+-<button data-page="flows">
+-<span class="nav-icon">⇄</span>Follow-up planner</button>
+-<div class="nav-label">YOUR WORKSPACE</div>
+-<button data-page="settings">
+-<span class="nav-icon">⚙</span>Settings & exports</button>
++<div class="nav-label">Trader’s lab</div>
++<button type="button" data-page="overview">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<rect x="3" y="3" width="7" height="7"/>
++<rect x="14" y="3" width="7" height="7"/>
++<rect x="3" y="14" width="7" height="7"/>
++<rect x="14" y="14" width="7" height="7"/>
++</svg>
++</span>Overview</button>
++<button type="button" data-page="trade">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<path d="M3 17l5-7 5 4 8-11M3 21h18"/>
++</svg>
++</span>Simulation desk</button>
++<button type="button" data-page="challenge">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<path d="M12 3l9 5v8l-9 5-9-5V8zM8 12l3 3 5-6"/>
++</svg>
++</span>Challenge rules</button>
++<button type="button" data-page="journal">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"/>
++</svg>
++</span>Trade journal</button>
++<button type="button" data-page="quant">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<path d="M2 12c4-15 6 15 10 0S18-3 22 12M2 20h20"/>
++</svg>
++</span>Quant visualizer</button>
++<button type="button" data-page="coach">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<circle cx="12" cy="12" r="8"/>
++<path d="M12 7v5l3 2"/>
++</svg>
++</span>Discipline coach</button>
++<button type="button" data-page="research">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<circle cx="10" cy="10" r="6"/>
++<path d="M15 15l6 6"/>
++</svg>
++</span>Research & alerts</button>
++<div class="nav-label">Operator workspace</div>
++<button type="button" data-page="studio">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<path d="M4 20L17 7l3 3L7 23zM16 2v3M21 5h3M8 3v3"/>
++</svg>
++</span>AI cowork studio</button>
++<button type="button" data-page="crm">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<circle cx="9" cy="8" r="4"/>
++<path d="M2 22v-3a7 7 0 0114 0v3M17 4a4 4 0 010 8M19 16a5 5 0 013 5"/>
++</svg>
++</span>Contacts & pipeline</button>
++<button type="button" data-page="flows">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<path d="M3 7h18l-4-4M21 17H3l4 4M21 7l-4 4M3 17l4-4"/>
++</svg>
++</span>Follow-up planner</button>
++<div class="nav-label">Your workspace</div>
++<button type="button" data-page="settings">
++<span class="nav-icon" aria-hidden="true">
++<svg viewBox="0 0 24 24">
++<path d="M4 6h16M4 12h16M4 18h16"/>
++<circle cx="9" cy="6" r="2"/>
++<circle cx="15" cy="12" r="2"/>
++<circle cx="9" cy="18" r="2"/>
++</svg>
++</span>Settings & exports</button>
+ </nav>
+-<div class="side-bottom">
+-<span class="status-dot">
+-</span>Simulated funds only<br>
++<div class="side-bottom">Simulated funds only<br>
+ <br>Think Tank Solutions AI<br>Learn the process. Keep the precision.<br>
+ <br>
+-<a href="/">← Back to SimuTrade Labs</a>
++<a href="/"> Back to SimuTrade Labs</a>
+ </div>
+ </aside>
+ <div class="app-body">
+ <header class="app-header">
+ <div class="app-header-left">
+-<button class="mobile-app-menu icon-btn" id="app-menu" aria-label="Open workspace navigation" aria-expanded="false">☰</button>
++<button type="button" class="mobile-app-menu icon-btn" id="app-menu" aria-label="Open workspace navigation" aria-expanded="false">☰</button>
+ <span class="muted" id="breadcrumb">Workspace / Overview</span>
+ </div>
+ <div class="app-header-right">
+-<span class="pill" id="storage-mode">Guest · saved in this browser</span>
+-<button class="small" id="account-button">Sign in / Save</button>
+-<a class="btn small primary" href="#trade">New practice trade ↗</a>
++<span class="pill" id="storage-mode">Guest / saved in this browser</span>
++<button type="button" class="small" id="account-button">Sign in / Save</button>
++<a class="btn small primary" href="#trade">New practice trade</a>
+ </div>
+ </header>
+ <main id="workspace" class="app-main" tabindex="-1">
+@@ -78,12 +129,12 @@
+ <dialog id="auth-dialog" class="auth-dialog">
+ <div class="dialog-top">
+ <h2 id="auth-title">Save your practice.</h2>
+-<button class="icon-btn" id="close-auth" aria-label="Close account dialog">×</button>
++<button type="button" class="icon-btn" id="close-auth" aria-label="Close account dialog">×</button>
+ </div>
+ <p class="note">Your account and guest practice are separate. Passwords use server-side scrypt hashing. Email verification and password recovery are not configured.</p>
+ <div class="tabs">
+-<button data-auth="register" class="selected">Create account</button>
+-<button data-auth="login">Sign in</button>
++<button type="button" data-auth="register" class="selected">Create account</button>
++<button type="button" data-auth="login">Sign in</button>
+ </div>
+ <form id="auth-form">
+ <label id="name-label">Your name<input name="name" autocomplete="name" maxlength="80">
+--- before/app.js
++++ after/app.js
+@@ -10,14 +10,14 @@
+ async function api(path,data,headers={}){if(window.SIMUTRADE_PREVIEW)throw Error('Standalone preview. Run the included server for accounts, server saving, and lead capture.');const r=await fetch(path,data===undefined?{headers}:{method:'POST',headers:{'Content-Type':'application/json',...headers},body:JSON.stringify(data)});let d;try{d=await r.json();}catch{throw Error('Server is unavailable. Run the included server to use account and lead features.');}if(!r.ok)throw Error(d.error||'Request failed');return d;}
+ function persistGuest(){try{localStorage.setItem('simutrade-guest-v1',JSON.stringify(state));}catch{toast('Browser storage is unavailable. Export your work before closing this tab.');}}
+ async function save(){if(user){try{const r=await api('/api/state',{state,version});state=r.state;version=r.version;}catch(e){await loadAccount();throw e;}}else persistGuest();}
+-async function loadAccount(){const r=await api('/api/me');user=r.user;version=r.version;if(user)state=r.state;$('#storage-mode').textContent=user?'Account · server saved':'Guest · saved in this browser';$('#account-button').textContent=user?user.name:'Sign in / Save';}
+-function replay(s='NQ'){let base={NQ:21450,ES:5890,PLTR:64,SPY:590}[s],scale={NQ:8,ES:2,PLTR:.07,SPY:.2}[s],slot=Math.floor(Date.now()/10000);const price=n=>base+scale*(Math.sin(n*.19)*6+Math.sin(n*.071)*10+Math.sin(n*.83)*2);let bars=Array.from({length:64},(_,i)=>{let n=slot-63+i,o=price(n-1),c=price(n);return{o,h:Math.max(o,c)+scale*.9,l:Math.min(o,c)-scale*.8,c,t:n*10};});return {symbol:s,price:Math.round(price(slot)*100)/100,bars,mode:'replay',source:'Synthetic practice feed · 10s bars',timestamp:slot*10,pointValue:s==='NQ'?20:s==='ES'?50:1};}
++async function loadAccount(){const r=await api('/api/me');user=r.user;version=r.version;if(user)state=r.state;$('#storage-mode').textContent=user?'Account / server saved':'Guest / saved in this browser';$('#account-button').textContent=user?user.name:'Sign in / Save';}
++function replay(s='NQ'){let base={NQ:21450,ES:5890,PLTR:64,SPY:590}[s],scale={NQ:8,ES:2,PLTR:.07,SPY:.2}[s],slot=Math.floor(Date.now()/10000);const price=n=>base+scale*(Math.sin(n*.19)*6+Math.sin(n*.071)*10+Math.sin(n*.83)*2);let bars=Array.from({length:64},(_,i)=>{let n=slot-63+i,o=price(n-1),c=price(n);return{o,h:Math.max(o,c)+scale*.9,l:Math.min(o,c)-scale*.8,c,t:n*10};});return {symbol:s,price:Math.round(price(slot)*100)/100,bars,mode:'replay',source:'Synthetic practice feed / 10s bars',timestamp:slot*10,pointValue:s==='NQ'?20:s==='ES'?50:1};}
+ async function refreshFeed(renderAfter=false){try{feed=await api('/api/market?symbol='+encodeURIComponent(symbol));quoteFail=false;}catch{feed=replay(symbol);quoteFail=true;}if(renderAfter)render();else{updateMarketUI();}checkAlerts();}
+ function regression(bars){let n=bars.length,ys=bars.map(b=>b.c),sx=n*(n-1)/2,sxx=n*(n-1)*(2*n-1)/6,sy=ys.reduce((a,b)=>a+b,0),sxy=ys.reduce((a,y,i)=>a+y*i,0),slope=(n*sxy-sx*sy)/(n*sxx-sx*sx),intercept=(sy-slope*sx)/n,residuals=ys.map((y,i)=>y-intercept-slope*i),rms=Math.sqrt(residuals.reduce((a,b)=>a+b*b,0)/n);return{slope,intercept,residuals,rms,last:residuals[n-1]};}
+ function chart(bars,trend=false){if(!bars?.length)return '';let lo=Math.min(...bars.map(x=>x.l)),hi=Math.max(...bars.map(x=>x.h)),pad=(hi-lo)*.2||1;lo-=pad;hi+=pad;const y=v=>235-(v-lo)/(hi-lo)*215,x=i=>18+i*(685/(bars.length-1));const r=regression(bars);let out=[0,1,2,3,4].map(i=>{let v=lo+(hi-lo)*i/4;return `<line class="gridline" x1="0" x2="800" y1="${y(v)}" y2="${y(v)}"/>
+-<text x="720" y="${y(v)+4}">${v.toFixed(2)}</text>`;}).join('');out+=bars.map((b,i)=>`<line x1="${x(i)}" x2="${x(i)}" y1="${y(b.h)}" y2="${y(b.l)}" stroke="${b.c>=b.o?'#54dce8':'#dc8d87'}"/>
+-<rect x="${x(i)-2.5}" y="${Math.min(y(b.o),y(b.c))}" width="5" height="${Math.max(1,Math.abs(y(b.o)-y(b.c)))}" fill="${b.c>=b.o?'#54dce8':'#dc8d87'}"/>`).join('');if(trend)out+=`<path class="trend" d="M${x(0)},${y(r.intercept)} L${x(bars.length-1)},${y(r.intercept+r.slope*(bars.length-1))}"/>`;return `<svg class="chart" viewBox="0 0 800 270" role="img" aria-label="${esc(symbol)} ${feed?.mode==='replay'?'synthetic':'provider'} candlestick series${trend?' with linear trend':''}">${out}<text x="18" y="265">${feed?.mode==='replay'?'SYNTHETIC REPLAY · 10s bars':'PROVIDER · 1min bars'}</text>
+-<text x="600" y="265">SIMULATED FUNDS</text>
++<text x="720" y="${y(v)+4}">${v.toFixed(2)}</text>`;}).join('');out+=bars.map((b,i)=>`<line x1="${x(i)}" x2="${x(i)}" y1="${y(b.h)}" y2="${y(b.l)}" stroke="${b.c>=b.o?'var(--bull)':'var(--bear)'}"/>
++<rect x="${x(i)-2.5}" y="${Math.min(y(b.o),y(b.c))}" width="5" height="${Math.max(1,Math.abs(y(b.o)-y(b.c)))}" fill="${b.c>=b.o?'var(--bull)':'var(--bear)'}"/>`).join('');if(trend)out+=`<path class="trend" d="M${x(0)},${y(r.intercept)} L${x(bars.length-1)},${y(r.intercept+r.slope*(bars.length-1))}"/>`;return `<svg class="chart" viewBox="0 0 800 270" role="img" aria-label="${esc(symbol)} ${feed?.mode==='replay'?'synthetic':'provider'} candlestick series${trend?' with linear trend':''}">${out}<text x="18" y="265">${feed?.mode==='replay'?'Synthetic replay / 10s bars':'Provider / 1min bars'}</text>
++<text x="600" y="265">Simulated funds</text>
+ </svg>`;}
+ function metrics(){const profit=state.balance-state.initial,dayLoss=state.day===new Date().toISOString().slice(0,10)?Math.max(0,state.dayStart-state.balance):0,drawdown=Math.max(0,state.initial-state.balance),wins=state.trades.filter(t=>t.pnl>0).length,days=new Set(state.trades.map(t=>new Date(t.opened*1000).toISOString().slice(0,10))).size,adherence=state.journal.length?state.journal.filter(j=>j.followed).length/state.journal.length*100:null;return{profit,dayLoss,drawdown,wins,days,adherence};}
+ function metric(label,value,note){return `<div class="metric">
+@@ -27,7 +27,6 @@
+ </div>`;}
+ function heading(title,sub,action=''){return `<div class="page-heading">
+ <div>
+-<span class="eyebrow">${page==='studio'||page==='crm'||page==='flows'?'THE OPERATOR’S OS':'THE TRADER’S LAB'}</span>
+ <h1>${title}</h1>
+ <p>${sub}</p>
+ </div>${action}</div>`;}
+@@ -51,18 +50,18 @@
+ <div class="progress-ticks">${Array.from({length:r.minDays},(_,i)=>`<i class="${i<m.days?'done':''}">
+ </i>`).join('')}</div>
+ </div>
+-<a href="#challenge" class="btn small" style="width:100%">Edit practice rules ↗</a>
++<a href="#challenge" class="btn small" style="width:100%">Edit practice rules</a>
+ <p class="note no-margin">Fixed balance-based limits. Daily boundary: UTC. Unrealized losses and trailing drawdown are not modeled.</p>`;}
+ function coachData(){let losses=state.trades.slice(0,3).filter(t=>t.pnl<0).length;return losses>=2?{title:'Protect the next decision.',body:'Two or more of your last three trades closed at a loss. Take a five-minute pause, write the setup, and review the risk before entering again.'}:state.positions.length?{title:'Manage the plan you already made.',body:'You have an open simulated position. Review your exit condition before looking for another entry. Moving a stop is a new risk decision.'}:{title:'Your edge starts before entry.',body:'Name the setup. Set the invalidation price. Calculate position size. If you cannot describe all three, observation is today’s trade.'};}
+ function feedPanel(trend=false){return `<div class="panel-header">
+ <div>
+ <h3>${esc(symbol)} <span class="muted">/ ${symbol==='NQ'?'Nasdaq futures practice':symbol==='ES'?'S&P futures practice':'Equity practice'}</span>
+ </h3>
+-<span class="source-label" id="feed-label">${esc(feed.source)}${quoteFail?' · offline fallback':''}</span>
++<span class="source-label" id="feed-label">${esc(feed.source)}${quoteFail?' / offline fallback':''}</span>
+ </div>
+ <div class="bar">
+ <select id="symbol-select" aria-label="Select practice instrument">${['NQ','ES','PLTR','SPY'].map(s=>`<option ${symbol===s?'selected':''}>${s}</option>`).join('')}</select>
+-<button class="small" data-action="refresh">↻ Refresh</button>
++<button type="button" class="small" data-action="refresh">↻ Refresh</button>
+ </div>
+ </div>
+ <div class="big-num mono" id="market-price">${Number(feed.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})} <span class="pill">${feed.mode==='replay'?'Synthetic replay':'Provider quotes'}</span>
+@@ -88,15 +87,15 @@
+ <td>${t.qty}</td>
+ <td class="mono ${t.pnl>=0?'positive':'negative'}">${money(t.pnl)}</td>
+ <td>
+-<button class="small" data-action="review-trade" data-id="${esc(t.id)}">Journal ↗</button>
++<button type="button" class="small" data-action="review-trade" data-id="${esc(t.id)}">Journal</button>
+ </td>
+ </tr>`).join('')}</tbody>
+ </table>
+ </div>`:`<div class="empty">
+ <strong>Your first decision starts here.</strong>Close a simulated trade to begin your history.<br>
+-<a class="btn small" style="margin-top:18px" href="#trade">Open the simulation desk ↗</a>
+-</div>`;}
+-function overview(){let m=metrics(),c=coachData();return heading(`Welcome to your practice desk${user?', '+esc(user.name.split(' ')[0]):''}.`,'One planned decision. One honest review. Repeat.',`<a class="btn small" href="#journal">Open journal ↗</a>`)+`<div class="metric-grid">${metric('SIMULATED BALANCE',money(state.balance),'Started with '+money(state.initial))}${metric('REALIZED P&L',`<span class="${m.profit>=0?'positive':'negative'}">${money(m.profit)}</span>`,state.trades.length+' closed practice trades')}${metric('RULE ADHERENCE',m.adherence===null?'—':pct(m.adherence),'Self-reported journal check-ins')}${metric('RISK PER TRADE',pct(state.rules.risk),money(state.balance*state.rules.risk/100)+' maximum planned risk')}</div>
++<a class="btn small" style="margin-top:18px" href="#trade">Open the simulation desk</a>
++</div>`;}
++function overview(){let m=metrics(),c=coachData();return heading(`Welcome to your practice desk${user?', '+esc(user.name.split(' ')[0]):''}.`,'One planned decision. One honest review. Repeat.',`<a class="btn small" href="#journal">Open journal</a>`)+`<div class="metric-grid">${metric('Simulated balance',money(state.balance),'Started with '+money(state.initial))}${metric('Realized P&L',`<span class="${m.profit>=0?'positive':'negative'}">${money(m.profit)}</span>`,state.trades.length+' closed practice trades')}${metric('Rule adherence',m.adherence===null?'N/A':pct(m.adherence),'Self-reported journal check-ins')}${metric('Risk per trade',pct(state.rules.risk),money(state.balance*state.rules.risk/100)+' maximum planned risk')}</div>
+ <div class="dash-grid">
+ <div class="panel">${feedPanel()}<div class="stats-row">
+ <div class="stat">
+@@ -105,7 +104,7 @@
+ </div>
+ <div class="stat">
+ <small>Closed win rate</small>
+-<b>${state.trades.length?pct(m.wins/state.trades.length*100):'—'}</b>
++<b>${state.trades.length?pct(m.wins/state.trades.length*100):'N/A'}</b>
+ </div>
+ <div class="stat">
+ <small>Mode</small>
+@@ -117,14 +116,14 @@
+ </div>
+ <div class="two" style="margin-top:22px">
+ <div class="panel">
+-<span class="eyebrow">The discipline coach</span>
+ <h3>${c.title}</h3>
++<p class="section-note">The discipline coach</p>
+ <p>${c.body}</p>
+-<a href="#coach" class="btn small">Take a deliberate pause ↗</a>
+-</div>
+-<div class="panel">
+-<span class="eyebrow">Your first focused session</span>
++<a href="#coach" class="btn small">Take a deliberate pause</a>
++</div>
++<div class="panel">
+ <h3>Learn the loop in four steps.</h3>
++<p class="section-note">Your first focused session</p>
+ <ul class="check-list no-margin">
+ <li>Configure your custom challenge rules</li>
+ <li>Define risk and enter a simulated position</li>
+@@ -139,10 +138,10 @@
+ <div class="panel">${feedPanel()}<div class="note">Market entries and manual exits only. Stop and target are planning references, not automatic orders. Fees, slippage, margin, and intrabar fills are not modeled.</div>
+ </div>
+ <div class="panel trade-form">
+-<span class="eyebrow">New simulated position</span>
++<p class="section-note">New simulated position</p>
+ <div class="side-choice">
+-<button data-side="buy" class="${side==='buy'?'selected':''}">Buy / Long</button>
+-<button data-side="sell" class="${side==='sell'?'selected':''}">Sell / Short</button>
++<button type="button" data-side="buy" class="${side==='buy'?'selected':''}">Buy / Long</button>
++<button type="button" data-side="sell" class="${side==='sell'?'selected':''}">Sell / Short</button>
+ </div>
+ <form id="trade-form">
+ <div class="form-grid">
+@@ -164,7 +163,7 @@
+ <input name="checklist" type="checkbox" required>
+ <span>I have named the setup, checked my risk, and accepted the planned loss.</span>
+ </label>
+-<button class="primary" type="submit" style="width:100%">Place simulated ${side==='buy'?'buy':'sell'} ↗</button>
++<button class="primary" type="submit" style="width:100%">Place simulated ${side==='buy'?'buy':'sell'}</button>
+ <p class="note">Per-trade risk cap: ${money(state.balance*state.rules.risk/100)}. Account: ${esc(state.profile)}.</p>
+ </form>
+ </div>
+@@ -188,7 +187,7 @@
+ <td>${p.stop.toFixed(2)} / ${p.take.toFixed(2)}</td>
+ <td>${money(p.risk)}</td>
+ <td>
+-<button class="small" data-action="close-position" data-id="${esc(p.id)}">Close at current quote</button>
++<button type="button" class="small" data-action="close-position" data-id="${esc(p.id)}">Close at current quote</button>
+ </td>
+ </tr>`).join('')}</tbody>
+ </table>
+@@ -199,15 +198,15 @@
+ <div class="panel">
+ <h3>Choose your practice conditions.</h3>
+ <div class="tabs">
+-<button data-profile="balanced">Balanced 100K</button>
+-<button data-profile="conservative">Conservative 100K</button>
++<button type="button" data-profile="balanced">Balanced 100K</button>
++<button type="button" data-profile="conservative">Conservative 100K</button>
+ </div>
+ <form id="rules-form">
+ <label>Profile name<input name="profile" value="${esc(state.profile)}" maxlength="80" required>
+ </label>
+ <div class="form-grid">${[['target','Profit target %',r.target,.1,100,.1],['dailyLoss','Daily loss limit %',r.dailyLoss,.1,20,.1],['maxLoss','Overall loss limit %',r.maxLoss,.1,50,.1],['risk','Max risk per trade %',r.risk,.01,5,.01],['minDays','Minimum active days',r.minDays,1,100,1]].map(([name,label,val,min,max,step])=>`<label>${label}<input name="${name}" type="number" value="${val}" min="${min}" max="${max}" step="${step}" required>
+ </label>`).join('')}</div>
+-<button class="primary">Save practice rules</button>
++<button type="submit" class="primary">Save practice rules</button>
+ </form>
+ </div>
+ <div class="panel">${rulesView()}<div class="callout">
+@@ -217,12 +216,12 @@
+ </div>
+ </div>
+ </div>`;}
+-function journal(){let attach=journal.tradeId||'';return heading('Keep the lesson.','A profitable trade can break the plan. A losing trade can follow it perfectly.',`<button class="small" data-action="export-journal">Export journal ↓</button>`)+`<div class="two">
++function journal(){let attach=journal.tradeId||'';return heading('Keep the lesson.','A profitable trade can break the plan. A losing trade can follow it perfectly.',`<button type="button" class="small" data-action="export-journal">Export journal</button>`)+`<div class="two">
+ <div class="panel">
+ <h3>Reflect on the decision.</h3>
+ <form id="journal-form">
+ <label>Related trade<select name="tradeId">
+-<option value="">General session reflection</option>${state.trades.map(t=>`<option value="${esc(t.id)}" ${attach===t.id?'selected':''}>${esc(t.symbol)} · ${money(t.pnl)} · ${date(t.closed)}</option>`).join('')}</select>
++<option value="">General session reflection</option>${state.trades.map(t=>`<option value="${esc(t.id)}" ${attach===t.id?'selected':''}>${esc(t.symbol)} / ${money(t.pnl)} / ${date(t.closed)}</option>`).join('')}</select>
+ </label>
+ <div class="form-grid">
+ <label>Setup / title<input name="title" required maxlength="120" placeholder="What was the setup?">
+@@ -243,7 +242,7 @@
+ <input name="followed" type="checkbox">
+ <span>I followed my plan, regardless of the outcome.</span>
+ </label>
+-<button class="primary">Save reflection</button>
++<button type="submit" class="primary">Save reflection</button>
+ </form>
+ </div>
+ <div class="panel">
+@@ -251,16 +250,16 @@
+ <h3>Your reflections</h3>
+ <span class="pill">${state.journal.length} entries</span>
+ </div>${state.journal.length?state.journal.map(j=>`<article class="journal-card">
+-<span class="meta">${date(j.created)} · ${esc(j.emotion)} · ${j.followed?'Plan followed':'Plan needs review'}</span>
++<span class="meta">${date(j.created)} / ${esc(j.emotion)} / ${j.followed?'Plan followed':'Plan needs review'}</span>
+ <h3>${esc(j.title)}</h3>
+ <p>${esc(j.note)}</p>
+-<button class="small danger" data-action="delete-journal" data-id="${esc(j.id)}">Delete</button>
++<button type="button" class="small danger" data-action="delete-journal" data-id="${esc(j.id)}">Delete</button>
+ </article>`).join(''):'<div class="empty">
+ <strong>No hindsight required.</strong>Start with what you noticed today.</div>'}</div>
+ </div>`;}
+-function quant(){const r=regression(feed.bars);return heading('Turn price into perspective.','Linear regression and residuals calculated from the displayed series. No signal or recommendation.')+`<div class="panel">${feedPanel(true)}<div class="metric-grid" style="margin-top:22px">${metric('SLOPE / BAR',r.slope.toFixed(4),'Least-squares trend')}${metric('LATEST RESIDUAL',r.last.toFixed(4),'Price minus fitted trend')}${metric('RESIDUAL RMS',r.rms.toFixed(4),'Root mean squared residual')}${metric('SAMPLES',feed.bars.length,'Visible price observations')}</div>
+-<span class="eyebrow">Residual map · most recent 32 bars</span>
+-<div class="heatmap">${r.residuals.slice(-32).map(v=>`<span title="Residual ${v.toFixed(4)}" style="background:${v>=0?'rgba(84,220,232,':'rgba(215,183,115,'}${Math.min(.8,.1+Math.abs(v)/(r.rms||1)*.2)})">${v.toFixed(1)}</span>`).join('')}</div>
++function quant(){const r=regression(feed.bars);return heading('Turn price into perspective.','Linear regression and residuals calculated from the displayed series. No signal or recommendation.')+`<div class="panel">${feedPanel(true)}<div class="metric-grid" style="margin-top:22px">${metric('Slope / bar',r.slope.toFixed(4),'Least-squares trend')}${metric('Latest residual',r.last.toFixed(4),'Price minus fitted trend')}${metric('Residual RMS',r.rms.toFixed(4),'Root mean squared residual')}${metric('Samples',feed.bars.length,'Visible price observations')}</div>
++<p class="section-note">Residual map / most recent 32 bars</p>
++<div class="heatmap">${r.residuals.slice(-32).map(v=>`<span title="Residual ${v.toFixed(4)}" class="${v>=0?'residual-positive':'residual-negative'}" style="--intensity:${Math.min(.8,.1+Math.abs(v)/(r.rms||1)*.2)}">${v.toFixed(1)}</span>`).join('')}</div>
+ <p class="note">Cyan: above fitted trend. Gold: below fitted trend. A residual describes past data; it does not establish a future move. Fit: y = ${r.intercept.toFixed(4)} + ${r.slope.toFixed(4)} × bar index.</p>
+ </div>
+ <div class="two" style="margin-top:22px">
+@@ -277,7 +276,7 @@
+ <label>Dollar value per point<input name="point" type="number" min=".01" step=".01" value="${feed.pointValue}" required>
+ </label>
+ </div>
+-<button class="primary">Calculate whole units</button>
++<button type="submit" class="primary">Calculate whole units</button>
+ </form>
+ <div id="calc-output" class="callout">Risk budget ÷ (stop distance × point value), rounded down.</div>
+ </div>
+@@ -289,29 +288,29 @@
+ <li>Changing the window changes the story.</li>
+ <li>Backtested or simulated results do not predict live returns.</li>
+ </ul>
+-<a href="#trade" class="btn small">Bring the math to a practice trade ↗</a>
++<a href="#trade" class="btn small">Bring the math to a practice trade</a>
+ </div>
+ </div>`;}
+ const lessons=[['Name the invalidation','Before entering, write the price or condition that makes the setup wrong. Size the position around the loss you accept, rather than around the gain you hope for.'],['Separate outcome from process','Review two questions independently: Did the trade make money? Did you follow your plan? Track both so one does not hide the other.'],['Understand loss geometry','After a 10% decline, returning to the starting balance requires about 11.11% growth. Loss control changes the recovery burden. Practice smaller risk before increasing repetition.'],['Rehearse challenge conditions','Copy only rules you have verified from the provider. Check whether loss is measured from balance or equity, whether it trails, and which timezone governs the day. This app uses simplified fixed balance-based rules.']];
+ function coach(){let c=coachData();return heading('Keep the trader human.','A transparent rules coach, not a psychological diagnosis or financial adviser.')+`<div class="two">
+ <div class="panel">
+-<span class="eyebrow">Based on your practice history</span>
+ <h2 style="margin-top:0">${c.title}</h2>
++<p class="section-note">Based on your practice history</p>
+ <p>${c.body}</p>
+ <div class="callout">
+ <strong>Your pre-trade questions</strong>
+ <p>What is the setup?<br>Where is the invalidation?<br>How much can this decision cost?<br>Would I still take it after a five-minute pause?</p>
+ </div>
+-<a class="btn small" href="#journal" style="margin-top:20px">Write your answer in the journal ↗</a>
++<a class="btn small" href="#journal" style="margin-top:20px">Write your answer in the journal</a>
+ <p class="note">Rules used: open positions prompt a management review; two losses among the last three closed trades prompt a pause. Otherwise, the coach prompts pre-trade planning.</p>
+ </div>
+ <div class="panel">
+-<span class="eyebrow">A deliberate pause</span>
++<p class="section-note">A deliberate pause</p>
+ <div class="pause-time" id="pause-time">05:00</div>
+ <p style="text-align:center">Step away from the next entry.<br>Return to the reason for this session.</p>
+ <div class="bar" style="justify-content:center">
+-<button class="gold" data-action="pause">Start five-minute pause</button>
+-<button class="small" data-action="cancel-pause">Reset</button>
++<button type="button" class="gold" data-action="pause">Start five-minute pause</button>
++<button type="button" class="small" data-action="cancel-pause">Reset</button>
+ </div>
+ <p class="note" style="text-align:center">The timer is a voluntary practice tool. It does not lock your account.</p>
+ </div>
+@@ -320,12 +319,12 @@
+ <div class="panel">${lessons.map(([t,b],i)=>`<details class="lesson">
+ <summary>${i+1}. ${t} ${state.completedLessons.includes(i)?'✓':''}</summary>
+ <p>${b}</p>
+-<button class="small" data-action="lesson" data-id="${i}">${state.completedLessons.includes(i)?'Mark unread':'Mark reviewed'}</button>
++<button type="button" class="small" data-action="lesson" data-id="${i}">${state.completedLessons.includes(i)?'Mark unread':'Mark reviewed'}</button>
+ </details>`).join('')}</div>`;}
+ function research(){let r=regression(feed.bars);return heading('Context before conviction.','A practice brief from the current chart window, plus alerts evaluated while the app is open.')+`<div class="two">
+ <div class="panel">
+-<span class="eyebrow">${esc(feed.source)}</span>
+ <h3>${esc(symbol)} / Practice context</h3>
++<p class="section-note">${esc(feed.source)}</p>
+ <p class="mono">Observed price: ${feed.price.toFixed(2)}<br>Window: ${feed.bars.length} bars<br>Trend slope: ${r.slope.toFixed(4)} per bar<br>Latest residual: ${r.last.toFixed(4)}</p>
+ <p>The fitted window slopes ${r.slope>=0?'upward':'downward'}, and the latest price sits ${r.last>=0?'above':'below'} that fit. Neither observation establishes a trading signal.</p>
+ <div class="callout">
+@@ -333,7 +332,7 @@
+ <p>What would invalidate the setup?<br>Is the planned risk within your challenge allowance?<br>Are you acting from a plan or a recent result?</p>
+ </div>
+ <p class="note">Not a news feed or a sourced market research report. Provider timestamps and replay labels remain visible in the simulation desk.</p>
+-<button class="small" data-action="download-brief">Download this brief ↓</button>
++<button type="button" class="small" data-action="download-brief">Download this brief</button>
+ </div>
+ <div class="panel">
+ <h3>Set an in-app price alert</h3>
+@@ -349,18 +348,18 @@
+ </div>
+ <label>Price threshold<input type="number" name="threshold" step=".01" min=".01" value="${(feed.price+10).toFixed(2)}" required>
+ </label>
+-<button class="primary">Save in-app alert</button>
++<button type="submit" class="primary">Save in-app alert</button>
+ </form>
+ <p class="note">Only the selected instrument is checked on refresh. Keep the tab open and visible. No background alerts, email, or SMS delivery is configured.</p>${state.alerts.map(a=>`<div class="journal-card">
+ <span class="tag">${a.triggered?'Triggered':'Watching'}</span>
+ <p>${esc(a.symbol)} ${esc(a.direction)} ${money(a.threshold)}</p>
+-<button class="small" data-action="delete-alert" data-id="${esc(a.id)}">Remove</button>
++<button type="button" class="small" data-action="delete-alert" data-id="${esc(a.id)}">Remove</button>
+ </div>`).join('')}</div>
+ </div>
+ <h2>Research with evidence</h2>
+ <div class="panel">
+ <p>Use the Research Agent to prepare a source checklist before comparing providers. The built-in planner does not retrieve the web or verify current firm rules.</p>
+-<a href="#studio" class="btn small">Open research planner ↗</a>
++<a href="#studio" class="btn small">Open research planner</a>
+ </div>`;}
+ const tools=['Offer Architect','Niche Architect','VSL Builder OS','Ads Architect','Category Architect','Sales Asset Architect','Landing Page Copywriter','Research Agent','AI Sales Agent','Nurture Sequence'];
+ function studio(){return heading('From idea to a working asset.','Editable frameworks included. Gemini generation activates only when a server-side key is connected.')+`<div class="two">
+@@ -371,12 +370,12 @@
+ <label>Your context / source notes<textarea name="brief" required maxlength="5000" style="min-height:180px" placeholder="Describe your audience, problem, offer, tone, and the next step you want someone to take. Include source material if relevant.">
+ </textarea>
+ </label>
+-<button class="primary" type="submit">Build editable draft ✧</button>
++<button class="primary" type="submit">Build editable draft</button>
+ <p class="note">Guest mode creates a structured planning draft locally. Signed-in mode uses Gemini when configured, otherwise a transparent template. Drafts never publish or send automatically.</p>
+ </form>
+ <div class="feature">
+-<span class="eyebrow">One workspace, ten tools</span>
+-<p>${tools.map(esc).join(' · ')}</p>
++<p class="section-note">One workspace, ten tools</p>
++<p>${tools.map(esc).join(' / ')}</p>
+ </div>
+ </div>
+ <div class="panel">
+@@ -386,8 +385,8 @@
+ </div>
+ <div id="draft-output" class="studio-output">${esc(draftText||'Your context belongs here. Add a brief and choose a tool to create the first draft.')}</div>
+ <div class="bar">
+-<button class="small" data-action="save-draft">Save to assets</button>
+-<button class="small" data-action="download-draft">Download draft ↓</button>
++<button type="button" class="small" data-action="save-draft">Save to assets</button>
++<button type="button" class="small" data-action="download-draft">Download draft</button>
+ </div>
+ </div>
+ </div>
+@@ -397,11 +396,11 @@
+ </summary>
+ <p style="white-space:pre-wrap">${esc(a.text)}</p>
+ <div class="bar">
+-<button class="small" data-action="load-draft" data-id="${esc(a.id)}">Load draft</button>
+-<button class="small danger" data-action="delete-asset" data-id="${esc(a.id)}">Delete</button>
++<button type="button" class="small" data-action="load-draft" data-id="${esc(a.id)}">Load draft</button>
++<button type="button" class="small danger" data-action="delete-asset" data-id="${esc(a.id)}">Delete</button>
+ </div>
+ </details>`).join(''):'<div class="empty">Save a draft to build your own reusable asset library.</div>'}</div>`;}
+-function crm(){return heading('Every contact needs a next step.','Your private operator pipeline. No outside CRM or automated messaging is connected.',`<button class="small" data-action="export-contacts">Export contacts ↓</button>`)+`<div class="panel">
++function crm(){return heading('Every contact needs a next step.','Your private operator pipeline. No outside CRM or automated messaging is connected.',`<button type="button" class="small" data-action="export-contacts">Export contacts</button>`)+`<div class="panel">
+ <form id="contact-form">
+ <div class="form-grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+ <label>Name<input name="name" required maxlength="100">
+@@ -418,18 +417,18 @@
+ </select>
+ </label>
+ </div>
+-<button class="primary small">Add contact</button>
++<button type="submit" class="primary small">Add contact</button>
+ </form>
+ </div>
+ <div class="kanban" style="margin-top:22px">${['New','Qualified','Conversation','Active'].map(stage=>`<div class="kanban-col">
+-<h3>${stage} · ${state.contacts.filter(c=>c.stage===stage).length}</h3>${state.contacts.filter(c=>c.stage===stage).map(c=>`<div class="contact">
++<h3>${stage} / ${state.contacts.filter(c=>c.stage===stage).length}</h3>${state.contacts.filter(c=>c.stage===stage).map(c=>`<div class="contact">
+ <h4>${esc(c.name)}</h4>
+ <p>${esc(c.email)}</p>
+ <p>${esc(c.goal)}</p>
+ <select aria-label="Stage for ${esc(c.name)}" data-contact="${esc(c.id)}">${['New','Qualified','Conversation','Active'].map(s=>`<option ${s===c.stage?'selected':''}>${s}</option>`).join('')}</select>
+ <div class="bar" style="margin-top:10px">
+-<button data-action="contact-followup" data-id="${esc(c.id)}">Plan follow-up</button>
+-<button class="danger" data-action="delete-contact" data-id="${esc(c.id)}">×</button>
++<button type="button" data-action="contact-followup" data-id="${esc(c.id)}">Plan follow-up</button>
++<button type="button" class="danger" data-action="delete-contact" data-id="${esc(c.id)}">×</button>
+ </div>
+ </div>`).join('')}</div>`).join('')}</div>
+ <div class="panel" style="margin-top:22px">
+@@ -437,21 +436,21 @@
+ <p class="note">The configured owner can import server-saved early-access requests into their own pipeline. Other users cannot read this inbox.</p>
+ <label>Owner access token<input id="owner-token" type="password" autocomplete="off" placeholder="Token configured on the server">
+ </label>
+-<button class="small" data-action="import-leads">Import owner’s waitlist requests ↗</button>
++<button type="button" class="small" data-action="import-leads">Import owner’s waitlist requests</button>
+ </div>`;}
+ function flows(){return heading('Prepare the next conversation.','A follow-up planning queue. These are unsent drafts; no scheduler or delivery provider is connected.')+`<div class="two">
+ <div class="panel">
+ <h3>Prepare a follow-up</h3>
+ <form id="flow-form">
+ <label>Contact<select name="contact" required>
+-<option value="">Choose a contact</option>${state.contacts.map(c=>`<option value="${esc(c.id)}" ${flows.contactId===c.id?'selected':''}>${esc(c.name)} · ${esc(c.email)}</option>`).join('')}</select>
++<option value="">Choose a contact</option>${state.contacts.map(c=>`<option value="${esc(c.id)}" ${flows.contactId===c.id?'selected':''}>${esc(c.name)} / ${esc(c.email)}</option>`).join('')}</select>
+ </label>
+ <label>Planned date and time<input name="due" type="datetime-local" required>
+ </label>
+ <label>Draft message<textarea name="message" required maxlength="5000" placeholder="Keep it specific, useful, and connected to their goal.">
+ </textarea>
+ </label>
+-<button class="primary">Save unsent follow-up</button>
++<button type="submit" class="primary">Save unsent follow-up</button>
+ </form>
+ </div>
+ <div class="panel">
+@@ -461,9 +460,9 @@
+ <span class="meta">${new Date(f.due).toLocaleString()}</span>
+ <p>${esc(f.message)}</p>
+ <div class="bar">
+-<button class="small" data-action="complete-flow" data-id="${esc(f.id)}">${f.done?'Reopen':'Mark reviewed'}</button>
+-<button class="small" data-action="download-flow" data-id="${esc(f.id)}">Download draft</button>
+-<button class="small danger" data-action="delete-flow" data-id="${esc(f.id)}">Remove</button>
++<button type="button" class="small" data-action="complete-flow" data-id="${esc(f.id)}">${f.done?'Reopen':'Mark reviewed'}</button>
++<button type="button" class="small" data-action="download-flow" data-id="${esc(f.id)}">Download draft</button>
++<button type="button" class="small danger" data-action="delete-flow" data-id="${esc(f.id)}">Remove</button>
+ </div>
+ </article>`;}).join(''):'<div class="empty">Add a contact, then prepare a useful follow-up.</div>'}</div>
+ </div>`;}
+@@ -471,7 +470,7 @@
+ <div class="panel">
+ <h3>Account & data</h3>
+ <p>${user?'Signed in as '+esc(user.email)+'. Work is saved on the server.':'Guest practice is saved only in this browser. Create an account for server storage.'}</p>
+-<div class="bar">${user?'<button class="small" data-action="logout">Sign out</button>':'<button class="primary small" data-action="auth">Create account / Sign in</button>'}<button class="small" data-action="export-all">Export workspace JSON ↓</button>
++<div class="bar">${user?'<button type="button" class="small" data-action="logout">Sign out</button>':'<button type="button" class="primary small" data-action="auth">Create account / Sign in</button>'}<button type="button" class="small" data-action="export-all">Export workspace JSON</button>
+ </div>
+ <div class="settings-status">
+ <span>Authentication</span>
+@@ -485,7 +484,7 @@
+ <div class="callout">
+ <strong>Reset the simulated account</strong>
+ <p>Resets the practice balance and clears this workspace’s positions, trade history, journal, contacts, assets, and follow-ups. Export first.</p>
+-<button class="small danger" data-action="reset">Reset this workspace</button>
++<button type="button" class="small danger" data-action="reset">Reset this workspace</button>
+ </div>
+ </div>
+ <div class="panel">
+@@ -494,25 +493,25 @@
+ <p class="note">Checking server configuration…</p>
+ </div>
+ <p class="note">Secrets are server-side environment variables. Never put keys in a downloaded HTML file or browser code. Live instrument coverage and delays depend on your provider entitlement.</p>
+-<a href="/privacy.html" class="btn small">Privacy notice ↗</a> <a href="/terms.html" class="btn small">Simulation limits ↗</a>
+-</div>
+-</div>`;}
+-function render(){if(!feed)feed=replay(symbol);if(!pages[page])page='overview';$$('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('#breadcrumb').textContent='Workspace / '+pages[page];$('#workspace').innerHTML=({overview,trade,challenge,journal,quant,coach,research,studio,crm,flows,settings}[page])()+`<div class="app-disclaimer">SIMULATED FUNDS ONLY · ${feed.mode==='replay'?'Synthetic practice data':'Provider data — entitlement and delays apply'} · Education, not financial advice. Reference stops and targets do not auto-execute. Fees and slippage are excluded. <a href="/terms.html">Full simulation limits ↗</a>
++<a href="/privacy.html" class="btn small">Privacy notice</a> <a href="/terms.html" class="btn small">Simulation limits</a>
++</div>
++</div>`;}
++function render(){if(!feed)feed=replay(symbol);if(!pages[page])page='overview';$$('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('#breadcrumb').textContent='Workspace / '+pages[page];$('#workspace').innerHTML=({overview,trade,challenge,journal,quant,coach,research,studio,crm,flows,settings}[page])()+`<div class="app-disclaimer">Simulated funds ONLY / ${feed.mode==='replay'?'Synthetic practice data':'Provider data : entitlement and delays apply'} / Education, not financial advice. Reference stops and targets do not auto-execute. Fees and slippage are excluded. <a href="/terms.html">Full simulation limits</a>
+ </div>`;if(page==='settings')updateStatus();tickPause();}
+-async function updateStatus(){try{let h=await api('/api/health');$('#integration-status').innerHTML=[['Storage',h.storage==='firestore'?'Google Firestore':'Local SQLite'],['Market provider',h.market],['Gemini AI generation',h.ai?'Configured':'Not connected · templates available'],['Email / booking / billing','Not connected'],['Outside CRM synchronization','CSV export only']].map(([a,b])=>`<div class="settings-status">
++async function updateStatus(){try{let h=await api('/api/health');$('#integration-status').innerHTML=[['Storage',h.storage==='firestore'?'Google Firestore':'Local SQLite'],['Market provider',h.market],['Gemini AI generation',h.ai?'Configured':'Not connected / templates available'],['Email / booking / billing','Not connected'],['Outside CRM synchronization','CSV export only']].map(([a,b])=>`<div class="settings-status">
+ <span>${esc(a)}</span>
+ <span class="${/Not |only/.test(b)?'gold-text':'positive'}">${esc(b)}</span>
+-</div>`).join('');}catch{if($('#integration-status'))$('#integration-status').innerHTML='<p class="note">Offline preview · browser guest mode only. Start the server for accounts, durable leads, and integration status.</p>';}}
+-function updateMarketUI(){if(page==='quant'){let r=regression(feed.bars),values=$$('.metric strong');if(values.length===4){values[0].textContent=r.slope.toFixed(4);values[1].textContent=r.last.toFixed(4);values[2].textContent=r.rms.toFixed(4);}let heat=$('.heatmap');if(heat)heat.innerHTML=r.residuals.slice(-32).map(v=>`<span title="Residual ${v.toFixed(4)}" style="background:${v>=0?'rgba(84,220,232,':'rgba(215,183,115,'}${Math.min(.8,.1+Math.abs(v)/(r.rms||1)*.2)})">${v.toFixed(1)}</span>`).join('');}if($('#market-chart'))$('#market-chart').innerHTML=chart(feed.bars,page==='quant');if($('#market-price'))$('#market-price').innerHTML=Number(feed.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+` <span class="pill">${feed.mode==='replay'?'Synthetic replay':'Provider quotes'}</span>`;if($('#feed-label'))$('#feed-label').textContent=feed.source+(quoteFail?' · offline fallback':'');if($('#entry-display'))$('#entry-display').value=feed.price.toFixed(2);updateRisk();}
+-function updateRisk(){if(!$('#trade-form'))return;let qty=Number($('#trade-qty').value),stop=Number($('#trade-stop').value),take=Number($('#trade-take').value),risk=Math.abs(feed.price-stop)*qty*feed.pointValue,reward=Math.abs(take-feed.price)*qty*feed.pointValue;$('#planned-risk').textContent=money(risk);$('#planned-risk').className=risk>state.balance*state.rules.risk/100?'negative mono':'positive mono';$('#reward-ratio').textContent=risk?(reward/risk).toFixed(2)+'R':'—';}
++</div>`).join('');}catch{if($('#integration-status'))$('#integration-status').innerHTML='<p class="note">Offline preview / browser guest mode only. Start the server for accounts, durable leads, and integration status.</p>';}}
++function updateMarketUI(){if(page==='quant'){let r=regression(feed.bars),values=$$('.metric strong');if(values.length===4){values[0].textContent=r.slope.toFixed(4);values[1].textContent=r.last.toFixed(4);values[2].textContent=r.rms.toFixed(4);}let heat=$('.heatmap');if(heat)heat.innerHTML=r.residuals.slice(-32).map(v=>`<span title="Residual ${v.toFixed(4)}" class="${v>=0?'residual-positive':'residual-negative'}" style="--intensity:${Math.min(.8,.1+Math.abs(v)/(r.rms||1)*.2)}">${v.toFixed(1)}</span>`).join('');}if($('#market-chart'))$('#market-chart').innerHTML=chart(feed.bars,page==='quant');if($('#market-price'))$('#market-price').innerHTML=Number(feed.price).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+` <span class="pill">${feed.mode==='replay'?'Synthetic replay':'Provider quotes'}</span>`;if($('#feed-label'))$('#feed-label').textContent=feed.source+(quoteFail?' / offline fallback':'');if($('#entry-display'))$('#entry-display').value=feed.price.toFixed(2);updateRisk();}
++function updateRisk(){if(!$('#trade-form'))return;let qty=Number($('#trade-qty').value),stop=Number($('#trade-stop').value),take=Number($('#trade-take').value),risk=Math.abs(feed.price-stop)*qty*feed.pointValue,reward=Math.abs(take-feed.price)*qty*feed.pointValue;$('#planned-risk').textContent=money(risk);$('#planned-risk').className=risk>state.balance*state.rules.risk/100?'negative mono':'positive mono';$('#reward-ratio').textContent=risk?(reward/risk).toFixed(2)+'R':':';}
+ function checkAlerts(){let triggered=state.alerts.filter(a=>!a.triggered&&a.symbol===symbol&&(a.direction==='above'?feed.price>=a.threshold:feed.price<=a.threshold));if(triggered.length){triggered.forEach(a=>a.triggered=Date.now()/1000);save().then(()=>{toast('Practice alert: '+symbol+' reached your threshold.');if(page==='research')render();}).catch(e=>toast(e.message));}}
+ function download(name,text,type='text/plain'){let u=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);}
+ function csv(rows){return rows.map(r=>r.map(v=>{let s=String(v??'');if(/^[=+@\-\t\r]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';}).join(',')).join('\r\n');}
+-async function guestTrade(d){const r=state.rules;let day=new Date().toISOString().slice(0,10);if(state.day!==day){state.dayStart=state.balance;state.day=day;}let m=metrics();if(m.dayLoss>=state.initial*r.dailyLoss/100||m.drawdown>=state.initial*r.maxLoss/100)throw Error('Challenge loss limit reached. Review or reset your practice.');if(state.positions.length>=3)throw Error('Maximum three open positions.');let p=feed.price,qty=Number(d.qty),stop=Number(d.stop),take=Number(d.take);if(!Number.isInteger(qty)||qty<1||qty>100)throw Error('Use 1–100 whole units.');if(!Number.isFinite(stop)||!Number.isFinite(take)||stop<=0||take<=0||!(side==='buy'?stop<p&&p<take:take<p&&p<stop))throw Error('Stop and target must bracket entry in the trade direction.');let risk=Math.abs(p-stop)*qty*feed.pointValue;if(risk>state.balance*r.risk/100+.01)throw Error('Planned risk exceeds your per-trade cap. Reduce size or stop distance.');let allowance=Math.min(state.initial*r.dailyLoss/100-m.dayLoss,state.initial*r.maxLoss/100-m.drawdown);if(risk+state.positions.reduce((a,p)=>a+p.risk,0)>allowance)throw Error('Combined open risk exceeds remaining loss allowance.');state.positions.push({id:id(),symbol,entry:p,qty,side,stop,take,risk,pointValue:feed.pointValue,opened:Date.now()/1000,mode:feed.mode});persistGuest();}
++async function guestTrade(d){const r=state.rules;let day=new Date().toISOString().slice(0,10);if(state.day!==day){state.dayStart=state.balance;state.day=day;}let m=metrics();if(m.dayLoss>=state.initial*r.dailyLoss/100||m.drawdown>=state.initial*r.maxLoss/100)throw Error('Challenge loss limit reached. Review or reset your practice.');if(state.positions.length>=3)throw Error('Maximum three open positions.');let p=feed.price,qty=Number(d.qty),stop=Number(d.stop),take=Number(d.take);if(!Number.isInteger(qty)||qty<1||qty>100)throw Error('Use 1-100 whole units.');if(!Number.isFinite(stop)||!Number.isFinite(take)||stop<=0||take<=0||!(side==='buy'?stop<p&&p<take:take<p&&p<stop))throw Error('Stop and target must bracket entry in the trade direction.');let risk=Math.abs(p-stop)*qty*feed.pointValue;if(risk>state.balance*r.risk/100+.01)throw Error('Planned risk exceeds your per-trade cap. Reduce size or stop distance.');let allowance=Math.min(state.initial*r.dailyLoss/100-m.dayLoss,state.initial*r.maxLoss/100-m.drawdown);if(risk+state.positions.reduce((a,p)=>a+p.risk,0)>allowance)throw Error('Combined open risk exceeds remaining loss allowance.');state.positions.push({id:id(),symbol,entry:p,qty,side,stop,take,risk,pointValue:feed.pointValue,opened:Date.now()/1000,mode:feed.mode});persistGuest();}
+ async function closePosition(pid){if(user){const d=await api('/api/close',{id:pid,version});state=d.state;version=d.version;}else{const p=state.positions.find(p=>p.id===pid);if(!p)throw Error('Position not found');let m;try{m=await api('/api/market?symbol='+p.symbol);}catch{m=replay(p.symbol);}let exit=m.price,pnl=Math.round((exit-p.entry)*(p.side==='buy'?1:-1)*p.qty*p.pointValue*100)/100;state.trades.unshift({...p,exit,pnl,closed:Date.now()/1000});state.positions=state.positions.filter(x=>x.id!==pid);state.balance=Math.round((state.balance+pnl)*100)/100;state.peak=Math.max(state.peak,state.balance);persistGuest();}render();toast('Simulated position closed. Record the decision in your journal.');}
+-function localDraft(t,b){return `${t.toUpperCase()} · STRUCTURED PLANNING DRAFT\n\nYour brief\n${b}\n\n1. Audience & problem\nIdentify the specific trader or operator, the decision they struggle with, and the context where it happens.\n\n2. Core message\nPractice a repeatable process before increasing exposure. Keep every example tied to simulated funds.\n\n3. Working structure\n${t==='Offer Architect'?'Define the promise, deliverables, delivery hours, support costs, price assumption, and fit criteria.':t==='Research Agent'?'Collect official rule pages, effective dates, instrument specifications, and provider licensing terms. Record claim, URL, date, and verification status. No web retrieval is connected.':t==='Nurture Sequence'||t==='AI Sales Agent'?'Ask about the goal, current obstacle, available practice time, and desired next step. Draft one useful reply and one consent-based follow-up.':t==='VSL Builder OS'?'Open with the decision problem. Demonstrate a simulated risk calculation. Explain the practice loop. End with one clear invitation.':'Write a specific hook, explain the practice problem, demonstrate the workflow, and invite one clear next step.'}\n\n4. Proof & review\nUse only source material you can verify. Do not invent performance, testimonials, profits, or qualification promises.\n\n5. Next action\nReview and edit this framework for your audience. Save it as a working asset; it will not publish or send.\n\nMode: local structured template; AI is not connected in guest mode.`;}
++function localDraft(t,b){return `${t.toUpperCase()} / STRUCTURED PLANNING DRAFT\n\nYour brief\n${b}\n\n1. Audience & problem\nIdentify the specific trader or operator, the decision they struggle with, and the context where it happens.\n\n2. Core message\nPractice a repeatable process before increasing exposure. Keep every example tied to simulated funds.\n\n3. Working structure\n${t==='Offer Architect'?'Define the promise, deliverables, delivery hours, support costs, price assumption, and fit criteria.':t==='Research Agent'?'Collect official rule pages, effective dates, instrument specifications, and provider licensing terms. Record claim, URL, date, and verification status. No web retrieval is connected.':t==='Nurture Sequence'||t==='AI Sales Agent'?'Ask about the goal, current obstacle, available practice time, and desired next step. Draft one useful reply and one consent-based follow-up.':t==='VSL Builder OS'?'Open with the decision problem. Demonstrate a simulated risk calculation. Explain the practice loop. End with one clear invitation.':'Write a specific hook, explain the practice problem, demonstrate the workflow, and invite one clear next step.'}\n\n4. Proof & review\nUse only source material you can verify. Do not invent performance, testimonials, profits, or qualification promises.\n\n5. Next action\nReview and edit this framework for your audience. Save it as a working asset; it will not publish or send.\n\nMode: local structured template; AI is not connected in guest mode.`;}
+ $('#workspace').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,b=$('button[type=submit]',f)||$('button',f),d=Object.fromEntries(new FormData(f));if(b)b.disabled=true;try{switch(f.id){case'trade-form':await refreshFeed();if(user){let r=await api('/api/trade',{...d,symbol,side,checklist:f.elements.checklist.checked,version});state=r.state;version=r.version;}else await guestTrade(d);toast('Simulated position opened. Your stop and target are references; close the position manually.');break;case'rules-form':state.rules=Object.fromEntries(['dailyLoss','maxLoss','target','risk','minDays'].map(k=>[k,Number(d[k])]));state.profile=d.profile;await save();toast('Practice rules saved.');break;case'journal-form':state.journal.unshift({...d,id:id(),created:Date.now()/1000,followed:f.elements.followed.checked});journal.tradeId='';await save();toast('Reflection saved.');break;case'calculator':{let budget=Number(d.balance)*Number(d.risk)/100,per=Number(d.distance)*Number(d.point),units=Math.floor(budget/per);$('#calc-output').innerHTML=`<strong>${units} whole units</strong>
+-<p>Budget: ${money(budget)} · Planned loss at reference stop: ${money(units*per)} · Unused budget: ${money(budget-units*per)}.</p>`;return;}case'alert-form':state.alerts.push({...d,threshold:Number(d.threshold),id:id(),triggered:false});await save();toast('In-app alert saved.');break;case'studio-form':tool=d.tool;if(user){let r=await api('/api/draft',{tool,brief:d.brief,version});draftText=r.text;draftMode=r.mode;}else{draftText=localDraft(tool,d.brief);draftMode='Local template · AI not connected';}$('#draft-output').textContent=draftText;$('#draft-mode').textContent=draftMode;return;case'contact-form':state.contacts.push({...d,id:id(),created:Date.now()/1000});await save();toast('Contact added.');break;case'flow-form':state.automations.push({...d,id:id(),done:false,created:Date.now()/1000});flows.contactId='';await save();toast('Unsent follow-up saved.');break;}render();}catch(err){toast(err.message);}finally{if(b)b.disabled=false;}});
++<p>Budget: ${money(budget)} / Planned loss at reference stop: ${money(units*per)} / Unused budget: ${money(budget-units*per)}.</p>`;return;}case'alert-form':state.alerts.push({...d,threshold:Number(d.threshold),id:id(),triggered:false});await save();toast('In-app alert saved.');break;case'studio-form':tool=d.tool;if(user){let r=await api('/api/draft',{tool,brief:d.brief,version});draftText=r.text;draftMode=r.mode;}else{draftText=localDraft(tool,d.brief);draftMode='Local template / AI not connected';}$('#draft-output').textContent=draftText;$('#draft-mode').textContent=draftMode;return;case'contact-form':state.contacts.push({...d,id:id(),created:Date.now()/1000});await save();toast('Contact added.');break;case'flow-form':state.automations.push({...d,id:id(),done:false,created:Date.now()/1000});flows.contactId='';await save();toast('Unsent follow-up saved.');break;}render();}catch(err){toast(err.message);}finally{if(b)b.disabled=false;}});
+ $('#workspace').addEventListener('input',e=>{if(e.target.closest('#trade-form'))updateRisk();});
+ $('#workspace').addEventListener('change',async e=>{if(e.target.id==='symbol-select'){symbol=e.target.value;await refreshFeed(true);}if(e.target.dataset.contact){try{let c=state.contacts.find(c=>c.id===e.target.dataset.contact);c.stage=e.target.value;await save();render();}catch(err){toast(err.message);}}});
+ $('#workspace').addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.side){side=b.dataset.side;render();return;}if(b.dataset.profile){state.profile=b.dataset.profile==='balanced'?'Balanced 100K':'Conservative 100K';state.rules=b.dataset.profile==='balanced'?{dailyLoss:5,maxLoss:10,target:8,risk:.5,minDays:5}:{dailyLoss:2,maxLoss:5,target:6,risk:.25,minDays:10};try{await save();render();toast('Generic practice profile saved.');}catch(err){toast(err.message);}return;}let a=b.dataset.action,k=b.dataset.id;if(!a)return;b.disabled=true;try{switch(a){case'refresh':await refreshFeed(true);return;case'auth':$('#auth-dialog').showModal();return;case'close-position':await closePosition(k);return;case'review-trade':journal.tradeId=k;location.hash='journal';return;case'delete-journal':if(!confirm('Delete this reflection?'))return;state.journal=state.journal.filter(x=>x.id!==k);await save();break;case'export-journal':download('SimuTrade-Journal.csv',csv([['Date','Title','Emotion','Followed plan','Note'],...state.journal.map(j=>[date(j.created),j.title,j.emotion,j.followed,j.note])]),'text/csv');return;case'delete-alert':state.alerts=state.alerts.filter(x=>x.id!==k);await save();break;case'pause':pauseEnds=Date.now()+300000;tickPause();return;case'cancel-pause':pauseEnds=0;tickPause();return;case'lesson':{let n=Number(k);state.completedLessons=state.completedLessons.includes(n)?state.completedLessons.filter(i=>i!==n):[...state.completedLessons,n];await save();break;}case'save-draft':if(!draftText)throw Error('Create a draft first.');state.assets.unshift({id:id(),title:tool,text:draftText,mode:draftMode,created:Date.now()/1000});await save();toast('Draft saved to assets.');break;case'download-draft':if(!draftText)throw Error('Create a draft first.');download('SimuTrade-Working-Draft.txt',draftText);return;case'load-draft':{let d=state.assets.find(x=>x.id===k);draftText=d.text;draftMode=d.mode;tool=d.title;break;}case'delete-asset':state.assets=state.assets.filter(x=>x.id!==k);await save();break;case'delete-contact':if(!confirm('Remove this contact?'))return;state.contacts=state.contacts.filter(x=>x.id!==k);await save();break;case'contact-followup':flows.contactId=k;location.hash='flows';return;case'export-contacts':download('SimuTrade-Contacts.csv',csv([['Name','Email','Goal','Stage'],...state.contacts.map(c=>[c.name,c.email,c.goal,c.stage])]),'text/csv');return;case'import-leads':{if(!user)throw Error('Sign in as the configured owner to import the waitlist.');let r=await api('/api/leads',undefined,{'X-Owner-Token':$('#owner-token').value}),count=0;for(let l of r.leads){if(!state.contacts.some(c=>c.email===l.email)){state.contacts.push({id:id(),name:l.name,email:l.email,goal:l.goal,stage:'New',created:l.created});count++;}}await save();toast(count+' waitlist contacts imported.');break;}case'complete-flow':{let f=state.automations.find(x=>x.id===k);f.done=!f.done;await save();break;}case'delete-flow':state.automations=state.automations.filter(x=>x.id!==k);await save();break;case'download-flow':download('SimuTrade-Unsent-Follow-Up.txt',state.automations.find(x=>x.id===k).message);return;case'export-all':download('SimuTrade-Workspace.json',JSON.stringify({exportedAt:new Date().toISOString(),mode:user?'account':'guest',state},null,2),'application/json');return;case'logout':await api('/api/logout',{});user=null;try{state=JSON.parse(localStorage.getItem('simutrade-guest-v1'))||fresh();}catch{state=fresh();}await loadAccount();toast('Signed out. Returned to this browser’s guest workspace.');break;case'reset':if(!confirm('Reset this workspace and clear all its saved practice and operator data? Export first if you need a copy.'))return;if(user){let r=await api('/api/reset',{version});state=r.state;version=r.version;}else{state=fresh();persistGuest();}toast('Workspace reset to a new simulated 100K account.');break;case'download-brief':{let r=regression(feed.bars);download('SimuTrade-Practice-Brief.txt',`${symbol} PRACTICE BRIEF\n${feed.source}\nGenerated ${new Date().toISOString()}\nPrice ${feed.price}\nRegression slope ${r.slope}\nLatest residual ${r.last}\nRMS ${r.rms}\nSimulated education only. No forecast or trading recommendation.`);return;}}render();}catch(err){toast(err.message);}finally{b.disabled=false;}});
+--- before/style.css
++++ after/style.css
+@@ -1,9 +1,145 @@
+-:root{--bg:#080e18;--panel:#101b29;--panel2:#152332;--line:#263648;--text:#eef0ef;--muted:#9eafbd;--cyan:#54dce8;--gold:#d7b773;--amber:#f1ba6b;--red:#f88e91;--green:#81d6b4;--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 var(--sans)}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a,input,select,textarea{touch-action:manipulation}button{cursor:pointer}button:disabled{opacity:.5;cursor:wait}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}button,.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--line);background:transparent;border-radius:5px;color:var(--text);padding:12px 20px;font-weight:600;transition:transform .2s,background .2s}button:hover,.btn:hover{transform:translateY(-2px);background:var(--panel2)}.primary{background:var(--cyan);color:#06151e;border-color:var(--cyan)}.primary:hover{background:#8cebf2}.gold{background:var(--gold);border-color:var(--gold);color:#162130}.small{font-size:12px;padding:8px 12px}.muted{color:var(--muted)}.cyan{color:var(--cyan)}.gold-text{color:var(--gold)}.positive{color:var(--green)}.negative{color:var(--red)}.eyebrow{text-transform:uppercase;font:11px/1.4 var(--sans);letter-spacing:2.4px;color:var(--gold);display:block;margin-bottom:18px}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-variant-numeric:tabular-nums}h1,h2,h3,p{margin-top:0}h1,h2{font-family:var(--serif);font-weight:400;line-height:1.07;letter-spacing:-1.7px}h1{font-size:clamp(48px,5.6vw,86px)}h2{font-size:clamp(34px,4vw,54px)}h3{font-weight:500;font-size:21px;line-height:1.3}p{color:var(--muted)}.wrap{max-width:1320px;margin:auto;padding:0 5vw}.site-nav{height:102px;display:flex;align-items:center;justify-content:space-between;gap:28px;border-bottom:1px solid #ffffff12;background:#080e18ef;position:sticky;top:0;z-index:10;padding:0 5vw}.brand{display:flex;align-items:center;gap:12px;line-height:1.15;white-space:nowrap}.brand img{width:45px;height:67px;object-fit:contain;border-radius:2px}.brand strong{font-family:var(--serif);font-size:21px;letter-spacing:.4px;font-weight:400}.brand small{display:block;text-transform:uppercase;letter-spacing:2px;font-size:8px;color:var(--gold);margin-top:7px}.nav-links{display:flex;gap:30px;font-size:12px;color:var(--muted);align-items:center}.nav-links a:hover{color:var(--text)}.menu-toggle{display:none}.hero{min-height:700px;position:relative;display:flex;align-items:center;overflow:hidden}.hero-img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.8}.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#080e18 0%,#080e18e8 27%,#080e1860 60%,transparent 90%),linear-gradient(0deg,#080e18 0%,transparent 30%)}.hero-content{position:relative;z-index:1;width:100%;padding-top:70px;padding-bottom:90px}.hero h1{max-width:690px;margin-bottom:24px}.hero h1 em{font-style:italic;color:var(--cyan)}.hero p{max-width:500px;font-size:17px;line-height:1.8}.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 20px}.quiet{font-size:11px;color:var(--muted)}.status-dot{width:6px;height:6px;display:inline-block;background:var(--cyan);border-radius:50%;margin-right:8px;box-shadow:0 0 14px #54dce870;animation:pulse 3s infinite}.hero-aside{position:absolute;right:5vw;bottom:75px;border-left:1px solid var(--gold);padding-left:22px;z-index:2;max-width:225px}.hero-aside p{font:21px/1.35 var(--serif);color:#fff;margin-bottom:7px}.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.4fr repeat(4,1fr);font-size:12px}.ticker>div{padding:22px 20px;border-right:1px solid var(--line)}.ticker b{display:block;font-size:18px;font-weight:400;color:var(--text)}.ticker span{font-size:10px}.ticker .label{display:flex;justify-content:center;flex-direction:column;gap:5px}.section{padding:100px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}.section-head h2{max-width:650px;margin-bottom:0}.section-head p{max-width:330px;margin-bottom:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.feature{border-top:1px solid var(--line);padding:28px 8px 10px}.feature .num{font:12px var(--sans);letter-spacing:2px;color:var(--cyan);margin-bottom:32px}.feature h3{font-family:var(--serif);font-size:27px}.feature p{font-size:14px}.panel{background:linear-gradient(130deg,#122131,#0d1724);border:1px solid var(--line);padding:26px;border-radius:7px}.panel h3{margin-bottom:8px}.panel .eyebrow{margin-bottom:12px}.quant-preview{min-height:370px;position:relative;overflow:hidden}.quant-top{display:flex;justify-content:space-between;gap:10px;font-size:11px}.big-num{font-size:34px;line-height:1.2;margin:10px 0}.chart{display:block;width:100%;height:245px;overflow:visible}.chart text{fill:var(--muted);font:11px var(--sans)}.chart .gridline{stroke:#ffffff0c;stroke-width:1}.chart .line{stroke:var(--cyan);fill:none;stroke-width:2}.chart .trend{stroke:var(--gold);fill:none;stroke-width:1.5;stroke-dasharray:5 5}.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-top:1px solid var(--line);padding-top:18px;margin-top:16px}.stat small{display:block;color:var(--muted);font-size:11px}.stat b{font-size:19px;font-weight:400}.check-list{list-style:none;padding:0;margin:25px 0}.check-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.check-list li:before{content:'↗';color:var(--cyan);margin-right:12px}.photo{width:100%;aspect-ratio:1.4;object-fit:cover;border-radius:5px}.cream-band{background:#eae3d5;color:#142333}.cream-band p{color:#52616b}.cream-band .eyebrow{color:#7f6428}.cream-band .feature{border-color:#14233330}.quote{font:clamp(28px,3vw,43px)/1.25 var(--serif);letter-spacing:-.6px}.coach-sample{padding:26px;border-left:2px solid var(--gold);background:#ffffff06;margin:30px 0}.coach-sample p{font:23px/1.5 var(--serif);color:var(--text);margin-bottom:12px}.operator{background:linear-gradient(110deg,#102234,#0b1320)}.pill{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:30px;padding:6px 12px;font-size:10px;color:var(--muted);gap:6px}.tool-pills{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0}.waitlist{background:radial-gradient(ellipse at top right,#15404c 0%,#101a29 55%);padding:48px;border:1px solid var(--line);border-radius:8px;display:grid;grid-template-columns:1fr 1fr;gap:60px}.waitlist h2{margin-bottom:20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}label{display:block;font-size:12px;color:var(--muted);margin-bottom:15px}input:not([type=checkbox]):not([type=range]),select,textarea{display:block;width:100%;min-width:0;background:#091321;border:1px solid #344558;color:var(--text);border-radius:4px;padding:11px 13px;margin-top:6px}textarea{min-height:105px;resize:vertical}input[type=range]{width:100%;accent-color:var(--cyan)}input[type=checkbox]{accent-color:var(--cyan);margin-right:9px}.check{display:flex;align-items:start;font-size:11px;line-height:1.5}.check input{margin-top:3px}.honeypot{position:absolute;left:-10000px}#lead-status{font-size:13px;min-height:24px;margin:15px 0 0}.faq{max-width:850px;margin:auto}details{border-bottom:1px solid var(--line);padding:22px 0}summary{cursor:pointer;font-size:17px}details p{padding-top:15px;font-size:14px;max-width:720px}.footer{padding:40px 0;border-top:1px solid var(--line)}.footer-top{display:flex;justify-content:space-between;gap:35px;align-items:start}.footer p{font-size:11px;max-width:650px;margin:25px 0 0}.reveal{animation:reveal .7s both}.delay{animation-delay:.15s}.watermark{font:140px var(--serif);position:absolute;color:#ffffff03;right:5%;pointer-events:none}.toast{position:fixed;bottom:25px;right:25px;background:#1d3444;border:1px solid var(--cyan);color:var(--text);padding:14px 20px;z-index:100;max-width:420px;font-size:13px;border-radius:5px}.toast[hidden]{display:none}.offline-banner{background:#382a19;padding:14px;font-size:12px;color:#f1cf90;text-align:center}.skip{position:absolute;left:-9999px;z-index:100;background:var(--cyan);color:#000;padding:10px}.skip:focus{left:10px}
+-/* Application */
+-.app-shell{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100vh}.sidebar{background:#0b1420;border-right:1px solid var(--line);position:fixed;width:232px;height:100dvh;overflow:auto;padding:24px 18px;z-index:20}.sidebar .brand{margin-bottom:34px}.sidebar .brand strong{font-size:18px}.sidebar .brand img{width:30px;height:45px}.nav-label{font-size:9px;letter-spacing:2px;color:#657c90;margin:25px 12px 10px}.side-nav button{width:100%;justify-content:start;padding:10px 13px;font-size:12px;border:0;margin:3px 0;color:var(--muted);font-weight:400;gap:13px}.side-nav button:hover{transform:none;color:var(--text)}.side-nav button.active{background:#16303b;color:var(--cyan);box-shadow:inset 2px 0 var(--cyan)}.nav-icon{font-size:16px;width:20px;text-align:center}.side-bottom{border-top:1px solid var(--line);margin-top:30px;padding:20px 10px;font-size:10px;color:var(--muted)}.app-body{grid-column:2;min-width:0}.app-header{height:80px;border-bottom:1px solid var(--line);padding:0 34px;display:flex;justify-content:space-between;align-items:center;gap:10px}.app-header-left{display:flex;align-items:center;gap:15px}.app-header-right{display:flex;align-items:center;gap:14px}.app-main{padding:34px;max-width:1600px;margin:auto}.page-heading{display:flex;justify-content:space-between;align-items:start;gap:25px;margin-bottom:25px}.page-heading h1{font:38px/1.2 var(--serif);letter-spacing:-1px;margin-bottom:7px}.page-heading p{font-size:12px;margin:0}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}.metric{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:6px;position:relative;overflow:hidden}.metric label{font-size:10px;letter-spacing:.4px;margin:0 0 10px}.metric strong{font:28px/1.2 var(--serif);display:block}.metric small{display:block;color:var(--muted);font-size:10px;margin-top:12px}.metric:after{content:'';position:absolute;right:15px;top:20px;width:4px;height:4px;border-radius:50%;background:var(--cyan)}.dash-grid{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(260px,1fr);gap:22px}.app-main .panel{padding:23px}.panel-header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}.panel-header h3{font-size:16px;margin:0}.app-main .chart{height:280px}.rule-row{font-size:12px;margin:20px 0}.rule-row>div:first-child{display:flex;justify-content:space-between;gap:10px;margin-bottom:9px}.track{height:4px;background:#283849;overflow:hidden;border-radius:10px}.track span{height:100%;background:var(--cyan);display:block;transition:width .4s}.track.amber span{background:var(--gold)}.callout{padding:18px;border:1px solid #c59a4840;background:#c59a4809;border-radius:5px;margin-top:20px}.callout strong{font:20px var(--serif);display:block;margin-bottom:10px}.callout p{font-size:12px;margin-bottom:10px}.app-main h2{font:28px var(--serif);letter-spacing:-.5px;margin:28px 0 17px}.app-main .two{gap:22px;align-items:start}.app-main .three{gap:18px}.table-scroll{overflow:auto}table{border-collapse:collapse;width:100%;text-align:left;font-size:12px}th{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:400;padding:14px 12px;border-bottom:1px solid var(--line);white-space:nowrap}td{padding:15px 12px;border-bottom:1px solid #ffffff08;vertical-align:top}td p{font-size:11px;margin:4px 0 0}.empty{text-align:center;padding:35px 15px;color:var(--muted);font-size:13px}.empty strong{display:block;color:var(--text);font:24px var(--serif);margin-bottom:8px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 24px}.tabs button{font-size:11px;padding:7px 12px}.tabs button.selected{color:var(--cyan);border-color:var(--cyan);background:#54dce810}.note{font-size:11px;line-height:1.6;color:var(--muted);padding:12px 0}.trade-form .form-grid{gap:12px}.trade-form label{font-size:11px}.side-choice{display:flex;gap:10px;margin-bottom:20px}.side-choice button{flex:1}.side-choice .selected{background:#54dce815;border-color:var(--cyan);color:var(--cyan)}.risk-readout{padding:14px;background:#080e18;border-radius:5px;margin-bottom:18px;display:flex;justify-content:space-between;font-size:12px}.journal-card{padding:20px 0;border-bottom:1px solid var(--line)}.journal-card p{white-space:pre-wrap}.journal-card h3{font-size:16px;margin-bottom:6px}.meta{font-size:10px;color:var(--muted)}.tag{display:inline-block;color:var(--cyan);background:#54dce810;border-radius:3px;padding:3px 8px;font-size:10px}.studio-output{min-height:420px;white-space:pre-wrap;font:13px/1.8 var(--sans);color:#ced8dd}.studio-agent{border-top:1px solid var(--line);padding:18px 0}.studio-agent button{width:100%;justify-content:space-between;font-size:12px}.studio-agent p{font-size:11px;margin-top:9px}.kanban{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.kanban-col{background:#0c1621;border:1px solid var(--line);border-radius:6px;min-height:250px;padding:14px}.kanban-col h3{font-size:12px;margin:0 0 20px;color:var(--gold)}.contact{background:var(--panel2);padding:15px;border-radius:5px;margin-bottom:12px;overflow-wrap:anywhere}.contact h4{font-size:13px;margin:0 0 4px}.contact p{font-size:10px;margin-bottom:12px}.contact select{font-size:10px;padding:7px}.contact button{padding:3px 8px;font-size:10px}.heatmap{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin:22px 0}.heatmap span{height:42px;display:flex;align-items:center;justify-content:center;font:9px monospace;background:#54dce812}.auth-dialog{max-width:450px;width:calc(100% - 32px);background:var(--panel);color:var(--text);border:1px solid var(--line);padding:30px;border-radius:8px}.auth-dialog::backdrop{background:#030810c9;backdrop-filter:blur(5px)}.dialog-top{display:flex;justify-content:space-between;align-items:center}.auth-dialog h2{font:30px var(--serif);letter-spacing:-.5px;margin:0}.mobile-app-menu{display:none}.progress-ticks{display:flex;gap:5px;margin-top:18px}.progress-ticks i{height:5px;flex:1;background:#293746}.progress-ticks i.done{background:var(--gold)}.settings-status{display:grid;grid-template-columns:1fr auto;gap:15px;padding:20px 0;border-bottom:1px solid var(--line);font-size:12px}.source-label{font:9px ui-monospace,monospace;color:var(--muted)}.pause-time{font:90px/1.3 var(--serif);text-align:center;color:var(--gold)}.lesson{padding:20px 0;border-bottom:1px solid var(--line)}.lesson p{font-size:13px}.lesson summary{font-size:15px}.danger{color:var(--red);border-color:#f88e9150}.app-disclaimer{font-size:10px;color:#8095a7;padding-top:30px;border-top:1px solid var(--line);margin-top:30px}.mobile-only{display:none}.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.bar select{width:auto;margin:0}.full{grid-column:1/-1}.no-margin{margin:0}.icon-btn{padding:6px 10px;font-size:16px}.loading{opacity:.5;pointer-events:none}
+-@keyframes reveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes pulse{50%{opacity:.35}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+-@media(max-width:1100px){.nav-links{gap:17px}.hero-aside{display:none}.dash-grid{grid-template-columns:1fr}.kanban{grid-template-columns:repeat(2,1fr)}.metric-grid{grid-template-columns:repeat(2,1fr)}.app-main{padding:25px}.app-header{padding:0 25px}.three{gap:18px}}@media(max-width:780px){.site-nav{height:85px}.brand strong{font-size:18px}.brand img{height:54px;width:36px}.brand small{font-size:7px}.menu-toggle{display:block;padding:7px 12px}.nav-links{display:none;position:absolute;top:85px;left:0;right:0;background:var(--panel);padding:25px;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.hero{min-height:740px;align-items:end}.hero-img{object-position:67% center;opacity:.5}.hero:after{background:linear-gradient(0deg,#080e18 0%,#080e18c0 55%,#080e1830 100%)}.hero-content{padding-top:210px;padding-bottom:55px}.hero h1{font-size:52px;max-width:580px}.hero p{font-size:15px;max-width:400px}.hero .eyebrow{font-size:9px}.ticker{grid-template-columns:repeat(2,1fr)}.ticker .label{grid-column:1/-1;padding:12px 20px}.ticker>div{padding:14px 18px}.ticker b{font-size:16px}.two,.three,.waitlist{grid-template-columns:1fr;gap:30px}.section{padding:65px 0}.section-head{display:block}.section-head p{margin-top:22px;max-width:100%}.waitlist{padding:27px}.footer-top{display:block}.footer-top>a{margin-top:25px}.panel{padding:20px}.app-shell{display:block}.sidebar{transform:translateX(-100%);transition:transform .2s;width:248px;box-shadow:30px 0 60px #0008}.sidebar.open{transform:translateX(0)}.app-header{height:72px;padding:0 16px;position:sticky;top:0;z-index:15;background:#080e18f5}.mobile-app-menu{display:block}.app-header .pill{display:none}.app-main{padding:22px 16px}.app-main .two,.app-main .three{grid-template-columns:1fr;gap:20px}.page-heading h1{font-size:31px}.page-heading{gap:12px}.page-heading .btn,.page-heading button{font-size:10px;padding:8px 10px}.metric{padding:17px}.metric strong{font-size:25px}.metric-grid{gap:11px}.dash-grid{display:block}.dash-grid>.panel{margin-bottom:20px}.kanban{grid-template-columns:1fr 1fr;gap:10px}.kanban-col{padding:10px}.app-main .panel{padding:18px}.app-header-right{gap:8px}.app-header-right .small{padding:7px 9px;font-size:10px}.source-label{font-size:8px}.app-main .chart{height:230px}.toast{left:16px;right:16px;bottom:16px;max-width:none}.mobile-only{display:block}.app-header-left>.muted{font-size:11px}.form-grid{gap:11px}.stats-row{gap:7px}.stat b{font-size:16px}}@media(max-width:400px){.hero h1{font-size:44px}.kanban{grid-template-columns:1fr}.metric strong{font-size:22px}.metric label{font-size:9px}.hero-actions .btn{width:100%}.form-grid{grid-template-columns:1fr}.app-header-left>.muted{display:none}}
+-
+-@media(max-width:780px){#contact-form .form-grid{grid-template-columns:1fr 1fr!important}}
+-.sidebar{overflow-x:hidden}.sidebar .brand small{font-size:6px;letter-spacing:1px;white-space:normal}.sidebar .brand span{min-width:0}
+-.section.wrap{padding-left:5vw;padding-right:5vw}
++/* Hallmark · shape: Workbench · genre: modern-minimal · theme: brand · redesign: full · job: try · hero: Stage · nav: brand mast and destinations · footer: wordmark and legal colophon · signature: visible risk geometry · v2.0.0 */
++/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 · weakest: S, retained the actual working risk control rather than generic performance figures. */
++/* Hallmark · dismissed 19 · existing legal copyright sentence retained verbatim in the footer. */
++@import url('./tokens.css');
++@import url('./base.css');
++html { scroll-behavior:smooth; scroll-padding-top:var(--space-3xl); overflow-x:clip; }
++body { overflow-x:clip; font-size:var(--text-md); line-height:1.65; }
++a { text-decoration:none; }
++button,input,select,textarea { font:inherit; touch-action:manipulation; }
++button,.btn { display:inline-flex; align-items:center; justify-content:center; gap:var(--space-xs); min-height:48px; padding:var(--space-sm) var(--space-lg); border:1px solid var(--field-rule); border-radius:var(--radius-input); background:transparent; color:var(--text); font-size:var(--text-sm); font-weight:500; cursor:pointer; white-space:nowrap; transition:transform var(--dur-micro) var(--ease-out),background-color var(--dur-short) var(--ease-out); }
++button:hover,.btn:hover { background:var(--panel2); }
++button:active,.btn:active { transform:translateY(1px); }
++button:disabled,.btn[aria-disabled=true],input:disabled,select:disabled,textarea:disabled { opacity:.55; cursor:not-allowed; background:var(--disabled-fill); color:var(--disabled-ink); transform:none; }
++button[aria-busy=true] { cursor:progress; }
++a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
++.primary { background:var(--cyan); border-color:var(--cyan); color:var(--cyan-ink); }
++.primary:hover { background:var(--cyan-hover); }
++.gold { background:var(--cyan); border-color:var(--cyan); color:var(--cyan-ink); }
++.small { min-height:40px; padding:var(--space-xs) var(--space-md); font-size:var(--text-sm); }
++.icon-btn { min-width:44px; padding:var(--space-xs); }
++.muted { color:var(--muted); }.cyan { color:var(--cyan); }.gold-text { color:var(--gold); }.positive { color:var(--green); }.negative { color:var(--red); }
++.mono { font-family:var(--font-outlier); font-variant-numeric:tabular-nums; }
++h1,h2,h3 { font-weight:400; overflow-wrap:break-word; min-width:0; }
++h1 { line-height:1.02; letter-spacing:-.045em; }
++h2 { line-height:1.08; letter-spacing:-.035em; }
++h3 { line-height:1.3; letter-spacing:-.015em; }
++p { margin-block:0 var(--space-lg); color:var(--muted); max-width:65ch; }
++.wrap { width:100%; max-width:var(--container); margin-inline:auto; padding-inline:var(--gutter); }
++.site-nav { height:var(--nav-height); background:var(--bg); position:relative; z-index:var(--z-sticky-nav); }
++.nav-inner { display:flex; align-items:center; justify-content:space-between; gap:var(--space-lg); height:100%; }
++.brand { display:flex; align-items:center; gap:var(--space-md); line-height:1.2; }
++.brand img { width:42px; height:62px; object-fit:contain; flex:none; }
++.brand strong { font-family:var(--font-display); font-weight:400; font-size:24px; color:var(--text); }
++.brand small { display:block; color:var(--muted); font-size:11px; margin-top:var(--space-2xs); }
++.nav-links { display:flex; align-items:center; gap:var(--space-lg); font-size:var(--text-sm); color:var(--muted); }
++.nav-links a:hover { color:var(--text); }.nav-links .primary { color:var(--cyan-ink); }.menu-toggle { display:none; }
++.hero { min-height:calc(100svh - var(--nav-height)); display:grid; align-items:center; }
++.hero-layout { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,6fr); gap:var(--gap-columns); align-items:center; padding-block:var(--space-page); }
++.hero h1 { font-size:var(--text-display); margin-bottom:var(--space-lg); max-width:12ch; }
++.hero-content>p { font-size:var(--text-lead); line-height:1.65; max-width:37ch; margin-bottom:var(--space-xl); }
++.hero-actions { display:flex; gap:var(--space-md); flex-wrap:wrap; margin-bottom:var(--space-lg); }
++.hero-actions .btn { min-height:52px; }
++.hero .quiet { display:block; font-size:var(--text-sm); max-width:42ch; }
++.hero-visual { margin:0; min-width:0; position:relative; }
++.hero-img { width:100%; height:min(66svh,680px); min-height:440px; object-fit:cover; object-position:77% center; border-radius:var(--radius-card); }
++.hero-visual figcaption { font-size:var(--text-sm); color:var(--muted); margin-top:var(--space-md); }
++.quiet { color:var(--muted); font-size:var(--text-sm); }
++.ticker { display:grid; grid-template-columns:1.4fr repeat(4,minmax(0,1fr)); padding-block:var(--space-lg); border-block:1px solid var(--line); }
++.ticker>div { padding-inline:var(--space-lg); border-left:1px solid var(--line); font-family:var(--font-body); }
++.ticker>div:first-child { border-left:0; padding-left:0; }.ticker>div:last-child { padding-right:0; }
++.ticker b { display:block; font-family:var(--font-display); font-size:28px; font-weight:400; color:var(--text); margin-block:var(--space-xs); }
++.ticker span { font-size:var(--text-sm); color:var(--muted); }.ticker .label { display:flex; flex-direction:column; justify-content:center; }
++.section { padding-block:var(--space-section); }
++.section-head { display:grid; grid-template-columns:minmax(0,7fr) minmax(0,4fr); gap:var(--gap-columns); align-items:end; margin-bottom:var(--space-2xl); }
++.section-head h2 { max-width:20ch; }.section-head p { margin:0; }
++.two { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--gap-columns); align-items:center; }
++.three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--gap-columns); }
++.method-steps { list-style:none; padding:0; margin:0; counter-reset:method; }
++.feature { padding-block:var(--space-lg); border-top:1px solid var(--line); }
++.feature h3 { margin-bottom:var(--space-md); }.feature p { font-size:var(--text-md); margin:0; }
++.method-steps>.feature { counter-increment:method; padding-top:var(--space-xl); }
++.method-steps>.feature::before { content:counter(method,decimal-leading-zero); display:block; font:400 52px/1 var(--font-display); color:var(--gold); margin-bottom:var(--space-xl); }
++.panel { background:var(--panel); color:var(--text); padding:var(--space-app); border-radius:var(--radius-card); }
++.quant-band { background:var(--cream); color:var(--cream-ink); }
++.quant-band h2,.quant-band h3 { color:var(--cream-ink); }.quant-band p,.quant-band li { color:var(--cream-muted); }
++.quant-band .panel { background:var(--bg); color:var(--text); }.quant-band .panel p { color:var(--muted); }
++.quant-band .check-list li { border-color:var(--cream-rule); }.quant-band .btn { color:var(--cream-ink); border-color:var(--cream-muted); }
++.quant-band .btn:hover { background:transparent; text-decoration:underline; }.quant-band .two { grid-template-columns:minmax(0,7fr) minmax(0,5fr); }
++.quant-top { display:flex; align-items:center; justify-content:space-between; gap:var(--space-md); color:var(--muted); font-size:var(--text-sm); }
++.big-num { font-size:40px; line-height:1.3; margin-block:var(--space-lg); font-variant-numeric:tabular-nums; }
++.chart { display:block; width:100%; height:260px; overflow:visible; }.chart text { fill:var(--muted); font:13px var(--font-body); }.chart .gridline { stroke:var(--line); stroke-width:1; }.chart .line { stroke:var(--cyan); fill:none; stroke-width:2; }.chart .trend { stroke:var(--gold); fill:none; stroke-width:1.5; stroke-dasharray:5 5; }
++.stats-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--space-md); border-top:1px solid var(--line); padding-top:var(--space-lg); margin-top:var(--space-lg); }
++.stat small { display:block; color:var(--muted); font-size:var(--text-sm); margin-bottom:var(--space-xs); }.stat b { font-size:var(--text-md); font-weight:400; font-variant-numeric:tabular-nums; }
++.check-list { list-style:none; padding:0; margin-block:var(--space-lg); }.check-list li { padding-block:var(--space-md); border-bottom:1px solid var(--line); font-size:var(--text-md); }
++.check-list li:before { content:none; }
++.photo { width:100%; height:100%; min-height:450px; aspect-ratio:4/5; object-fit:cover; object-position:52% center; border-radius:var(--radius-card); }
++.coach-section { padding-block:var(--space-section-large); }.coach-section .two { grid-template-columns:minmax(0,5fr) minmax(0,6fr); }.coach-section .photo { aspect-ratio:5/4; min-height:420px; }
++.coach-sample { padding-block:var(--space-xl); margin-block:var(--space-lg); border-block:1px solid var(--line); }
++.coach-sample p { color:var(--text); font:400 30px/1.4 var(--font-display); margin-bottom:var(--space-md); }
++.cream-band { border-block:1px solid var(--line); padding-block:var(--space-section-compact); background:var(--panel); }
++.cream-band .three { grid-template-columns:minmax(0,1fr); gap:0; }.cream-band .feature { display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:var(--gap-columns); align-items:start; padding-block:var(--space-lg); }.cream-band h3 { margin:0; }.cream-band p { margin:0; }
++.operator .two { grid-template-columns:minmax(0,6fr) minmax(0,5fr); }.operator h2 { margin-bottom:var(--space-lg); }.operator .panel { background:transparent; border-left:1px solid var(--line); border-radius:0; padding-inline:var(--space-xl) 0; }.operator .panel .feature { border:0; padding-block:var(--space-lg); }
++.tool-pills { display:flex; flex-wrap:wrap; gap:var(--space-xs); margin-block:var(--space-lg); }.pill { display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:var(--radius-pill); padding:var(--space-2xs) var(--space-xs); font:400 13px/1.5 var(--font-body); color:var(--muted); }
++.waitlist-section { padding-top:0; }.waitlist { background:var(--panel); color:var(--text); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--gap-columns); padding:var(--space-page); }.waitlist h2 { margin-bottom:var(--space-lg); }.waitlist form { align-self:center; }
++.form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-md); }
++label { display:block; color:var(--muted); font-size:var(--text-sm); margin-bottom:var(--space-lg); }
++input:not([type=checkbox]):not([type=range]),select,textarea { display:block; width:100%; min-width:0; min-height:48px; margin-top:var(--space-xs); background:var(--bg); border:1px solid var(--field-rule); border-radius:var(--radius-input); color:var(--text); padding:var(--space-sm) var(--space-md); }
++input::placeholder,textarea::placeholder { color:var(--muted); opacity:1; }
++input:not([type=checkbox]):focus-visible,select:focus-visible,textarea:focus-visible { outline-offset:-3px; }
++textarea { min-height:128px; resize:vertical; }input[type=range] { width:100%; accent-color:var(--cyan); min-height:44px; }input[type=checkbox] { width:18px; height:18px; accent-color:var(--cyan); flex:none; margin:var(--space-2xs) var(--space-xs) 0 0; }
++input[aria-invalid=true],textarea[aria-invalid=true] { border-color:var(--red); }
++.check { display:flex; align-items:start; font-size:var(--text-sm); line-height:1.55; }.check a { text-decoration:underline; }
++.honeypot { position:absolute; inset-inline-start:-9999px; }.form-message,#lead-status { font-size:var(--text-sm); min-height:1lh; margin-block:var(--space-md); }
++.faq { max-width:100%; }.faq h2 { margin-bottom:var(--space-xl); }details { padding-block:var(--space-lg); border-bottom:1px solid var(--line); }summary { cursor:pointer; font-size:var(--text-lead); line-height:1.45; }details p { margin-block:var(--space-lg) 0; }
++.footer { padding-block:var(--space-2xl); border-top:1px solid var(--line); }.footer-top { display:flex; justify-content:space-between; gap:var(--space-xl); align-items:center; }.footer .brand strong { font-size:32px; }.footer p { font-size:var(--text-sm); max-width:75ch; margin-block:var(--space-xl) 0; }.footer .quiet { text-decoration:underline; }
++.bar { display:flex; align-items:center; gap:var(--space-sm); flex-wrap:wrap; }.bar select { width:auto; margin:0; }
++.toast { position:fixed; inset:auto var(--space-lg) var(--space-lg) auto; z-index:var(--z-toast); max-width:440px; background:var(--panel2); color:var(--text); padding:var(--space-md) var(--space-lg); border:1px solid var(--field-rule); border-radius:var(--radius-card); font-size:var(--text-sm); }
++.offline-banner { background:var(--panel2); color:var(--gold); padding:var(--space-sm) var(--space-md); font-size:var(--text-sm); text-align:center; }
++.skip { position:absolute; inset-inline-start:-9999px; z-index:var(--z-tooltip); padding:var(--space-sm) var(--space-md); background:var(--cyan); color:var(--cyan-ink); }.skip:focus { inset-inline-start:var(--space-md); }
++.full { grid-column:1/-1; }.no-margin { margin:0; }.source-label,.meta { font:400 13px/1.6 var(--font-body); color:var(--muted); }.note { font-size:var(--text-sm); line-height:1.6; color:var(--muted); padding-block:var(--space-sm); }.loading { opacity:.55; pointer-events:none; }
++/* The app uses the same palette with a quieter, denser type scale. */
++.app-shell { display:grid; grid-template-columns:var(--sidebar-width) minmax(0,1fr); min-height:100svh; }
++.sidebar { background:var(--panel); color:var(--text); position:fixed; inset:0 auto 0 0; width:var(--sidebar-width); height:100dvh; overflow-y:auto; overflow-x:clip; padding:var(--space-lg) var(--space-md); z-index:var(--z-sticky-nav); }
++.sidebar .brand { margin-bottom:var(--space-xl); gap:var(--space-sm); }.sidebar .brand img { width:30px; height:44px; }.sidebar .brand strong { font-size:20px; }.sidebar .brand small { font-size:11px; max-width:15ch; }.sidebar .brand span { min-width:0; }
++.nav-label { font:400 13px var(--font-body); color:var(--muted); margin:var(--space-lg) var(--space-sm) var(--space-xs); }
++.side-nav button { display:flex; width:100%; min-height:44px; justify-content:start; padding:var(--space-sm); margin-block:var(--space-2xs); border:0; font-size:var(--text-sm); color:var(--muted); font-weight:400; gap:var(--space-sm); }
++.side-nav button:hover { background:var(--panel2); color:var(--text); }.side-nav button.active { color:var(--cyan); background:var(--bg); }.nav-icon { width:18px; height:18px; flex:none; }.nav-icon svg { width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:1.5; }
++.side-bottom { border-top:1px solid var(--line); margin-top:var(--space-xl); padding:var(--space-lg) var(--space-sm); color:var(--muted); font-size:var(--text-sm); }
++.app-body { grid-column:2; min-width:0; }.app-header { min-height:var(--app-nav-height); padding-inline:var(--space-app); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:var(--space-md); }
++.app-header-left,.app-header-right { display:flex; align-items:center; gap:var(--space-md); }.app-header-left { font-size:var(--text-sm); }.app-header .pill { border:0; padding:0; }.app-main { padding:var(--space-app); max-width:var(--container); margin-inline:auto; }
++.page-heading { display:flex; justify-content:space-between; align-items:start; gap:var(--space-lg); margin-bottom:var(--space-xl); }.page-heading h1 { font:400 40px/1.15 var(--font-display); letter-spacing:-.025em; margin-bottom:var(--space-sm); max-width:30ch; }.page-heading p { font-size:var(--text-sm); margin:0; }
++.metric-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0; border-block:1px solid var(--line); padding-block:var(--space-lg); margin-bottom:var(--space-app); }
++.metric { padding-inline:var(--space-lg); border-left:1px solid var(--line); min-width:0; }.metric:first-child { border-left:0; padding-left:0; }.metric:last-child { padding-right:0; }.metric label { font-size:var(--text-sm); margin-bottom:var(--space-sm); }.metric strong { display:block; font:400 32px/1.2 var(--font-body); font-variant-numeric:tabular-nums; letter-spacing:-.04em; }.metric small { display:block; color:var(--muted); font-size:13px; margin-top:var(--space-sm); }
++.dash-grid { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr); gap:var(--gap-columns); }
++.app-main .panel { padding:var(--space-lg); }.app-main .panel-header { display:flex; align-items:center; justify-content:space-between; gap:var(--space-md); margin-bottom:var(--space-lg); }.panel-header h3 { font:500 var(--text-md)/1.4 var(--font-body); margin:0; }.panel h3 { margin-bottom:var(--space-md); }.panel h3:last-child { margin:0; }
++.app-main .two { gap:var(--gap-columns); align-items:start; }.app-main .chart { height:280px; }.app-main h2 { font:400 28px/1.25 var(--font-display); margin:var(--space-xl) 0 var(--space-lg); letter-spacing:-.025em; }
++.app-main .big-num { font-size:36px; }.app-main .pill { font-size:12px; }.app-main .stat b { font-size:var(--text-md); }
++.rule-row { margin-block:var(--space-lg); font-size:var(--text-sm); }.rule-row>div:first-child { display:flex; justify-content:space-between; gap:var(--space-sm); margin-bottom:var(--space-sm); }.rule-row .mono { font-family:var(--font-body); font-variant-numeric:tabular-nums; }
++.track { height:4px; background:var(--line); }.track span { display:block; height:100%; background:var(--cyan); }.track.amber span { background:var(--gold); }
++.progress-ticks { display:flex; gap:var(--space-2xs); margin-top:var(--space-md); }.progress-ticks i { flex:1; height:4px; background:var(--line); }.progress-ticks i.done { background:var(--gold); }
++.callout { border-top:1px solid var(--line); padding-block:var(--space-lg) 0; margin-top:var(--space-lg); background:transparent; }.callout strong { display:block; font:400 22px/1.3 var(--font-display); margin-bottom:var(--space-sm); }.callout p { margin-bottom:var(--space-sm); }
++.table-scroll { overflow-x:auto; }table { width:100%; border-collapse:collapse; text-align:left; font-size:var(--text-sm); }th { font:400 13px var(--font-body); color:var(--muted); padding:var(--space-md); border-bottom:1px solid var(--line); white-space:nowrap; }td { padding:var(--space-md); border-bottom:1px solid var(--line); vertical-align:top; }td p { margin:var(--space-2xs) 0 0; font-size:13px; }th:first-child,td:first-child { padding-left:0; }th:last-child,td:last-child { padding-right:0; }
++.empty { padding:var(--space-xl) var(--space-md); text-align:center; font-size:var(--text-sm); color:var(--muted); }.empty strong { display:block; font:400 26px/1.3 var(--font-display); color:var(--text); margin-bottom:var(--space-sm); }
++.tabs { display:flex; gap:var(--space-xs); flex-wrap:wrap; margin-block:var(--space-md) var(--space-lg); }.tabs button { min-height:40px; padding:var(--space-xs) var(--space-sm); }.tabs button.selected,.side-choice button.selected { border-color:var(--cyan); color:var(--cyan); background:var(--bg); }
++.side-choice { display:flex; gap:var(--space-sm); margin-bottom:var(--space-lg); }.side-choice button { flex:1; }.risk-readout { display:flex; justify-content:space-between; gap:var(--space-sm); padding-block:var(--space-md); margin-bottom:var(--space-md); border-block:1px solid var(--line); font-size:var(--text-sm); }
++.journal-card { padding-block:var(--space-lg); border-bottom:1px solid var(--line); }.journal-card h3 { margin-top:var(--space-sm); font:500 var(--text-md)/1.5 var(--font-body); }.journal-card p { white-space:pre-wrap; margin-bottom:var(--space-md); }.tag { display:inline-block; color:var(--gold); font-size:13px; }
++.studio-output { min-height:420px; white-space:pre-wrap; font:400 var(--text-sm)/1.8 var(--font-body); color:var(--text); padding-bottom:var(--space-lg); }
++.kanban { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:var(--space-lg); }.kanban-col { border-top:1px solid var(--line); min-height:240px; padding-block:var(--space-lg); min-width:0; }.kanban-col h3 { font:500 var(--text-sm) var(--font-body); color:var(--muted); margin-bottom:var(--space-lg); }.contact { padding-block:var(--space-md); border-bottom:1px solid var(--line); overflow-wrap:anywhere; }.contact h4 { font-size:var(--text-md); margin:0 0 var(--space-xs); }.contact p { font-size:var(--text-sm); margin-bottom:var(--space-md); }.contact select { font-size:var(--text-sm); }.contact button { min-height:40px; padding:var(--space-xs); font-size:13px; }
++.heatmap { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:var(--space-2xs); margin-block:var(--space-lg); }.heatmap span { min-height:44px; display:flex; align-items:center; justify-content:center; font:13px var(--font-outlier); }.residual-positive { background:rgb(var(--cyan-rgb)/var(--intensity)); }.residual-negative { background:rgb(var(--gold-rgb)/var(--intensity)); }
++.auth-dialog { position:fixed; inset:0; margin:auto; height:fit-content; max-height:90dvh; overflow-y:auto; width:calc(100% - 32px); max-width:480px; background:var(--panel); color:var(--text); border:1px solid var(--line); padding:var(--space-app); border-radius:var(--radius-card); }.auth-dialog::backdrop { background:var(--overlay); }.dialog-top { display:flex; align-items:center; justify-content:space-between; gap:var(--space-md); }.auth-dialog h2 { font:400 32px var(--font-display); margin:0; }
++.settings-status { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:var(--space-md); padding-block:var(--space-lg); border-bottom:1px solid var(--line); font-size:var(--text-sm); }.pause-time { font:400 90px/1.4 var(--font-outlier); text-align:center; color:var(--gold); font-variant-numeric:tabular-nums; }.lesson p { font-size:var(--text-md); }.lesson summary { font-size:var(--text-md); }
++.danger { color:var(--red); border-color:var(--red); }.app-disclaimer { font-size:13px; color:var(--muted); padding-top:var(--space-lg); border-top:1px solid var(--line); margin-top:var(--space-xl); }.mobile-app-menu,.mobile-only { display:none; }
++.section-note { font-size:var(--text-sm); color:var(--muted); margin-top:var(--space-lg); }.simulation-notice { margin:0; font-size:var(--text-sm); color:var(--muted); }
++@keyframes settle { from{transform:translateY(8px)}to{transform:translateY(0)} }
++.hero-content { animation:settle var(--dur-long) var(--ease-out) both; }
++@media(min-width:1600px) { .hero-img { height:680px; }.hero-layout { padding-block:var(--space-2xl); } }
++@media(max-width:1200px) { .dash-grid { grid-template-columns:minmax(0,1fr); }.metric strong { font-size:28px; }.app-header .pill { display:none; }.kanban { grid-template-columns:repeat(2,minmax(0,1fr)); }.app-main { padding:var(--space-lg); } }
++@media(max-width:960px) { :root { --gutter:24px; --sidebar-width:240px; --space-section:96px; --space-section-large:120px; --space-section-compact:80px; --space-app:24px; }.menu-toggle,.mobile-app-menu { display:inline-flex; }.nav-links { display:none; position:absolute; inset:var(--nav-height) 0 auto; padding:var(--space-lg); background:var(--panel); flex-direction:column; align-items:stretch; }.nav-links.open { display:flex; }.hero-layout { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }.hero h1 { font-size:clamp(3.25rem,7vw,5.25rem); }.hero-img { min-height:420px; }.hero .quiet { font-size:13px; }.two,.quant-band .two,.coach-section .two,.operator .two { grid-template-columns:minmax(0,1fr); }.section-head { grid-template-columns:minmax(0,1fr); gap:var(--space-lg); }.three { grid-template-columns:minmax(0,1fr); }.method-steps>.feature { display:grid; grid-template-columns:80px minmax(0,1fr); gap:var(--space-lg); }.method-steps>.feature:before { grid-row:1/3; margin:0; }.method-steps h3 { margin:0; }.method-steps p { grid-column:2; }.photo { min-height:0; }.operator .panel { padding:0; border-left:0; }.app-shell { display:block; }.sidebar { transform:translateX(-100%); transition:transform var(--dur-short) var(--ease-out); }.sidebar.open { transform:translateX(0); }.app-header { position:relative; min-height:72px; padding-inline:var(--space-lg); }.app-header-left>.muted { display:none; }.app-main .two { grid-template-columns:minmax(0,1fr); }.metric-grid { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:var(--space-lg); }.metric:nth-child(3) { border-left:0; padding-left:0; }.metric:nth-child(2) { padding-right:0; }.footer-top { align-items:start; flex-direction:column; } }
++@media(max-width:640px) { :root { --gutter:20px; --space-section:72px; --space-section-large:96px; --space-section-compact:64px; --space-app:20px; }.site-nav { height:80px; }.brand strong { font-size:21px; }.brand small { max-width:21ch; font-size:11px; }.hero { min-height:0; }.hero-layout { display:flex; flex-direction:column; align-items:stretch; gap:var(--space-xl); padding-block:var(--space-xl) var(--space-2xl); }.hero h1 { font-size:64px; max-width:12ch; }.hero-content>p { font-size:var(--text-md); max-width:33ch; margin-bottom:var(--space-lg); }.hero-actions { gap:var(--space-sm); }.hero-actions .btn { padding-inline:var(--space-md); font-size:var(--text-sm); }.hero-img { height:360px; min-height:0; object-position:77% center; }.hero-visual figcaption { font-size:13px; }.ticker { grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--space-lg); }.ticker .label { grid-column:1/-1; }.ticker>div { border-left:0; padding:0; }.ticker b { font-size:24px; }.ticker span { font-size:13px; }.section-head { margin-bottom:var(--space-xl); }.section h2 { font-size:42px; }.cream-band .feature { grid-template-columns:minmax(0,1fr); gap:var(--space-md); }.waitlist { grid-template-columns:minmax(0,1fr); padding:var(--space-lg); gap:var(--space-xl); }.form-grid { grid-template-columns:minmax(0,1fr); gap:0; }.quant-top { align-items:start; flex-direction:column; gap:var(--space-xs); }.stats-row { gap:var(--space-sm); }.stat small { font-size:12px; }.stat b { font-size:var(--text-sm); }.panel { padding:var(--space-lg); }.coach-sample p { font-size:28px; }.footer .brand strong { font-size:26px; }.footer p { max-width:65ch; }.app-header { padding-inline:var(--space-md); gap:var(--space-xs); }.app-header-right { gap:var(--space-xs); }.app-header-right .small { font-size:12px; padding-inline:var(--space-sm); }.app-main { padding:var(--space-lg) var(--space-md); }.page-heading { flex-direction:column; gap:var(--space-md); }.page-heading h1 { font-size:32px; }.page-heading p { font-size:var(--text-sm); }.metric { padding-inline:var(--space-md); }.metric label { font-size:13px; }.metric strong { font-size:27px; }.metric small { font-size:12px; }.app-main .panel { padding:var(--space-lg) var(--space-md); }.app-main .panel-header { flex-wrap:wrap; }.app-main .chart { height:auto; min-height:180px; }.app-main .big-num { font-size:30px; }.app-main .big-num .pill { display:block; width:fit-content; margin-top:var(--space-xs); }.dash-grid { gap:var(--space-lg); }.settings-status { grid-template-columns:minmax(0,1fr); gap:var(--space-xs); }.kanban { grid-template-columns:minmax(0,1fr); }.toast { inset:auto var(--space-md) var(--space-md); max-width:none; }.mobile-only { display:block; }.auth-dialog { padding:var(--space-lg); }.heatmap { grid-template-columns:repeat(4,minmax(0,1fr)); }#contact-form .form-grid { grid-template-columns:minmax(0,1fr)!important; }td:first-child,th:first-child { position:sticky; left:0; background:var(--panel); color:var(--text); }.app-main .check-list li { font-size:var(--text-sm); } }
++@media(max-width:360px) { .hero h1 { font-size:56px; }.hero-actions .btn { width:100%; }.app-header-right .small { font-size:11px; padding-inline:var(--space-xs); }.metric strong { font-size:24px; } }
++@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
++.risk-unit{font-size:var(--text-sm);font-family:var(--font-body);color:var(--muted)}.quant-caption{margin-top:var(--space-md)}.waitlist-note{margin-top:var(--space-lg)}.full-control{width:100%}.faq-section{padding-top:0}.underlined{text-decoration:underline}
++.footer p{max-width:75ch}.cream-band{color:var(--text)}.app-main .big-num{font-variant-numeric:tabular-nums}.hero-actions .btn:not(.primary){background:transparent}
++.preview-lab{padding:0;width:calc(100% - 32px);max-width:var(--container);height:96dvh;max-height:96dvh;background:var(--bg);border:1px solid var(--line);color:var(--text)}.preview-controls{height:44px;display:flex;align-items:center;justify-content:space-between;padding-inline:var(--space-md);font:400 var(--text-sm) var(--font-body);color:var(--muted)}.preview-content{width:100%;height:calc(100% - 44px);border:0}.legal-content{padding-top:var(--space-lg)}.legal-dialog{max-width:800px;max-height:90dvh;overflow:auto}.legal-dialog h1{font-size:38px}.legal-dialog h2{font-size:28px;margin-top:var(--space-lg)}
++.quant-band .btn:focus-visible{outline-color:var(--cream-ink)}
