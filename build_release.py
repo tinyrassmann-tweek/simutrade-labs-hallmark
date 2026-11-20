@@ -14,7 +14,7 @@ CSS=stylesheet('style.css')+'\n'+stylesheet('premium.css')
 def standalone(name,script=None):
     text=(PUBLIC/name).read_text(encoding='utf-8')
     text=text.replace('<link rel="stylesheet" href="/style.css">','<style>'+CSS+'</style>')
-    text=text.replace('<link rel="stylesheet" href="/premium.css">','')
+    text=re.sub(r'<link rel="stylesheet" href="/premium\.css(?:\?[^"\n]*)?">','',text)
     text=re.sub(r'<link rel="manifest"[^>]*>','',text)
     for asset in (PUBLIC/'assets').glob('*.webp'):
         text=text.replace('/assets/'+asset.name,'data:image/webp;base64,'+base64.b64encode(asset.read_bytes()).decode())
