@@ -1,0 +1,173 @@
+{
+  "release": {
+    "revision": "think-tank-hub-00006-neq",
+    "image": "us-east1-docker.pkg.dev/think-tank-solutions-ai/cloud-run-source-deploy/think-tank-hub@sha256:aab21bb11da57a8e1df7ec05342cd666b215a3d49d62428497638554e4995993",
+    "source_commit": "327725a7cf534ed2ac7b41fe46fba787cabbc41d",
+    "build": "9410bffe-ad59-4cec-a2a4-1db4edde73cc",
+    "traffic_percent": 100,
+    "checks": [
+      {
+        "path": "/api/simutrade/health",
+        "status": 200
+      },
+      {
+        "path": "/api/simutrade/health",
+        "status": 200
+      },
+      {
+        "path": "/api/simutrade/me",
+        "status": 200
+      },
+      {
+        "path": "/api/simutrade/market?symbol=NQ",
+        "status": 200
+      },
+      {
+        "path": "/api/simutrade/operator/team?id=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "status": 403
+      },
+      {
+        "path": "/api/leads",
+        "status": 405
+      }
+    ],
+    "runtime_identity_preserved": true,
+    "environment_preserved": true,
+    "rollback_revision": "think-tank-hub-00004-t2t",
+    "released_at": 1795214122.782501
+  },
+  "security_scan": {
+    "build": "9410bffe-ad59-4cec-a2a4-1db4edde73cc",
+    "source_commit": "327725a7cf534ed2ac7b41fe46fba787cabbc41d",
+    "image": "us-east1-docker.pkg.dev/think-tank-solutions-ai/cloud-run-source-deploy/think-tank-hub@sha256:aab21bb11da57a8e1df7ec05342cd666b215a3d49d62428497638554e4995993",
+    "counts": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "UNKNOWN": 0
+    }
+  },
+  "activation": {
+    "team": "118736b5ac9513728c4574ce66780fb1",
+    "activation_status": "active",
+    "seat_limit": 5,
+    "duplicate_receipt_idempotent": true,
+    "fictional_acceptance": true,
+    "stripe_charge_created": false
+  },
+  "support": {
+    "reference": "TT-C8DFF63B",
+    "single_record": true,
+    "venture": "SimuTrade Labs",
+    "consent": true,
+    "fictional": true
+  },
+  "public_files": {
+    "index.html": {
+      "status": 200,
+      "sha256": "efbb3405ebaa36facc220c885b892e7a4964cff620b2a798078dfd9e21343500",
+      "nosniff": "nosniff",
+      "frame": "DENY"
+    },
+    "app.html": {
+      "status": 200,
+      "sha256": "d6a52800153015bd7d0aece8082d3b3a10002ba62822241fd63866d60136217d",
+      "nosniff": "nosniff",
+      "frame": "DENY"
+    },
+    "app.js": {
+      "status": 200,
+      "sha256": "eae7693b09955259ba6c16972604addb57a432a5dcdb75ecdc1db77be4d6cc86",
+      "nosniff": "nosniff",
+      "frame": "DENY"
+    },
+    "style.css": {
+      "status": 200,
+      "sha256": "9e7018b4348d16d85abaf4143c05034084b4bab71743798402b7fd880b25add9",
+      "nosniff": "nosniff",
+      "frame": "DENY"
+    },
+    "premium.css": {
+      "status": 200,
+      "sha256": "f20c44f08c2a5332f69bb7b2538d5cbc332d54c96771a6f7620983cfb5e923b3",
+      "nosniff": "nosniff",
+      "frame": "DENY"
+    },
+    "support.html": {
+      "status": 200,
+      "sha256": "bbd30fa58d3ce7a117988b0b44f171ff8429b4a12b35b0f10bafeae061b89a61",
+      "nosniff": "nosniff",
+      "frame": "DENY"
+    },
+    "support.js": {
+      "status": 200,
+      "sha256": "aded80aa0f895d6e38a2ac8a71e5b14998b957804aceb74702e1ac01cdbacba0",
+      "nosniff": "nosniff",
+      "frame": "DENY"
+    },
+    "cohort-terms.html": {
+      "status": 200,
+      "sha256": "08295d504225808b17d15fe8ce0a41fdc83680d057badc377afec0c869c20c70",
+      "nosniff": "nosniff",
+      "frame": "DENY"
+    }
+  },
+  "static_releases": [
+    {
+      "previous": "sites/simutrade-labs-tts/versions/4a2875dde2c88df0",
+      "version": "sites/simutrade-labs-tts/versions/5d1f2a0a93513d05",
+      "release": "sites/simutrade-labs-tts/releases/1795215906547000",
+      "source_commit": "cfff3a2e52d4866d578f06a207ef6458a9f72d61",
+      "only_changed": "/premium.css",
+      "sha256": "f20c44f08c2a5332f69bb7b2538d5cbc332d54c96771a6f7620983cfb5e923b3",
+      "configuration_preserved": true,
+      "all_other_files_preserved": true
+    },
+    {
+      "previous": "sites/simutrade-labs-tts/versions/5d1f2a0a93513d05",
+      "version": "sites/simutrade-labs-tts/versions/fceefb84a988b9e9",
+      "release": "sites/simutrade-labs-tts/releases/1795215999994000",
+      "source_commit": "62d9628da346b887f261d321ce7fc22bf20eaca4",
+      "only_changed": "/index.html",
+      "sha256": "efbb3405ebaa36facc220c885b892e7a4964cff620b2a798078dfd9e21343500",
+      "configuration_preserved": true,
+      "all_other_files_preserved": true
+    }
+  ],
+  "fixture_cleanup": {
+    "paid_collaboration_suspended": true,
+    "fictional_auth_accounts_disabled": 3,
+    "temporary_verification_tag_removed": true,
+    "customer_data_deleted": false
+  },
+  "browser_checks": {
+    "live_sign_in": true,
+    "study_progress_persists_after_reload": true,
+    "private_journal_persists_after_reload": true,
+    "team_created_through_ui": true,
+    "five_included_seats_owner_plus_four_reservations": true,
+    "sixth_seat_refused": true,
+    "shared_note_saved": true,
+    "logout": true,
+    "recovery_request_confirmation": true,
+    "recovery_email_delivery": "not independently verified",
+    "password_reset_completion": "not performed",
+    "journal_export_button": "clicked; final downloaded file not independently read back",
+    "workspace_json_export_button": "clicked; final downloaded file not independently read back",
+    "support_confirmation": "TT-C8DFF63B",
+    "desktop_hero_no_overlap": {
+      "heading_width": 567,
+      "heading_scroll_width": 567,
+      "last_text_right": 758.96,
+      "chart_left": 844.43
+    },
+    "mobile_team_screen": "new interactive check remains unverified; viewport override did not apply and isolated headless launch was unavailable"
+  },
+  "verification_status": "PRODUCTION DEPLOYED; documented acceptance limits remain",
+  "remaining_handover": [
+    "Final director operating/packet acknowledgment",
+    "Verify founding-subscription operations with the existing director before paid activation",
+    "Previously recorded merchant tax-configuration question remains unresolved in this technical verification"
+  ]
+}
