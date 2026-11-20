@@ -1,5 +1,4 @@
 import {spawn} from 'node:child_process';
-import './server.mjs';
 
 let worker;
 let stopping = false;
@@ -23,3 +22,13 @@ process.on('SIGTERM', () => {
   worker?.kill('SIGTERM');
   setTimeout(() => process.exit(0), 800).unref();
 });
+
+// Keep Cloud Run's listener closed until the account worker can answer.
+for (let i = 0; i < 50; i++) {
+  try {
+    const result = await fetch('http://127.0.0.1:8081/api/health', {signal: AbortSignal.timeout(250)});
+    if (result.ok) break;
+  } catch {}
+  await new Promise(resolve => setTimeout(resolve, 200));
+}
+await import('./server.mjs');
