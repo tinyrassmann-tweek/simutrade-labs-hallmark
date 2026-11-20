@@ -1,39 +1,173 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimuTrade Labs Launch Acceptance</title><style>:root{--foreground:#14202e;--border:#ccd4dc}body{max-width:1180px;margin:32px auto;padding:0 20px;line-height:1.55}a{color:#00628a}</style></head><body><h1>SimuTrade Labs Production Launch Acceptance</h1><div id="simutrade-acceptance"><style>#simutrade-acceptance{font-family:system-ui,sans-serif;color:var(--foreground);max-width:100%;overflow-wrap:anywhere}#simutrade-acceptance table{width:100%;border-collapse:collapse}#simutrade-acceptance th,#simutrade-acceptance td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--border)}#simutrade-acceptance caption{text-align:left;font-weight:500;margin:16px 0}#simutrade-acceptance code{overflow-wrap:anywhere}#simutrade-acceptance .summary{display:flex;gap:20px;flex-wrap:wrap}@media(max-width:600px){#simutrade-acceptance thead{display:none}#simutrade-acceptance tr{display:block;margin:20px 0}#simutrade-acceptance td{display:block;padding:6px 0}}</style>
-<h2>Acceptance status</h2><p>November 20, 2026, Eastern Time. Final launch acceptance remains open.</p>
-<div class="summary"><span>17 passed</span><span>1 failed</span><span>8 blocked</span><span>2 legally restricted</span></div>
-<table><caption>All launch gates and their current evidence</caption><thead><tr><th>Area</th><th>Acceptance gate</th><th>Status</th><th>Evidence or required correction</th></tr></thead><tbody><tr><td>Functionality</td><td>Free synthetic practice desk</td><td>Passed</td><td>Existing live desk and original backend regression coverage retained. Simulated balances and synthetic feed remain labeled.</td></tr>
-<tr><td>Functionality</td><td>Hosted registration and sign-in</td><td>Passed</td><td>Live Firebase registration returned 200 with verificationSent=true. Sign-in and account retrieval returned 200.</td></tr>
-<tr><td>Functionality</td><td>Email verification boundary</td><td>Passed</td><td>Live team creation refused an unverified account with 403; the designated fictional account proceeded after verification.</td></tr>
-<tr><td>Functionality</td><td>Private progress saving</td><td>Passed</td><td>Canonical-domain state update saved the fictional journal entry and study progress with 200. Complete reload and browser export checks remain in the final end-to-end gate.</td></tr>
-<tr><td>Functionality</td><td>Included seats</td><td>Passed</td><td>Live founding team accepted owner plus four reserved learners and refused the sixth seat. Local regression coverage also verifies ten-seat Premium.</td></tr>
-<tr><td>Functionality</td><td>Learner isolation and shared notes</td><td>Passed</td><td>Local regression suite verifies private journals stay isolated, invitation email matching, owner permissions, and deliberate sharing of team notes.</td></tr>
-<tr><td>Functionality</td><td>Final browser journey and exports</td><td>Blocked</td><td>The connected browser became unavailable before the final new study/team screens, recovery journey, exports, and live support submission could all be checked.</td></tr>
-<tr><td>Security</td><td>Protected session cookie</td><td>Passed</td><td>Canonical-domain sign-in returned Firebase-compatible __session with Secure and HttpOnly. Sessions are server-side and expire.</td></tr>
-<tr><td>Security</td><td>Operator authorization</td><td>Passed</td><td>An unauthenticated activation attempt returned 403. Existing-owner Google authentication successfully activated the designated fictional fixture.</td></tr>
-<tr><td>Security</td><td>Atomic seat limits and billing replay</td><td>Passed</td><td>21 local tests passed, including concurrent invitations, duplicate receipts, receipt ownership, invitation expiry/reservations, and refund suspension.</td></tr>
-<tr><td>Security</td><td>New container vulnerability scan</td><td>Blocked</td><td>The baseline image was previously reviewed, but the new Python-containing image has no completed fresh scan receipt in this cycle.</td></tr>
-<tr><td>Deployment</td><td>Canonical domain and public release</td><td>Passed</td><td>Published to the existing .online site. Hosting version 4a2875dde2c88df0 preserves old files and routes and adds the namespaced API route. No new CNAME was needed.</td></tr>
-<tr><td>Deployment</td><td>Durable production API</td><td>Passed</td><td>Cloud Run revision think-tank-hub-00004-t2t deployed. Live health reported Firestore and synthetic replay; account and team records were exercised.</td></tr>
-<tr><td>Deployment</td><td>Cold-start readiness</td><td>Failed</td><td>The first direct health probe returned 503 before the worker was ready; subsequent health and account requests succeeded. The readiness correction is committed and built but promotion was interrupted.</td></tr>
-<tr><td>Deployment</td><td>Promote and verify readiness correction</td><td>Blocked</td><td>Final build 2300626c-4be3-4936-92a6-2610b803b5a3 reported SUCCESS. Verify its immutable digest and current service revision before updating. Do not deploy an unverified mutable tag.</td></tr>
-<tr><td>Deployment</td><td>Rollback and source continuity</td><td>Passed</td><td>Previous API revision think-tank-hub-00003-pfx and Hosting version a4bb174c4cbed45f are recorded. Runtime identity, inquiry routes and unrelated venture deployments were preserved.</td></tr>
-<tr><td>Customer handover</td><td>Seller and receipt clarity</td><td>Passed</td><td>Both active Stripe links now carry order handover messages naming THINK TANK DIGITAL, included seats, activation timing and the support URL. Re-read through Stripe after browser loss.</td></tr>
-<tr><td>Customer handover</td><td>Paid activation rehearsal</td><td>Passed</td><td>Existing-owner identity activated a fictional founding team with five seats. Fixture is marked fictionalAcceptance and excluded from revenue. No charge or real customer subscription was created.</td></tr>
-<tr><td>Customer handover</td><td>Director operating access</td><td>Blocked</td><td>Existing SimuTrade Director reported its iMac connection offline and the local Google Cloud CLI certificate startup issue. Repair must preserve certificate validation and the existing identity.</td></tr>
-<tr><td>Customer handover</td><td>Final fresh packet acknowledgment</td><td>Blocked</td><td>Director acknowledged source commit 4c090080b8873b1f2725173afdb3cc315d038bfd and preserved 641 legacy brand assets. Final source ffc7c3fb32dc8b26eaf1487402381fa24b6b319a still needs its receipt.</td></tr>
-<tr><td>Legal</td><td>Customer terms and privacy content</td><td>Passed</td><td>Published cohort-terms, support, privacy and simulation terms with the public site release. Account/checkout flows record terms acceptance. Unwaivable customer rights remain reserved.</td></tr>
-<tr><td>Legal</td><td>Merchant tax configuration</td><td>Blocked</td><td>Stripe returned no tax registrations. Automatic tax is off on both existing links. Confirm the seller's actual existing registered jurisdictions and collection method before configuring tax. No registration or new paid tax service was created.</td></tr>
-<tr><td>Legal</td><td>Unsupported advertising claims</td><td>Legally restricted</td><td>Do not advertise guaranteed passing, returns, funded accounts, invented success rates or testimonials. FTC guidance requires truthful, substantiated advertising.</td></tr>
-<tr><td>Legal</td><td>Unprovided services and market data</td><td>Legally restricted</td><td>Do not sell this launch as including live exchange data, real-money execution, broker/prop-firm affiliation, human coaching, or connected AI generation. Current scope is synthetic educational practice and rules-based prompts.</td></tr>
-<tr><td>Commercial readiness</td><td>Approved seat-inclusive offers</td><td>Passed</td><td>Founding Cohort is $19/month total, five included seats including owner, for six monthly periods. Premium is $49/month total with ten included seats. Existing payment link quantity remains one team.</td></tr>
-<tr><td>Commercial readiness</td><td>Six-month billing and cancellation operations</td><td>Blocked</td><td>The existing recurring link has no built-in six-cycle cap. Operator must set and verify each new founding subscription's six-month end before activation. Cancellation, monthly renewal and refund procedures require an operational director; self-service cancellation has not been verified.</td></tr>
-<tr><td>Commercial readiness</td><td>Campaign and brand inventory</td><td>Passed</td><td>Existing director prepared a 20-post campaign, six priority posts, fulfillment instructions and asset manifest. Preserve the canonical .online link and evaluation-practice/student/cohort positioning.</td></tr>
-<tr><td>Commercial readiness</td><td>Final marketing blitz handoff</td><td>Blocked</td><td>Preparation is complete, but final handoff is not accepted until the failed and blocked launch gates are resolved. No new posts, paid ads or sales are claimed in this acceptance.</td></tr></tbody></table>
-<h2>Approved commercial terms</h2><p>Seats are included in the total monthly price. The founding term is implemented as six monthly periods followed by an end of subscription, with an optional Premium upgrade. There is no automatic increase to $49. This is the implementation choice used to make the six-month limit concrete.</p>
-<h2>Remaining dependencies</h2><ol><li>Reconnect ChatGPT in the Chrome profile with the connected extension and reopen the Grok Bot app on the iMac.</li><li>Verify the final build digest, scan the new image, promote the readiness correction with a current-revision guard, and finish the browser/support/recovery/export checks.</li><li>Repair the director's existing CLI certificate configuration without disabling TLS, then rehearse its operator command against the fictional team.</li><li>Confirm the seller's existing tax registrations and collection method. Configure only jurisdictions actually registered, with any required owner confirmation.</li><li>Deliver the final source packet to the existing director, receive its acknowledgment, and release the accurate organic campaign. No new ad spend is authorized.</li></ol>
-<h2>Preserved release references</h2><ul><li>Canonical site <a href="https://simutradelabs.thinktanksolutionsai.online/">simutradelabs.thinktanksolutionsai.online</a></li><li>Hosting release <code>sites/simutrade-labs-tts/releases/1795207634086000</code>, version <code>4a2875dde2c88df0</code></li><li>Current API revision <code>think-tank-hub-00004-t2t</code>, image digest <code>sha256:34673b352fa3bf8898e1e0c01c7504e1431beb9215dd49b7c2d5524391580d1d</code></li><li>Latest code <a href="https://github.com/tinyrassmann-tweek/simutrade-labs-hallmark/tree/ffc7c3fb32dc8b26eaf1487402381fa24b6b319a">ffc7c3fb32dc8b26eaf1487402381fa24b6b319a</a></li><li><a href="https://github.com/tinyrassmann-tweek/simutrade-labs-hallmark/archive/ffc7c3fb32dc8b26eaf1487402381fa24b6b319a.zip">Fresh source ZIP</a></li><li><a href="https://grok.com/bot/7c471bda-920c-4cec-86f4-b71f508ce568">Existing SimuTrade Director</a></li></ul>
-<h2>Rollback</h2><p>Inspect current revisions before any action. Restore traffic to <code>think-tank-hub-00003-pfx</code> and restore Hosting version <code>sites/simutrade-labs-tts/versions/a4bb174c4cbed45f</code> together if the launch needs rollback. Restoring only the old API would remove the new account endpoints. Preserve any newer unrelated changes rather than blindly replaying an old configuration.</p>
-<h2>Campaign copy ready for the director</h2><p>Practice to pass. Study. Rehearse. Review. Prepare your risk routine for a prop-firm evaluation with simulated sessions, custom rules and a study cohort. Start free. Founding Cohort is $19/month total for up to five people, owner included, for six monthly periods. Premium is optional at $49/month total for ten seats. Synthetic educational practice only. Passing and funding are never guaranteed. Purchases are billed by Think Tank Digital.</p>
-<h2>Evidence limits</h2><p>The working environment failed to restart and the connected browser subsequently became unavailable. The final build was not promoted after that interruption. The last multi-request live test stopped after confirming private progress saving; later unreturned assertions are not counted as passed. Public captures were requested separately, but responsive behavior has not received a final interactive sign-off. The report does not certify all legal obligations or record an actual sale.</p>
-<h2>Primary references</h2><ul><li><a href="https://firebase.google.com/docs/hosting/manage-cache">Firebase Hosting session-cookie forwarding</a></li><li><a href="https://www.ftc.gov/business-guidance/advertising-marketing/advertising-marketing-basics">FTC advertising requirements</a></li><li><a href="https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax/canned-computer-software-digital-goods">Pennsylvania digital-software tax guidance</a></li></ul>
-</div></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SimuTrade Labs — Production Acceptance Record</title><style>*{box-sizing:border-box}:root{color-scheme:dark;--bg:#0a1421;--panel:#132536;--ink:#eef5f6;--quiet:#bdcdd5;--cyan:#86dfe7;--gold:#e1bf7d}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,sans-serif}main{max-width:1120px;padding:46px 24px 76px;margin:auto}h1{font:400 clamp(36px,6vw,60px)/1.12 Georgia,serif;max-width:850px}h2{font:400 30px Georgia,serif;margin-top:37px}.eyebrow,a,th{color:var(--cyan)}a{overflow-wrap:anywhere;text-underline-offset:3px}.muted{color:var(--quiet)}.notice{background:var(--panel);border-left:4px solid var(--gold);padding:18px 22px;margin:24px 0}.table{overflow-x:auto}table{width:100%;border-collapse:collapse}caption{text-align:left;color:var(--quiet);padding:10px 0}th,td{padding:13px 11px;text-align:left;vertical-align:top;border-bottom:1px solid #314958}td:first-child{min-width:190px}td:nth-child(2){min-width:150px}li{margin:9px 0}code,pre{font-size:13px;overflow-wrap:anywhere}pre{white-space:pre-wrap;background:var(--panel);padding:18px}details{margin:20px 0}summary{cursor:pointer;color:var(--gold)}@media(max-width:600px){main{padding:28px 16px}table{font-size:14px}th,td{padding:10px 7px}}@media print{:root{color-scheme:light}body{background:white;color:#14202e;font-size:11px}main{padding:0}h1{font-size:34px}.notice,pre{background:#eff5f7}.muted,caption{color:#465766}a,th,.eyebrow{color:#006278}td:first-child,td:nth-child(2){min-width:0}tr{break-inside:avoid}}</style></head><body><main><h1>Production acceptance record</h1><p>November 20, 2026 · 06:10 PM EST</p><p>Runtime revision <code>think-tank-hub-00006-neq</code> serves 100% of production traffic. The image scan reports zero findings; Hosting version <code>fceefb84a988b9e9</code> includes the verified headline-layout correction.</p><p>Live sign-in, study/journal persistence, fictional team activation, five-seat limits, duplicate-reference protection, shared notes, logout, recovery-request confirmation and durable support submission passed. The source archive rebuild passed.</p><p>Full launch acceptance remains open for final browser download-file receipt, the new team screen at mobile width, real-mailbox recovery delivery, final director acknowledgment, and the previously recorded commercial operations/tax items. These limits are not passed by this record.</p><p><a href="https://simutradelabs.thinktanksolutionsai.online/">Canonical site</a> · <a href="production-verification.json">Machine-readable evidence</a> · <a href="../../deployment/OPERATOR.md">Operator procedure</a></p><details><summary>Exact evidence and retained limitations</summary><pre>{
+  &quot;release&quot;: {
+    &quot;revision&quot;: &quot;think-tank-hub-00006-neq&quot;,
+    &quot;image&quot;: &quot;us-east1-docker.pkg.dev/think-tank-solutions-ai/cloud-run-source-deploy/think-tank-hub@sha256:aab21bb11da57a8e1df7ec05342cd666b215a3d49d62428497638554e4995993&quot;,
+    &quot;source_commit&quot;: &quot;327725a7cf534ed2ac7b41fe46fba787cabbc41d&quot;,
+    &quot;build&quot;: &quot;9410bffe-ad59-4cec-a2a4-1db4edde73cc&quot;,
+    &quot;traffic_percent&quot;: 100,
+    &quot;checks&quot;: [
+      {
+        &quot;path&quot;: &quot;/api/simutrade/health&quot;,
+        &quot;status&quot;: 200
+      },
+      {
+        &quot;path&quot;: &quot;/api/simutrade/health&quot;,
+        &quot;status&quot;: 200
+      },
+      {
+        &quot;path&quot;: &quot;/api/simutrade/me&quot;,
+        &quot;status&quot;: 200
+      },
+      {
+        &quot;path&quot;: &quot;/api/simutrade/market?symbol=NQ&quot;,
+        &quot;status&quot;: 200
+      },
+      {
+        &quot;path&quot;: &quot;/api/simutrade/operator/team?id=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,
+        &quot;status&quot;: 403
+      },
+      {
+        &quot;path&quot;: &quot;/api/leads&quot;,
+        &quot;status&quot;: 405
+      }
+    ],
+    &quot;runtime_identity_preserved&quot;: true,
+    &quot;environment_preserved&quot;: true,
+    &quot;rollback_revision&quot;: &quot;think-tank-hub-00004-t2t&quot;,
+    &quot;released_at&quot;: 1795214122.782501
+  },
+  &quot;security_scan&quot;: {
+    &quot;build&quot;: &quot;9410bffe-ad59-4cec-a2a4-1db4edde73cc&quot;,
+    &quot;source_commit&quot;: &quot;327725a7cf534ed2ac7b41fe46fba787cabbc41d&quot;,
+    &quot;image&quot;: &quot;us-east1-docker.pkg.dev/think-tank-solutions-ai/cloud-run-source-deploy/think-tank-hub@sha256:aab21bb11da57a8e1df7ec05342cd666b215a3d49d62428497638554e4995993&quot;,
+    &quot;counts&quot;: {
+      &quot;CRITICAL&quot;: 0,
+      &quot;HIGH&quot;: 0,
+      &quot;MEDIUM&quot;: 0,
+      &quot;LOW&quot;: 0,
+      &quot;UNKNOWN&quot;: 0
+    }
+  },
+  &quot;activation&quot;: {
+    &quot;team&quot;: &quot;118736b5ac9513728c4574ce66780fb1&quot;,
+    &quot;activation_status&quot;: &quot;active&quot;,
+    &quot;seat_limit&quot;: 5,
+    &quot;duplicate_receipt_idempotent&quot;: true,
+    &quot;fictional_acceptance&quot;: true,
+    &quot;stripe_charge_created&quot;: false
+  },
+  &quot;support&quot;: {
+    &quot;reference&quot;: &quot;TT-C8DFF63B&quot;,
+    &quot;single_record&quot;: true,
+    &quot;venture&quot;: &quot;SimuTrade Labs&quot;,
+    &quot;consent&quot;: true,
+    &quot;fictional&quot;: true
+  },
+  &quot;public_files&quot;: {
+    &quot;index.html&quot;: {
+      &quot;status&quot;: 200,
+      &quot;sha256&quot;: &quot;efbb3405ebaa36facc220c885b892e7a4964cff620b2a798078dfd9e21343500&quot;,
+      &quot;nosniff&quot;: &quot;nosniff&quot;,
+      &quot;frame&quot;: &quot;DENY&quot;
+    },
+    &quot;app.html&quot;: {
+      &quot;status&quot;: 200,
+      &quot;sha256&quot;: &quot;d6a52800153015bd7d0aece8082d3b3a10002ba62822241fd63866d60136217d&quot;,
+      &quot;nosniff&quot;: &quot;nosniff&quot;,
+      &quot;frame&quot;: &quot;DENY&quot;
+    },
+    &quot;app.js&quot;: {
+      &quot;status&quot;: 200,
+      &quot;sha256&quot;: &quot;eae7693b09955259ba6c16972604addb57a432a5dcdb75ecdc1db77be4d6cc86&quot;,
+      &quot;nosniff&quot;: &quot;nosniff&quot;,
+      &quot;frame&quot;: &quot;DENY&quot;
+    },
+    &quot;style.css&quot;: {
+      &quot;status&quot;: 200,
+      &quot;sha256&quot;: &quot;9e7018b4348d16d85abaf4143c05034084b4bab71743798402b7fd880b25add9&quot;,
+      &quot;nosniff&quot;: &quot;nosniff&quot;,
+      &quot;frame&quot;: &quot;DENY&quot;
+    },
+    &quot;premium.css&quot;: {
+      &quot;status&quot;: 200,
+      &quot;sha256&quot;: &quot;f20c44f08c2a5332f69bb7b2538d5cbc332d54c96771a6f7620983cfb5e923b3&quot;,
+      &quot;nosniff&quot;: &quot;nosniff&quot;,
+      &quot;frame&quot;: &quot;DENY&quot;
+    },
+    &quot;support.html&quot;: {
+      &quot;status&quot;: 200,
+      &quot;sha256&quot;: &quot;bbd30fa58d3ce7a117988b0b44f171ff8429b4a12b35b0f10bafeae061b89a61&quot;,
+      &quot;nosniff&quot;: &quot;nosniff&quot;,
+      &quot;frame&quot;: &quot;DENY&quot;
+    },
+    &quot;support.js&quot;: {
+      &quot;status&quot;: 200,
+      &quot;sha256&quot;: &quot;aded80aa0f895d6e38a2ac8a71e5b14998b957804aceb74702e1ac01cdbacba0&quot;,
+      &quot;nosniff&quot;: &quot;nosniff&quot;,
+      &quot;frame&quot;: &quot;DENY&quot;
+    },
+    &quot;cohort-terms.html&quot;: {
+      &quot;status&quot;: 200,
+      &quot;sha256&quot;: &quot;08295d504225808b17d15fe8ce0a41fdc83680d057badc377afec0c869c20c70&quot;,
+      &quot;nosniff&quot;: &quot;nosniff&quot;,
+      &quot;frame&quot;: &quot;DENY&quot;
+    }
+  },
+  &quot;static_releases&quot;: [
+    {
+      &quot;previous&quot;: &quot;sites/simutrade-labs-tts/versions/4a2875dde2c88df0&quot;,
+      &quot;version&quot;: &quot;sites/simutrade-labs-tts/versions/5d1f2a0a93513d05&quot;,
+      &quot;release&quot;: &quot;sites/simutrade-labs-tts/releases/1795215906547000&quot;,
+      &quot;source_commit&quot;: &quot;cfff3a2e52d4866d578f06a207ef6458a9f72d61&quot;,
+      &quot;only_changed&quot;: &quot;/premium.css&quot;,
+      &quot;sha256&quot;: &quot;f20c44f08c2a5332f69bb7b2538d5cbc332d54c96771a6f7620983cfb5e923b3&quot;,
+      &quot;configuration_preserved&quot;: true,
+      &quot;all_other_files_preserved&quot;: true
+    },
+    {
+      &quot;previous&quot;: &quot;sites/simutrade-labs-tts/versions/5d1f2a0a93513d05&quot;,
+      &quot;version&quot;: &quot;sites/simutrade-labs-tts/versions/fceefb84a988b9e9&quot;,
+      &quot;release&quot;: &quot;sites/simutrade-labs-tts/releases/1795215999994000&quot;,
+      &quot;source_commit&quot;: &quot;62d9628da346b887f261d321ce7fc22bf20eaca4&quot;,
+      &quot;only_changed&quot;: &quot;/index.html&quot;,
+      &quot;sha256&quot;: &quot;efbb3405ebaa36facc220c885b892e7a4964cff620b2a798078dfd9e21343500&quot;,
+      &quot;configuration_preserved&quot;: true,
+      &quot;all_other_files_preserved&quot;: true
+    }
+  ],
+  &quot;fixture_cleanup&quot;: {
+    &quot;paid_collaboration_suspended&quot;: true,
+    &quot;fictional_auth_accounts_disabled&quot;: 3,
+    &quot;temporary_verification_tag_removed&quot;: true,
+    &quot;customer_data_deleted&quot;: false
+  },
+  &quot;browser_checks&quot;: {
+    &quot;live_sign_in&quot;: true,
+    &quot;study_progress_persists_after_reload&quot;: true,
+    &quot;private_journal_persists_after_reload&quot;: true,
+    &quot;team_created_through_ui&quot;: true,
+    &quot;five_included_seats_owner_plus_four_reservations&quot;: true,
+    &quot;sixth_seat_refused&quot;: true,
+    &quot;shared_note_saved&quot;: true,
+    &quot;logout&quot;: true,
+    &quot;recovery_request_confirmation&quot;: true,
+    &quot;recovery_email_delivery&quot;: &quot;not independently verified&quot;,
+    &quot;password_reset_completion&quot;: &quot;not performed&quot;,
+    &quot;journal_export_button&quot;: &quot;clicked; final downloaded file not independently read back&quot;,
+    &quot;workspace_json_export_button&quot;: &quot;clicked; final downloaded file not independently read back&quot;,
+    &quot;support_confirmation&quot;: &quot;TT-C8DFF63B&quot;,
+    &quot;desktop_hero_no_overlap&quot;: {
+      &quot;heading_width&quot;: 567,
+      &quot;heading_scroll_width&quot;: 567,
+      &quot;last_text_right&quot;: 758.96,
+      &quot;chart_left&quot;: 844.43
+    },
+    &quot;mobile_team_screen&quot;: &quot;new interactive check remains unverified; viewport override did not apply and isolated headless launch was unavailable&quot;
+  },
+  &quot;verification_status&quot;: &quot;PRODUCTION DEPLOYED; documented acceptance limits remain&quot;,
+  &quot;remaining_handover&quot;: [
+    &quot;Final director operating/packet acknowledgment&quot;,
+    &quot;Verify founding-subscription operations with the existing director before paid activation&quot;,
+    &quot;Previously recorded merchant tax-configuration question remains unresolved in this technical verification&quot;
+  ]
+}</pre></details></main></body></html>
