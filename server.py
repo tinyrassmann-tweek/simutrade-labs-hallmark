@@ -12,6 +12,7 @@ from http.cookies import SimpleCookie
 ROOT=Path(__file__).parent
 DB=os.getenv('DB_PATH',str(ROOT/'data'/'simutrade.db'))
 PROJECT=os.getenv('GOOGLE_CLOUD_PROJECT','')
+COLLECTION=os.getenv('ST_COLLECTION','records')
 CLOUD=bool(os.getenv('K_SERVICE'))
 if CLOUD and not PROJECT: raise RuntimeError('Cloud Run requires GOOGLE_CLOUD_PROJECT; local SQLite is not durable there')
 LOCK=threading.RLock()
@@ -23,7 +24,7 @@ class Store:
    with sqlite3.connect(DB) as c: c.execute('CREATE TABLE IF NOT EXISTS records (key TEXT PRIMARY KEY, value TEXT NOT NULL, version INTEGER NOT NULL)')
  def call(self,path,method='GET',data=None):
   token=json.load(urlopen(Request('http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token',headers={'Metadata-Flavor':'Google'}),timeout=5))['access_token']
-  url=f'https://firestore.googleapis.com/v1/projects/{PROJECT}/databases/(default)/documents/records/{path}'
+  url=f'https://firestore.googleapis.com/v1/projects/{PROJECT}/databases/(default)/documents/{COLLECTION}/{path}'
   req=Request(url,data=None if data is None else json.dumps(data).encode(),method=method,headers={'Authorization':'Bearer '+token,'Content-Type':'application/json'})
   try:
    with urlopen(req,timeout=15) as r: return json.load(r)
@@ -112,7 +113,7 @@ class Handler(BaseHTTPRequestHandler):
   self.send_header('X-Content-Type-Options','nosniff');self.send_header('Referrer-Policy','strict-origin-when-cross-origin');self.send_header('X-Frame-Options','SAMEORIGIN')
   self.send_header('Content-Security-Policy',"default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'self'")
  def session(self):
-  c=SimpleCookie(); c.load(self.headers.get('Cookie','')); token=c.get('st_session'); token=token.value if token else ''
+  c=SimpleCookie(); c.load(self.headers.get('Cookie','')); token=c.get('__session'); token=token.value if token else ''
   row,_=STORE.get('session:'+hashlib.sha256(token.encode()).hexdigest()) if token else (None,None)
   if not row or row['expires']<time.time():return None
   return row
@@ -148,7 +149,7 @@ class Handler(BaseHTTPRequestHandler):
  def do_POST(self):
   try:
    origin=self.headers.get('Origin')
-   if origin and urlparse(origin).netloc!=self.headers.get('Host'):return self.out(403,{'error':'Cross-origin request rejected'})
+   if origin and urlparse(origin).netloc!=self.headers.get('Host') and origin!=os.getenv('PUBLIC_ORIGIN'):return self.out(403,{'error':'Cross-origin request rejected'})
    if self.headers.get('Sec-Fetch-Site')=='cross-site':return self.out(403,{'error':'Cross-site request rejected'})
    if not self.headers.get('Content-Type','').startswith('application/json'):return self.out(415,{'error':'JSON required'})
    path=urlparse(self.path).path;d=self.body()
@@ -182,13 +183,13 @@ class Handler(BaseHTTPRequestHandler):
       salt=secrets.token_hex(16);uid=secrets.token_hex(16);u={'uid':uid,'email':email,'name':str(d.get('name','Trader'))[:80] or 'Trader','salt':salt,'hash':hashlib.scrypt(pw.encode(),salt=bytes.fromhex(salt),n=16384,r=8,p=1).hex()};STORE.put(key,u);STORE.put('state:'+uid,fresh())
      elif not u or not hmac.compare_digest(hashlib.scrypt(pw.encode(),salt=bytes.fromhex(u['salt']),n=16384,r=8,p=1).hex(),u['hash']):return self.out(401,{'error':'Email or password incorrect'})
      token=secrets.token_urlsafe(32);csrf=secrets.token_urlsafe(24);STORE.put('session:'+hashlib.sha256(token.encode()).hexdigest(),{'uid':u['uid'],'email':email,'name':u['name'],'expires':time.time()+604800})
-    cookie='st_session='+token+'; HttpOnly; SameSite=Lax; Path=/; Max-Age=604800'+('; Secure' if CLOUD or self.headers.get('X-Forwarded-Proto')=='https' else '')
+    cookie='__session='+token+'; HttpOnly; SameSite=Lax; Path=/; Max-Age=604800'+('; Secure' if CLOUD or self.headers.get('X-Forwarded-Proto')=='https' else '')
     return self.out(200,{'ok':True},cookie)
    u=self.session()
    if not u:return self.out(401,{'error':'Sign in to save across devices. Guest practice stays in this browser.'})
    if path=='/api/logout':
-    c=SimpleCookie();c.load(self.headers.get('Cookie',''));key='session:'+hashlib.sha256(c['st_session'].value.encode()).hexdigest();old,v=STORE.get(key);old['expires']=0;STORE.put(key,old,v)
-    return self.out(200,{'ok':True},'st_session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0'+('; Secure' if CLOUD else ''))
+    c=SimpleCookie();c.load(self.headers.get('Cookie',''));key='session:'+hashlib.sha256(c['__session'].value.encode()).hexdigest();old,v=STORE.get(key);old['expires']=0;STORE.put(key,old,v)
+    return self.out(200,{'ok':True},'__session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0'+('; Secure' if CLOUD else ''))
    with LOCK:
     s,v=STORE.get('state:'+u['uid'])
     if d.get('version')!=v:raise Conflict('Changed in another tab. Refresh and try again.')

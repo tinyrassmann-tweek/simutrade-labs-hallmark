@@ -25,7 +25,9 @@
 </span>
 </a>
 <nav class="side-nav" aria-label="Workspace">
-<div class="nav-label">Trader’s lab</div>
+<div class="nav-label">Evaluation training</div>
+<button type="button" data-page="study">Evaluation study track</button>
+<button type="button" data-page="team">Study team</button>
 <button type="button" data-page="overview">
 <span class="nav-icon" aria-hidden="true">
 <svg viewBox="0 0 24 24">
@@ -132,7 +134,7 @@
 <h2 id="auth-title">Save your practice.</h2>
 <button type="button" class="icon-btn" id="close-auth" aria-label="Close account dialog">×</button>
 </div>
-<p class="note">Your account and guest practice stay separate. Email verification and password recovery are not available yet. Use exports to keep a copy of important records.</p>
+<p class="note">Save your practice, verify your email, and join your study team. Use password recovery below if you need help signing in.</p>
 <div class="tabs">
 <button type="button" data-auth="register" class="selected">Create account</button>
 <button type="button" data-auth="login">Sign in</button>
@@ -144,7 +146,9 @@
 </label>
 <label>Password (12+ characters)<input name="password" type="password" required minlength="12" maxlength="128" autocomplete="new-password">
 </label>
+<label class="check" id="account-terms"><input type="checkbox" name="termsAccepted" required><span>I am 18 or older and accept the <a href="/terms.html" target="_blank" rel="noopener">app terms</a> and <a href="/privacy.html" target="_blank" rel="noopener">privacy notice</a>.</span></label>
 <button type="submit" class="primary" style="width:100%">Create account</button>
+<button type="button" class="small" id="password-recovery">Send password recovery email</button>
 <p id="auth-status" class="note" aria-live="polite">
 </p>
 </form>

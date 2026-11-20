@@ -5,10 +5,10 @@ Premium consumer landing page and functional simulated-trading education app. Vi
 ## Run locally
 
 ```bash
-python3 server.py
+python3 production.py
 ```
 
-Open http://localhost:3000 for the site and http://localhost:3000/app for the app. Python 3.12+ is required. No pip or npm dependencies are required for the app runtime.
+Open http://localhost:8080 for the site and http://localhost:8080/app for the app. Python 3.12+ is required. No pip or npm dependencies are required for the app runtime.
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -62,3 +62,8 @@ Cloud deployment, Firestore, Gemini, and provider credentials have not been exer
 The landing explains the practice loop through a risk check, controlled synthetic replay, reflection preview, geometric sizing calculator, and voluntary pause. Demo results are labeled examples. The app retains its real routes, storage, and simulation logic, with a new visual treatment and linked session guidance. No front-end framework, external fonts, or animation library is required.
 
 See `verification/visual-edition.json` for the checks performed in this update. Historical `.hallmark/` records describe the earlier foundation.
+
+
+## November 20 production cycle
+
+The production app uses Firebase email/password authentication and private Firestore records in `simutrade_records`. Hosted requests use `/api/simutrade/*` and a Firebase-compatible `__session` cookie. A namespaced proxy preserves the existing Think Tank inquiry API. See `deployment/hub/` for the pinned derivative image. No Stripe API secret is deployed. New paid teams are activated by the existing owner operator after verifying the settled Stripe subscription and purchaser reference. Founder pricing is $19 per team per month for six periods, including five seats. Premium is $49 per team per month, including ten seats. See `public/cohort-terms.html` and `deployment/OPERATOR.md`.

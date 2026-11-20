@@ -1,0 +1,17 @@
+# SimuTrade Labs operator handover
+
+Canonical site: https://simutradelabs.thinktanksolutionsai.online/
+Only the existing owner Google identity may operate activation. Never put identity tokens in source, reports, messages or shell output. The local acceptance token is disabled on Cloud Run.
+
+1. Check NEW SimuTrade orders in the existing live Think Tank Digital Stripe account. Match the exact subscription, settled invoice, purchaser email and client_reference_id `st_<team-id>`. If the buyer used a direct link, resolve their verified app team before activation. Do not create a second charge.
+2. Verify the actual plan price. Founder price `price_1Ua49MPNVON98wre4f91h2ri` is $19 total monthly with five included seats. Premium price `price_1Ua4BKPNVON98wreqmAFMcck` is $49 total monthly with ten included seats. Quantity is one team.
+3. Before Founder activation, schedule cancellation at the sixth monthly anniversary in the existing Stripe Dashboard. Record and independently verify the cancellation date. No automatic switch to Premium. Use the actual Stripe billing anchor, UTC, and calendar months.
+4. Prepare a JSON activation file containing team, plan (`founder` or `premium`), customerEmail, startedAt, paidUntil, paymentReference (`cs_...` checkout or `in_...` settled renewal invoice), subscription, paymentVerified true and subscriptionVerified true. Founder additionally requires scheduledCancellationAt and cancellationVerified true. Use verified Stripe timestamps, never estimates.
+5. Run `python3 deployment/operator.py activate PRIVATE_ACTIVATION_FILE.json` from an existing owner-authenticated gcloud session. The helper obtains the current identity token privately, verifies the owner locally, posts to the canonical endpoint, then prints only the non-secret result. Fulfill within one business day.
+6. For monthly renewal extend only to the actual settled paid-through time. Receipt reuse is idempotent and cannot activate a different team. A failed/unpaid subscription is never extended. Paid team features expire automatically; private personal practice remains available.
+7. On a verified refund, chargeback or ended subscription use `python3 deployment/operator.py suspend PRIVATE_FILE.json`. Fields: team, subscription, reason (`refunded`, `chargeback`, `subscription_ended`), billingVerified true. This revokes paid collaboration immediately without deleting private journals. Financial refunds themselves remain in Stripe, under existing owner authorization.
+8. Resolve cancellation and support requests via the shared inquiry queue with venture `SimuTrade Labs`. Cancel before the next renewal when requested under the published terms. Customer may keep/download their personal report and journal exports. Share only deliberately posted team notes.
+
+Never mark a fictional acceptance record as a customer or revenue. `fictionalAcceptance` is limited to designated example.test/example.com accounts. A fixture proves application access controls, not a bank settlement.
+
+Marketing scope: simulated educational practice, self-guided lessons, configurable generic evaluation rules, seat-inclusive study teams. No passing percentage, live-market-data claim, guaranteed funding, broker/prop-firm affiliation, human coaching inclusion or AI-service claim without a verified enabled provider.

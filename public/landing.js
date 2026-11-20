@@ -45,5 +45,24 @@ function riskUpdate(){const balance=Number($('#risk-balance').value),percent=Num
 let pauseEnd=0,pauseInterval;
 function pauseTick(){const seconds=pauseEnd?Math.max(0,Math.ceil((pauseEnd-Date.now())/1000)):300;$('#landing-pause-time').textContent=String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');if(pauseEnd&&seconds===0){pauseEnd=0;clearInterval(pauseInterval);$('#landing-pause').textContent='Try the five-minute pause';$('#landing-pause-status').textContent='Pause complete. Review your setup and risk before returning.';}}
 $('#landing-pause').addEventListener('click',()=>{if(pauseEnd){pauseEnd=0;clearInterval(pauseInterval);$('#landing-pause').textContent='Try the five-minute pause';$('#landing-pause-status').textContent='Pause ended. Return to your plan when you are ready.';}else{pauseEnd=Date.now()+300000;pauseInterval=setInterval(pauseTick,1000);$('#landing-pause').textContent='End this pause';$('#landing-pause-status').textContent='Pause started. Name the setup, the risk, and one deliberate next step.';}pauseTick();});
-$('#lead-form').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,b=f.querySelector('button[type=submit]'),status=$('#lead-status');b.disabled=true;b.setAttribute('aria-busy','true');status.textContent='Saving your request…';try{if(location.protocol==='file:'||window.SIMUTRADE_PREVIEW)throw new Error('This downloaded page is an interactive preview. Run the included server to send your request.');const data=Object.fromEntries(new FormData(f));data.consent=f.elements.consent.checked;const r=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const d=await r.json();if(!r.ok)throw new Error(d.error||'Unable to save. Please retry.');status.textContent=d.message;status.className='m-fine positive';status.style.setProperty('color','var(--green)','important');f.reset();}catch(error){status.className='m-fine negative';status.style.setProperty('color','var(--red)','important');status.textContent=error.message;}finally{b.disabled=false;b.removeAttribute('aria-busy');}});
+$('#lead-form').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,b=f.querySelector('button[type=submit]'),status=$('#lead-status');b.disabled=true;b.setAttribute('aria-busy','true');status.textContent='Saving your request…';try{if(location.protocol==='file:'||window.SIMUTRADE_PREVIEW)throw new Error('This downloaded page is an interactive preview. Run the included server to send your request.');const data=Object.fromEntries(new FormData(f));data.consent=f.elements.consent.checked;const payload = {
+  submissionId: crypto.randomUUID(),
+  name: data.name,
+  email: data.email,
+  company: "",
+  venture: "SimuTrade Labs",
+  message: "Early access interest: " + data.goal,
+  goal: data.goal,
+  website: data.website,
+  consent: data.consent
+};
+const r = await fetch('/api/leads', {
+  method: 'POST',
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify(payload)
+});const d=await r.json();if(!r.ok)throw new Error(d.error||'Unable to save. Please retry.');if (typeof d.reference !== 'string' || !d.reference) {
+  throw new Error('The request was not confirmed. Please retry.');
+}
+status.textContent = 'Your early-access request is saved. Reference: ' +
+  d.reference + '. No email confirmation has been sent.';status.className='m-fine positive';status.style.setProperty('color','var(--green)','important');f.reset();}catch(error){status.className='m-fine negative';status.style.setProperty('color','var(--red)','important');status.textContent=error.message;}finally{b.disabled=false;b.removeAttribute('aria-busy');}});
 })();

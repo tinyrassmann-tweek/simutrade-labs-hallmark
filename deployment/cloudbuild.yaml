@@ -1,0 +1,6 @@
+steps:
+- name: gcr.io/cloud-builders/docker
+  args: [build, -f, deployment/hub/Dockerfile, -t, us-east1-docker.pkg.dev/think-tank-solutions-ai/cloud-run-source-deploy/think-tank-hub:simutrade-20261120, .]
+images:
+- us-east1-docker.pkg.dev/think-tank-solutions-ai/cloud-run-source-deploy/think-tank-hub:simutrade-20261120
+timeout: 900s
