@@ -1,6 +1,6 @@
 {
   "release": {
-    "revision": "think-tank-hub-00006-neq",
+    "revision": "think-tank-hub-00009-zud",
     "image": "us-east1-docker.pkg.dev/think-tank-solutions-ai/cloud-run-source-deploy/think-tank-hub@sha256:aab21bb11da57a8e1df7ec05342cd666b215a3d49d62428497638554e4995993",
     "source_commit": "327725a7cf534ed2ac7b41fe46fba787cabbc41d",
     "build": "9410bffe-ad59-4cec-a2a4-1db4edde73cc",
@@ -34,7 +34,21 @@
     "runtime_identity_preserved": true,
     "environment_preserved": true,
     "rollback_revision": "think-tank-hub-00004-t2t",
-    "released_at": 1795214122.782501
+    "previous_revision": "think-tank-hub-00006-neq",
+    "base_image_released_at": 1795214122.782501,
+    "operator_configuration": {
+      "revision": "think-tank-hub-00009-zud",
+      "image_unchanged": true,
+      "owner_unchanged": true,
+      "permissions_unchanged": true,
+      "only_environment_change": "OPERATOR_AUDIENCE",
+      "audience": "32555940559.apps.googleusercontent.com",
+      "unauthorized_status": 403,
+      "health_status": 200,
+      "traffic": 100,
+      "helper_source": "caca6751fc78d5c40eb6518d2ce0cda80f5dd1a9"
+    },
+    "acceptance_as_of": "2026-11-20T19:17:45.604274-05:00"
   },
   "security_scan": {
     "build": "9410bffe-ad59-4cec-a2a4-1db4edde73cc",
@@ -151,10 +165,10 @@
     "shared_note_saved": true,
     "logout": true,
     "recovery_request_confirmation": true,
-    "recovery_email_delivery": "not independently verified",
+    "recovery_email_delivery": "PASSED \u2014 actual owner-controlled inbox delivery and reset link verified",
     "password_reset_completion": "not performed",
-    "journal_export_button": "clicked; final downloaded file not independently read back",
-    "workspace_json_export_button": "clicked; final downloaded file not independently read back",
+    "journal_export_button": "PASSED \u2014 production CSV physically downloaded, parsed and checksummed",
+    "workspace_json_export_button": "PASSED \u2014 production JSON physically downloaded, parsed and checksummed",
     "support_confirmation": "TT-C8DFF63B",
     "desktop_hero_no_overlap": {
       "heading_width": 567,
@@ -162,12 +176,177 @@
       "last_text_right": 758.96,
       "chart_left": 844.43
     },
-    "mobile_team_screen": "new interactive check remains unverified; viewport override did not apply and isolated headless launch was unavailable"
+    "mobile_team_screen": "PASSED \u2014 390x844 and 320x740, keyboard navigation, invitations, shared-note reload, no horizontal overflow"
   },
-  "verification_status": "PRODUCTION DEPLOYED; documented acceptance limits remain",
-  "remaining_handover": [
-    "Final director operating/packet acknowledgment",
-    "Verify founding-subscription operations with the existing director before paid activation",
-    "Previously recorded merchant tax-configuration question remains unresolved in this technical verification"
-  ]
+  "verification_status": "FULL REQUESTED ACCEPTANCE PASSED; COMMERCIAL HANDOFF ACCEPTED",
+  "remaining_handover": [],
+  "prior_deployment": {
+    "revision": "think-tank-hub-00006-neq",
+    "image": "us-east1-docker.pkg.dev/think-tank-solutions-ai/cloud-run-source-deploy/think-tank-hub@sha256:aab21bb11da57a8e1df7ec05342cd666b215a3d49d62428497638554e4995993",
+    "source_commit": "327725a7cf534ed2ac7b41fe46fba787cabbc41d",
+    "build": "9410bffe-ad59-4cec-a2a4-1db4edde73cc",
+    "traffic_percent": 100,
+    "checks": [
+      {
+        "path": "/api/simutrade/health",
+        "status": 200
+      },
+      {
+        "path": "/api/simutrade/health",
+        "status": 200
+      },
+      {
+        "path": "/api/simutrade/me",
+        "status": 200
+      },
+      {
+        "path": "/api/simutrade/market?symbol=NQ",
+        "status": 200
+      },
+      {
+        "path": "/api/simutrade/operator/team?id=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "status": 403
+      },
+      {
+        "path": "/api/leads",
+        "status": 405
+      }
+    ],
+    "runtime_identity_preserved": true,
+    "environment_preserved": true,
+    "rollback_revision": "think-tank-hub-00004-t2t",
+    "released_at": 1795214122.782501
+  },
+  "four_gate_closeout": {
+    "accepted_scope": "Live simulated educational practice, private saved accounts, seat-inclusive study teams, and owner-operated commercial fulfillment.",
+    "all_four_requested_gates": "PASSED",
+    "downloads": [
+      {
+        "filename": "SimuTrade-Journal.csv",
+        "bytes": 204,
+        "sha256": "77cebaedd179f55fd7ea0ae1d1b993bf0a9afffe59c15b4dc9dde8582bad57fc",
+        "content_verified": true,
+        "kind": "journal_csv"
+      },
+      {
+        "filename": "SimuTrade-Workspace.json",
+        "bytes": 867,
+        "sha256": "47fc094656f6462df62aed015e40fe00e7a8209606efa65c3ce1b0cf07de77fd",
+        "content_verified": true,
+        "kind": "workspace_json",
+        "study_progress_included": true
+      }
+    ],
+    "mobile": {
+      "canonical": "https://simutradelabs.thinktanksolutionsai.online",
+      "fictional": true,
+      "checks": {
+        "server_study_progress_survives_reload": true,
+        "private_journal_survives_reload": true,
+        "active_founder_plan_has_five_seats": true,
+        "mobile_keyboard_navigation": true,
+        "mobile_team_invitation_and_note_persist": true,
+        "mobile_320_and_390_no_horizontal_overflow": true,
+        "logout": true
+      },
+      "downloads": [
+        {
+          "filename": "SimuTrade-Journal.csv",
+          "bytes": 204,
+          "sha256": "77cebaedd179f55fd7ea0ae1d1b993bf0a9afffe59c15b4dc9dde8582bad57fc",
+          "content_verified": true,
+          "kind": "journal_csv"
+        },
+        {
+          "filename": "SimuTrade-Workspace.json",
+          "bytes": 867,
+          "sha256": "47fc094656f6462df62aed015e40fe00e7a8209606efa65c3ce1b0cf07de77fd",
+          "content_verified": true,
+          "kind": "workspace_json",
+          "study_progress_included": true
+        }
+      ],
+      "team": "45997165db2dcfbefaf62b1c0003081e",
+      "status": "PASSED",
+      "mobile_390": {
+        "width": 390,
+        "height": 844,
+        "client": 390,
+        "scroll": 390
+      },
+      "mobile_320": {
+        "width": 320,
+        "height": 740,
+        "client": 320,
+        "scroll": 320
+      },
+      "landing_mobile_390": {
+        "width": 390,
+        "height": 844,
+        "client": 390,
+        "scroll": 390
+      }
+    },
+    "recovery_email": {
+      "status": "PASSED",
+      "delivered_at": "Fri, 20 Nov 2026 23:46:19 +0000",
+      "sender": "noreply@think-tank-solutions-ai.firebaseapp.com",
+      "recipient": "Owner-controlled Gmail acceptance alias",
+      "body_read": true,
+      "reset_link_present": true,
+      "reset_mode_confirmed": true,
+      "scope": "Production recovery request to actual inbox delivery; no password change requested."
+    },
+    "commercial_handoff": {
+      "status": "ACCEPTED",
+      "director": "Existing SimuTrade Director",
+      "source_commit": "caca6751fc78d5c40eb6518d2ce0cda80f5dd1a9",
+      "packet": "/workspace/simutrade/nov20-handoff/",
+      "legacy_brand_assets_preserved": 641,
+      "mac_google_cloud_cli_repaired": true,
+      "normal_tls_validation": true,
+      "plain_python_helper_live_activation": true,
+      "plain_python_helper_live_suspension": true,
+      "helper": "deployment/simutrade_operator.py",
+      "responsibilities": [
+        "New-order payment and purchaser/team matching",
+        "Six-period founding cancellation set before activation",
+        "Monthly paid-through checks",
+        "Support and refunds",
+        "Organic campaign readiness"
+      ],
+      "actual_payment_created": false
+    },
+    "operator_release": {
+      "revision": "think-tank-hub-00009-zud",
+      "image_unchanged": true,
+      "owner_unchanged": true,
+      "permissions_unchanged": true,
+      "only_environment_change": "OPERATOR_AUDIENCE",
+      "audience": "32555940559.apps.googleusercontent.com",
+      "unauthorized_status": 403,
+      "health_status": 200,
+      "traffic": 100,
+      "helper_source": "caca6751fc78d5c40eb6518d2ce0cda80f5dd1a9"
+    },
+    "cleanup": {
+      "disabled_acceptance_roles": [
+        "owner",
+        "mailbox"
+      ],
+      "verification_tag_removed": true,
+      "mobile_image_bytes": 38647,
+      "mobile_image_base64_chars": 51532
+    },
+    "suspension": {
+      "status": "PASSED",
+      "stored_team_status": "suspended",
+      "public_inactive_status": "pending",
+      "shared_note_preserved": true,
+      "private_journal_preserved": true,
+      "study_progress_preserved": true,
+      "customer_or_revenue_record_created": false
+    },
+    "next_venture": "Think Tank Digital"
+  }
 }

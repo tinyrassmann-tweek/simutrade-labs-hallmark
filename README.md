@@ -1,69 +1,37 @@
 # SimuTrade Labs
 
-Premium consumer landing page and functional simulated-trading education app. Visual edition 1.1, November 17, 2026. This repository is the shared source for the project, including the site, app, original brand assets, operator tools, tests, deployment files, and downloadable build.
+Live simulated trading education, private saved workspaces and seat-inclusive study teams.
+
+Production: https://simutradelabs.thinktanksolutionsai.online/ · App: https://simutradelabs.thinktanksolutionsai.online/app
+
+## Accepted production scope — November 20, 2026
+
+All four requested closeout gates passed: actual customer CSV/JSON downloads and contents, mobile team workflows at 320px and 390px, real recovery-email delivery, and the existing director’s commercial handoff. The Mac operator performed both fictional activation and suspension with the portable helper. See `launch/2026-11-20/production-verification.json` and its HTML acceptance record.
+
+The current runtime is `think-tank-hub-00009-zud`; Hosting version is `fceefb84a988b9e9`. The runtime image is unchanged from the patched image with zero reported vulnerability findings. Runtime source, later static corrections and acceptance records have distinct provenance in the ledger.
+
+## Customer and commercial model
+
+Free guest practice stays in the browser. Firebase email/password accounts save private work in Firestore. Each learner’s journal stays private; deliberately posted study notes are shared with the team. Founding Cohort is $19/month total for six monthly periods with five included seats. Optional Premium is $49/month total with ten included seats. The existing Think Tank Digital merchant processes payments. The existing operator verifies settled payment and the purchaser/team reference, confirms the founding cancellation schedule, and activates access within the published window. Read `public/cohort-terms.html` and `deployment/OPERATOR.md`.
+
+Owner actions use `python3 deployment/simutrade_operator.py activate PRIVATE_FILE.json` (or `suspend`, or `team TEAM_ID`). The helper finds the existing Google Cloud CLI and trusted CA bundle on the Mac. Tokens stay private; the server checks the exact verified owner, Google issuer, configured audience and expiry. The old `deployment/operator.py` filename was removed to avoid shadowing Python’s standard library.
 
 ## Run locally
 
+Python 3.12+ is required; the application uses the standard library.
+
 ```bash
 python3 production.py
-```
-
-Open http://localhost:8080 for the site and http://localhost:8080/app for the app. Python 3.12+ is required. No pip or npm dependencies are required for the app runtime.
-
-```bash
 python3 -m unittest discover -s tests -v
-```
-
-## Build the downloadable package
-
-```bash
 python3 build_release.py
 ```
 
-Generated previews and the complete ZIP appear in `dist/`. They are reproducible outputs rather than committed duplicate bundles. All modular source and original assets are included. The standalone landing embeds the app and legal previews. Guest practice works in the preview; account and lead APIs require running the Python server.
+Open http://localhost:8080. SQLite is used only for local development. Local guest/account data is separate from production; Firebase recovery requires the configured production identity service. Cloud Run requires `GOOGLE_CLOUD_PROJECT` and durable Firestore. The hosted API prefix is `/api/simutrade/*`; the shared inquiry API is preserved.
 
-## Key files
+Generated standalone previews and source ZIPs appear in `dist/`. They include the original assets and modular source. Standalone guest practice is a preview; server-backed accounts and commercial activation use the deployed service.
 
-| Path | Purpose |
-| --- | --- |
-| `public/index.html` | Landing page |
-| `public/app.html` and `public/app.js` | Trader and operator workspace |
-| `public/style.css`, `public/premium.css`, `public/tokens.css`, `public/base.css` | Shared styling, visual edition, and design tokens |
-| `public/assets/` | Supplied logo and custom illustrative photographs |
-| `server.py` | Backend and web server |
-| `tests/` | Backend regression tests |
-| `build_release.py` | Generates standalone HTML previews, launch guide, and complete ZIP in `dist/` |
-| `START-HERE.html` | Full launch and capability guide |
-| `.hallmark/` | Original page snapshots, design audit, verification record, and source comparison diff |
-| `requirements/` | Original operating-system requirements and landing prompt |
-| `deploy-google-cloud.sh` and `Dockerfile` | Google Cloud deployment package |
+## Boundaries and source layout
 
-## Agent handoff
+All balances and execution are simulated. Included data is synthetic replay. Entries and exits are manual; reference stops and targets do not auto-execute. Fixed balance-based rules use UTC days and realized losses; trailing-equity and firm-specific qualification rules are not modeled. Coaching prompts are rules based. Optional licensed data and Gemini generation are not included as active services. CRM drafts and follow-up plans are unsent workspaces.
 
-Work from this repository. Preserve the simulated-funds-only posture and existing branding. Read `design.md`, `START-HERE.html`, and `AGENTS.md` before changing the UI. Run the tests before pushing. Never commit local databases, real credentials, or generated session data.
-
-Public source access does not mean the app has been deployed as a live service. Google Cloud publishing and optional provider integrations still require project access and configuration.
-
-## Persistence
-Local: SQLite at `data/simutrade.db`. Keep this directory private and back it up. Cloud Run: Firestore Native via the runtime identity. Never use SQLite for Cloud Run production because its filesystem is ephemeral. Cloud Run without GOOGLE_CLOUD_PROJECT fails fast.
-
-Guest records stay in localStorage. Account data is separate. No automatic guest import.
-Server calculates authenticated trade fills, risk checks, and realized P&L. Workspace writes cannot set balances, positions, or trade history. Version preconditions prevent stale concurrent overwrites.
-
-## Scope
-Synthetic replay included; Twelve Data quotes optional. Manual entries/exits only; stops/targets are references, not auto orders. Fixed balance-based challenge limits; no trailing drawdown/equity enforcement. Rules coach included; Gemini optional. CRM, editable drafts, and unsent follow-up plans included; no email delivery, outside CRM sync, booking, paid plans, or background jobs.
-
-No email verification or password recovery yet. Owner waitlist inbox requires both ADMIN_EMAIL and a separate ADMIN_ACCESS_TOKEN. Secrets never go into static files. No claims that results predict live trading or qualification.
-
-Cloud deployment, Firestore, Gemini, and provider credentials have not been exercised against a connected account in this build session. The deployment script is supplied, not executed. Public launch needs operator contact details and identity verification/recovery configured.
-
-## Visual edition 1.1
-
-The landing explains the practice loop through a risk check, controlled synthetic replay, reflection preview, geometric sizing calculator, and voluntary pause. Demo results are labeled examples. The app retains its real routes, storage, and simulation logic, with a new visual treatment and linked session guidance. No front-end framework, external fonts, or animation library is required.
-
-See `verification/visual-edition.json` for the checks performed in this update. Historical `.hallmark/` records describe the earlier foundation.
-
-
-## November 20 production cycle
-
-The production app uses Firebase email/password authentication and private Firestore records in `simutrade_records`. Hosted requests use `/api/simutrade/*` and a Firebase-compatible `__session` cookie. A namespaced proxy preserves the existing Think Tank inquiry API. See `deployment/hub/` for the pinned derivative image. No Stripe API secret is deployed. New paid teams are activated by the existing owner operator after verifying the settled Stripe subscription and purchaser reference. Founder pricing is $19 per team per month for six periods, including five seats. Premium is $49 per team per month, including ten seats. See `public/cohort-terms.html` and `deployment/OPERATOR.md`.
+`public/` contains the landing, app, original logo and generated illustrative photographs. `production.py` provides hosted account/team operations; `server.py` supplies storage and simulation logic. `deployment/hub/` preserves the existing inquiry service with a namespaced proxy. `tests/` contains 21 backend regression tests. `.hallmark/` preserves historical design records. Read `AGENTS.md`, `design.md` and `START-HERE.html` before changing the UI. Never commit databases, real credentials, tokens or session data.
